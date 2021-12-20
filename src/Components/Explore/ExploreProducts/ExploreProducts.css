@@ -1,0 +1,18 @@
+.explore-products img{
+    width: 25rem;
+    height: 19rem;
+    padding-block: 10px;
+    object-fit: contain;
+    margin: auto;
+    transition: .2s;
+}
+
+/* .explore-products:hover{
+    width: 31rem;
+    padding: none;
+} */
+
+.explore-products{
+    padding: 15px;
+    transition: .2s;
+}

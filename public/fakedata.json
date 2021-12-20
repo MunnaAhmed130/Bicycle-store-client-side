@@ -1,9 +1,64 @@
 [
     {
-        "name": "",
-        "url": "",
-        "prize": "",
+        "name": "Hero Kyoto 26T",
+        "url": "https://i.ibb.co/ZcbwkN7/Black-Hero-Kyoto-26-T-Single-Speed-Cycle.jpg",
+        "prize": "200",
+        "description": ""
+    },
+    {
+        "name": "Hero Buzz 20T",
+        "url": "https://i.ibb.co/dGKrZn0/Buzz-20-T-SBZZ20-RD0003-Road-Cycle-Red.jpg",
+        "prize": "400",
+        "description": ""
+    },
+    {
+        "name": "CUDA Dirt Squirt BMX Bike",
+        "url": "https://i.ibb.co/jfMShDX/Cuda-Dirt-Squirt-BMX-Bike-Orange.png",
+        "prize": "300",
+        "description": ""
+    },
+    {
+        "name": "JULIANA JOPLIN D Aluminum",
+        "url": "https://i.ibb.co/FBFtwjb/JULIANA-JOPLIN-D-ALUMINUM.png",
+        "prize": "500",
+        "description": ""
+    },
+    {
+        "name": "HERO Ranger 6 speed DTB VX 26T",
+        "url": "https://i.ibb.co/qmhY6bc/Ranger-6-Speed-Dtb-Vx-26-T.jpg",
+        "prize": "560",
+        "description": ""
+    },
+    {
+        "name": "HERO SPRINT Thorn 24T ",
+        "url": "https://i.ibb.co/C0xCMsn/Thorn-24-T-Sports-Cycle.jpg",
+        "prize": "450",
+        "description": ""
+    },
+    {
+        "name": "HERO SPRINT DTB 26T",
+        "url": "https://i.ibb.co/3f5s9x7/Sprint-Dtb-26t-Road-Cycle.jpg",
+        "prize": "360",
+        "description": ""
+    },
+    {
+        "name": "SANTA CRUZ Bronson Aluminum R+",
+        "url": "https://i.ibb.co/f1kJrD3/Santa-Cruz-Bronson-Aluminum-R.png",
+        "prize": "360",
+        "description": ""
+    },
+    {
+        "name": "VIVA RYDE ON 26T",
+        "url": "https://i.ibb.co/8d0kCK3/VIVA-RYDE-ON-26-T-SINGLE-SPEED-CYCLE.jpg",
+        "prize": "360",
+        "description": ""
+    },
+    {
+        "name": "HERO THORN 24T Wrigid Fork ATB DTB+",
+        "url": "https://i.ibb.co/hBRpxYQ/THORN-24-T-WRIGID-FORK-ATB-Dtb-Plus-Cycle.jpg",
+        "prize": "360",
         "description": ""
     },
     {}
 ]
+

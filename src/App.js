@@ -6,9 +6,9 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import Explore from './Components/Explore/Explore';
 import Login from './Components/Authentication/Login/Login';
 import Register from './Components/Authentication/Register/Register';
+import Explore from './Components/Explore/Explore/Explore';
 
 function App() {
   return (
