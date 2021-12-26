@@ -13,11 +13,12 @@ const Explore = () => {
             .then(data => setProducts(data))
     }, [])
     // console.log(products);
+
     return (
         <div>
             <Header />
-            <h1>This is explore</h1>
-            <Row xs={1} md={2} lg={3} className="w-100 m-0 justify-content-between">
+            <h1 className='text-center mt-5 mb-4'>Explore our new world of bicycle collection</h1>
+            <Row xs={1} md={2} lg={3} className="w-100 m-0 ">
                 {
                     products.map(product => <ExploreProducts key={product.name} product={product}></ExploreProducts>)
                 }

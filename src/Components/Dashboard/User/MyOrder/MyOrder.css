@@ -1,0 +1,18 @@
+.my-order img{
+    width: 80%;
+    height: 19rem;
+    padding-block: 10px;
+    object-fit: contain;
+    margin: auto;
+    transition: .2s;
+}
+
+/* .explore-products:hover{
+    width: 31rem;
+    padding: none;
+} */
+
+.my-order{
+    padding: 15px;
+    transition: .2s;
+}

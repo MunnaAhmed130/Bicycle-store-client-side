@@ -1,0 +1,27 @@
+ .header .logOut-btn{
+    border: 1px solid transparent;
+    font-weight: 500;
+    margin-left: 5px;
+    transition: .2s;
+}
+
+.profile-pic{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-pic-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (max-width:992px) {
+    .logOut-btn{
+        width: 8rem;
+        margin-left: 0px;
+        margin-top: 10px;
+    }
+}

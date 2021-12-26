@@ -1,0 +1,68 @@
+:root{
+    --offcanvas-width:250px;
+    --topNavbarHeight: 56px;
+}
+
+.dashboard .logOut-btn{
+    border: 0px solid transparent;
+    margin-left: 1.2rem;
+    margin-top: 1rem;
+    font-weight: 500;
+    /* background-color: transparent; */
+    color: #DC3545;
+
+}
+
+.dashboard .logOut-btn:hover{
+    color: white;
+}
+
+
+.sidebar{
+    width: var(--offcanvas-width);
+}
+
+.sidebar-content a{
+    padding-inline: 2rem ;
+}
+
+.sidebar-content a{
+    text-decoration: none;
+    color: rgba(165, 165, 165, 0.565);
+    font-weight: 500;
+}
+
+.sidebar-content a:hover{
+    color: white;
+}
+.sidebar-content a:active{
+    color: white;
+}
+
+
+
+
+@media screen and (min-width:992px) {
+    body{
+        overflow: auto !important;
+    }
+    .offcanvas-backdrop::before{
+        display: none;
+    }
+
+    main{
+        margin-left: var(--offcanvas-width);
+    }
+
+    .btn-close{
+        display: none;
+    }
+    
+    .sidebar{
+        transform: none !important;
+        visibility: visible !important;
+        /* top: var(--topNavbarHeight); */
+        /* height: calc(100% - var(--topNavbarHeight)); */
+    
+    }
+}

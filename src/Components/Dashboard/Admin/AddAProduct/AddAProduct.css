@@ -1,0 +1,27 @@
+.add-product{
+    text-align: center;
+}
+
+.add-form{
+    
+}
+
+.file-label{
+    border: 1px solid gray;
+    cursor: pointer;
+}
+.add-form input, .add-form textarea, .file-label{
+    width: 30%;
+}
+
+#upload-photo {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+ }
+
+@media screen and (max-width:768px) {
+    .add-form input, .add-form textarea{
+        width: 50%;
+    }
+}

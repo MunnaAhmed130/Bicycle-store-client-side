@@ -8,8 +8,8 @@ const Banner = () => {
     const img3 = "https://i.ibb.co/5L2LNjB/image-copyright-51.jpg"
     const img4 = "https://i.ibb.co/GCKctkK/image-copyright-46.jpg"
     return (
-        <Carousel>
-            <Carousel.Item interval={1000}>
+        <Carousel fade>
+            <Carousel.Item interval={2500}>
                 <img
                     className="d-block w-100 banner-img"
                     src={img1}
@@ -20,7 +20,7 @@ const Banner = () => {
                     <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                 </Carousel.Caption>
             </Carousel.Item>
-            <Carousel.Item interval={1000}>
+            <Carousel.Item interval={2500}>
                 <img
                     className="d-block w-100 banner-img"
                     src={img2}
@@ -31,7 +31,7 @@ const Banner = () => {
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                 </Carousel.Caption>
             </Carousel.Item>
-            <Carousel.Item interval={1000}>
+            <Carousel.Item interval={2500}>
                 <img
                     className="d-block w-100 banner-img"
                     src={img3}
