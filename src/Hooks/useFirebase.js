@@ -46,7 +46,6 @@ const useFirebase = () => {
         setLoading(true);
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-
                 const destination = location?.state?.from || '/';
                 history(destination);
                 setError('');
@@ -84,6 +83,12 @@ const useFirebase = () => {
         });
         return () => unsubscribed;
     }, [auth])
+
+    useEffect(() => {
+        fetch(`https://limitless-reaches-30016.herokuapp.com/users/${user.email}`)
+            .then(res => res.json())
+            .then(data => setAdmin(data.admin))
+    }, [user.email])
 
     // user log out
     const logOut = () => {

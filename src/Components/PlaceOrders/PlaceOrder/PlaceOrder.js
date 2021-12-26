@@ -16,7 +16,7 @@ const PlaceOrder = () => {
     const { register, handleSubmit } = useForm();
     const [order, setOrder] = useState([]);
     useEffect(() => {
-        fetch(`https://agile-island-88744.herokuapp.com/${id}`)
+        fetch(`https://agile-island-88744.herokuapp.com/products/${id}`)
             .then(res => res.json())
             .then(data => setOrder(data))
     }, [id])
@@ -95,6 +95,7 @@ const PlaceOrder = () => {
                                 onBlur={handleOnBlur}
                                 placeholder="Address"
                                 variant="outlined"
+                                required
                             /> <br />
                             <input
                                 name="phone"
@@ -102,6 +103,7 @@ const PlaceOrder = () => {
                                 onBlur={handleOnBlur}
                                 placeholder="Phone"
                                 variant="outlined"
+                                required
                             /> <br />
                             <input
                                 type="number"

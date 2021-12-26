@@ -18,6 +18,7 @@ import ManageOrders from './Components/Dashboard/Admin/ManageAllOrders/ManageOrd
 import AddAProduct from './Components/Dashboard/Admin/AddAProduct/AddAProduct';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import AdminRoute from './Components/AdminRoute/AdminRoute';
+import NotFound from './Components/NotFound/NotFound';
 
 function App() {
   return (
@@ -30,18 +31,14 @@ function App() {
           <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>}>
             <Route path="dashboardHome" element={<DashboardHome />} />
             <Route path="myOrders" element={<MyOrders />} />
-            <Route path="addAProduct" element={<AddAProduct />} />
-            <Route path="review" element={<Review />} />
-          </Route>
-          <Route path="/dashboard" element={<AdminRoute><Dashboard /></AdminRoute>}>
-            <Route path="dashboardHome" element={<DashboardHome />} />
             <Route path="manageOrders" element={<ManageOrders />} />
-            <Route path="addAProduct" element={<AddAProduct />} />
+            <Route path="addAProduct" element={<AdminRoute><AddAProduct /></AdminRoute>} />
             <Route path="review" element={<Review />} />
           </Route>
           <Route path="/placeOrder/:id" element={<PrivateRoute><PlaceOrder /></PrivateRoute>} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+          <Route path="*" element={<NotFound />} />
       </Routes>
       </BrowserRouter>
     </AuthProvider>
