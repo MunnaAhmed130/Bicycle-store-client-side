@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import { Outlet } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import useAuth from '../../../Hooks/useAuth';
 import './Dashboard.css';
 
 const Dashboard = () => {
-    const { logOut } = useAuth();
+    const { logOut, admin } = useAuth();
 
     return (
         <div className='dashboard'>
@@ -28,11 +29,17 @@ const Dashboard = () => {
                 </div>
                 <div className="offcanvas-body sidebar-content">
                     <Link to="/home">Home</Link> <br />
-                    <Link to="dashboardHome">Dashboard Home</Link> <br />
-                    <Link to="myOrders">My Order</Link> <br />
-                    <Link to="manageOrders">Manage Orders</Link> <br />
+                    <Link to="dashboard">Dashboard Home</Link> <br />
+                    {!admin && <>
+                        <Link to="myOrders" >My Order</Link> <br />
+                        <Link to="review">Review</Link><br />
+                        <Link to="pay">Pay</Link><br /></>}
+                    {admin && <>
+                        <Link to="manageOrders">Manage Orders</Link> <br />
+                        <Link to="manageProducts">Manage Products</Link> <br />
                     <Link to="addAProduct">Add Product</Link> <br />
-                    <Link to="review">Review</Link> <br />
+                        <Link to="makeAdmin">Make Admin</Link> <br /> </>}
+
 
                     <Button className='logOut-btn' variant="outline-danger" onClick={logOut}>Log out</Button>
                     <div className="dropdown mt-3">

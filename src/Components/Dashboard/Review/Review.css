@@ -6,6 +6,9 @@
 
 #review h2{
     margin-top: 2em;
+    font-size: 2rem;
+    font-weight: 700;
+    
 }
 
 .review-success{

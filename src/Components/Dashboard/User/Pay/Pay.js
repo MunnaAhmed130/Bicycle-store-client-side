@@ -3,8 +3,8 @@ import './Pay.css';
 
 const Pay = () => {
     return (
-        <div>
-
+        <div className='pay'>
+            <h2 className='text-center my-4'>Payment System coming soon</h2>
         </div>
     );
 };

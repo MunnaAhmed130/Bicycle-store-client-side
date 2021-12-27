@@ -5,6 +5,11 @@
     transition: .2s;
 }
 
+.logOut-btn:hover{
+    color: white;
+    background-color: #D32F2F !important;
+}
+
 .profile-pic{
     height: 40px;
     width: 40px;

@@ -15,7 +15,7 @@ const MyOrder = ({ myOrder, handleDeleteOrder }) => {
                         <Card.Text>
                             {description}
                         </Card.Text>
-                        <p>{price}</p>
+                        <p style={{ fontWeight: 500 }}>Price: ${price}</p>
                         <Button variant="outline-danger" onClick={() => handleDeleteOrder(_id)} className=''>Delete</Button>
 
                     </Card.Body>

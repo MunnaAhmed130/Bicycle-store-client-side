@@ -1,10 +1,25 @@
-.footer p{
+.footer-col a{
+    display: block;
+    padding-bottom: 5px;
+    cursor: pointer;
+    font-size: .9rem;
+    text-decoration: none;
+    color: white;
+}
+
+.footer-col h5{
+    color: white;
+}
+.footer-top{
+    background: #2c3e50;
+}
+.footer .footer-bottom p{
     color: white;
     font-weight: 500;
     text-align: center;
     line-height: 50px;
 }
 
-.footer{
+.footer .footer-bottom{
     background: #212529;
 }

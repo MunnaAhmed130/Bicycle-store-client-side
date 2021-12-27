@@ -9,7 +9,7 @@ initializeFirebase();
 const useFirebase = () => {
     const [user, setUser] = useState({});
     const [error, setError] = useState('');
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
     const [admin, setAdmin] = useState(false);
 
     const auth = getAuth();
@@ -80,12 +80,13 @@ const useFirebase = () => {
             } else {
                 setUser({})
             }
+            setLoading(false);
         });
         return () => unsubscribed;
     }, [auth])
 
     useEffect(() => {
-        fetch(`https://limitless-reaches-30016.herokuapp.com/users/${user.email}`)
+        fetch(`https://agile-island-88744.herokuapp.com/users/${user.email}`)
             .then(res => res.json())
             .then(data => setAdmin(data.admin))
     }, [user.email])
@@ -103,12 +104,12 @@ const useFirebase = () => {
 
     const saveUser = (email, displayName) => {
         const user = { email, displayName };
-        axios.post('http://localhost:5000/users', user)
+        axios.post('https://agile-island-88744.herokuapp.com/users', user)
             .then()
     }
     const saveGoogleUser = (email, displayName) => {
         const user = { email, displayName };
-        axios.put('http://localhost:5000/users', user)
+        axios.put('https://agile-island-88744.herokuapp.com/users', user)
             .then()
     }
 

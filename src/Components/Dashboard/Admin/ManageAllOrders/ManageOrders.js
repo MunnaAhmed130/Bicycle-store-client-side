@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Card, Col, Row } from 'react-bootstrap';
+import { Card, Col, Row } from 'react-bootstrap';
 import Alert from '@mui/material/Alert';
 import './ManageOrders.css';
+import { Button } from '@mui/material';
 
 const ManageOrders = () => {
     const [orders, setOrders] = useState([])
@@ -47,8 +48,11 @@ const ManageOrders = () => {
                                         {order.description}
                                     </Card.Text>
                                     <p>{order.price}</p>
-                                    <Button variant="outline-info" className='me-1 ship'>SHIP</Button>
-                                    <Button variant="outline-danger" onClick={() => handleDeleteOrder(order._id)} className=''>DELETE</Button>
+                                    <Button variant="outlined" className='me-1 ship'>SHIP</Button>
+
+                                    <Button variant="outlined" color="error" onClick={() => handleDeleteOrder(order._id)} >
+                                        Delete
+                                    </Button>
 
                                 </Card.Body>
                             </Card>

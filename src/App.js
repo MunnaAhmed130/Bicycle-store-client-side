@@ -19,6 +19,9 @@ import AddAProduct from './Components/Dashboard/Admin/AddAProduct/AddAProduct';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import AdminRoute from './Components/AdminRoute/AdminRoute';
 import NotFound from './Components/NotFound/NotFound';
+import MakeAdmin from './Components/Dashboard/Admin/MakeAdmin/MakeAdmin';
+import ManageProducts from './Components/Dashboard/Admin/ManageProducts/ManageProducts';
+import Pay from './Components/Dashboard/User/Pay/Pay';
 
 function App() {
   return (
@@ -29,11 +32,16 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/explore" element={<Explore />} />
           <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>}>
-            <Route path="dashboardHome" element={<DashboardHome />} />
+            <Route path="dashboard" element={<DashboardHome />} />
             <Route path="myOrders" element={<MyOrders />} />
-            <Route path="manageOrders" element={<ManageOrders />} />
-            <Route path="addAProduct" element={<AdminRoute><AddAProduct /></AdminRoute>} />
+            <Route path="pay" element={<Pay />} />
             <Route path="review" element={<Review />} />
+            <Route path="manageOrders" element={<ManageOrders />} />
+            <Route path="manageProducts" element={<ManageProducts />} />
+            <Route path="makeAdmin" element={<MakeAdmin />} />
+            <Route path="addAProduct" element={<AddAProduct />} />
+            {/* <Route path="addAProduct" element={<AdminRoute><AddAProduct /></AdminRoute>} /> */}
+
           </Route>
           <Route path="/placeOrder/:id" element={<PrivateRoute><PlaceOrder /></PrivateRoute>} />
         <Route path="/login" element={<Login />} />

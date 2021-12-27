@@ -1,14 +1,15 @@
+import { Button } from '@mui/material';
 import Alert from '@mui/material/Alert';
 import Rating from '@mui/material/Rating';
 import axios from 'axios';
-import React from 'react';
-import { Button } from 'react-bootstrap';
+import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 import useAuth from '../../../Hooks/useAuth';
 import './Review.css'
 
 const Review = () => {
-    let { user, success, setSuccess } = useAuth();
+    let { user } = useAuth();
+    const [success, setSuccess] = useState(false);
     const [value, setValue] = React.useState(1);
     const { register, handleSubmit } = useForm();
     const initialvalue = { name: user.displayName, rating: value, url: user.photoURL };
@@ -31,7 +32,7 @@ const Review = () => {
     console.log(value)
     return (
         <div id='review'>
-            <h2>Please Give Us Your valuable opinion!</h2>
+            <h2 className='mb-5'>Please Give Us Your valuable opinion!</h2>
             {success && <Alert severity="success" className="review-success">You have successfully add a review</Alert>}
             {success || <form className="review-form" onSubmit={handleSubmit(onSubmit)}>
                 <input {...register("name")} placeholder="Your Name" defaultValue={user.displayName} required="required" /> <br />
@@ -48,7 +49,7 @@ const Review = () => {
                     /></div>
 
                 <textarea type="text" {...register("description")} placeholder="Short description" required="required" /> <br />
-                <Button type="submit">Submit</Button>
+                <Button type="submit" variant="contained">Submit</Button>
             </form>}
         </div>
     );

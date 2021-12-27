@@ -1,6 +1,5 @@
-import { Alert, CircularProgress } from '@mui/material';
+import { Alert, Button, CircularProgress } from '@mui/material';
 import React from 'react';
-import { Button } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
@@ -17,8 +16,11 @@ const Login = () => {
     const onSubmit = data => {
         console.log(data);
         loginWithEmail(data.email, data.password, location, history);
-
     };
+
+    const handleGoogleSignIn = () => {
+        signInWithGoogle(location, history);
+    }
     return (
         <div>
             <Header />
@@ -28,14 +30,14 @@ const Login = () => {
                     <input {...register("email")} placeholder='Your Email' required="required" /> <br />
                     <input {...register("password")} type='password' placeholder='Your Password' required="required" /> <br />
                     <Link to='/register'>New User? Please Register</Link> <br />
-                    <Button className="login-btn m-3" type="submit" >Login</Button>
+                    <Button className="login-btn m-3" variant='contained' type="submit" >Login</Button>
                 </form>
                 {loading && <div>
                     <CircularProgress /> <br />
                 </div>}
                 {user?.email && <Alert severity="success">This is a success alert — check it out!</Alert>}
                 {error && <Alert severity="error">{error}</Alert>}
-                <Button onClick={() => signInWithGoogle(location, history)}>Google sign In</Button>
+                <Button onClick={handleGoogleSignIn} variant='contained'>Google sign In</Button>
             </div>
             <Footer />
         </div>

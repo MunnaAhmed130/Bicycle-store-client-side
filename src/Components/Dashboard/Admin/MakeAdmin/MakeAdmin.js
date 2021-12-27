@@ -1,6 +1,7 @@
 import { Alert, Button } from '@mui/material';
 import axios from 'axios';
 import React, { useState } from 'react';
+import { Container } from 'react-bootstrap';
 import './MakeAdmin.css';
 
 const MakeAdmin = () => {
@@ -11,10 +12,9 @@ const MakeAdmin = () => {
     }
     const handleAdminSubmit = e => {
         const user = { email }
-        axios.put('https://limitless-reaches-30016.herokuapp.com/users/admin', user
+        axios.put('https://agile-island-88744.herokuapp.com/users/admin', user
         )
             .then(res => {
-
                 if (res.data.modifiedCount) {
                     console.log(res.data)
                     setEmail('')
@@ -24,7 +24,7 @@ const MakeAdmin = () => {
         e.preventDefault();
     }
     return (
-        <div>
+        <Container className='text-center'>
             <h2 className="admin-heading">Make a New Admin</h2>
             <form className="admin-form" onSubmit={handleAdminSubmit}>
                 <input
@@ -33,9 +33,10 @@ const MakeAdmin = () => {
                     onBlur={handleOnBlur}
                     variant="standard" /> <br />
                 <Button type='submit' variant="contained">Make Admin</Button>
+                {success && <Alert severity="success" className="alert">Your have successfully made a new admin</Alert>}
             </form>
-            {success && <Alert severity="success">Your have successfully made a new admin</Alert>}
-        </div>
+
+        </Container>
     );
 };
 

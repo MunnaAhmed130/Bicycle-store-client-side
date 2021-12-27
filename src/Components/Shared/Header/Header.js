@@ -1,5 +1,6 @@
+import { Button } from '@mui/material';
 import React from 'react';
-import { Button, Col, Container, Nav, Navbar, Row } from 'react-bootstrap';
+import { Col, Container, Nav, Navbar, Row } from 'react-bootstrap';
 import { HashLink } from 'react-router-hash-link';
 import useAuth from '../../../Hooks/useAuth';
 import Footer from '../Footer/Footer';
@@ -17,13 +18,13 @@ const Header = () => {
                         <Nav className="ms-auto">
                             <Nav.Link as={HashLink} className="" to="/home">Home</Nav.Link>
                             <Nav.Link as={HashLink} className="" to="/explore">Explore</Nav.Link>
-                            <Nav.Link as={HashLink} className="" to="/dashboard">Dashboard</Nav.Link>
+                            <Nav.Link as={HashLink} className="" to={`/dashboard/dashboard`}>Dashboard</Nav.Link>
                             {user.displayName && <Nav.Link className=''>{user.displayName}</Nav.Link>}
 
 
                             {user.photoURL && <img className='profile-pic' src={user.photoURL} alt="dd" />}
 
-                            {user.email ? <Button className='logOut-btn' variant='outline-danger' onClick={logOut}>Log out</Button> : <Nav.Link as={HashLink} className="" to="/login">Login</Nav.Link>}
+                            {user.email ? <Button className='logOut-btn' variant='outlined' color="error" onClick={logOut}>Log out</Button> : <Nav.Link as={HashLink} className="" to="/login">Login</Nav.Link>}
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

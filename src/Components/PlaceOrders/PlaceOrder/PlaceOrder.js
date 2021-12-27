@@ -1,17 +1,18 @@
-import { Alert } from '@mui/material';
+import { Alert, Button } from '@mui/material';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { Button, Card, Col, Container, Row } from 'react-bootstrap';
+import { Card, Col, Container, Row } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
-import Footer from '../../Shared/FooterBottom/Footer';
+import Footer from '../../Shared/Footer/Footer';
+import FooterBottom from '../../Shared/FooterBottom/Footer';
 import Header from '../../Shared/Header/Header';
 import './PlaceOrder.css';
 
 const PlaceOrder = () => {
     let { id } = useParams();
-    let { user } = useAuth();
+    let { user, loading } = useAuth();
     const [success, setSuccess] = useState(false);
     const { register, handleSubmit } = useForm();
     const [order, setOrder] = useState([]);
@@ -113,12 +114,13 @@ const PlaceOrder = () => {
                                 disabled
                                 variant="outlined"
                             /> <br />
-                            <Button type="submit" className="purchase-btn">Purchase</Button>
+                            <Button type="submit" variant='contained' className="purchase-btn">Purchase</Button>
                         </form>}
                     </Col>
                 </Row>
             </Container>
-            <Footer />
+            {!loading && <Footer />}
+            {loading && <FooterBottom />}
         </div>
     );
 };

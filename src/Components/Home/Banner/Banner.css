@@ -2,3 +2,8 @@
     height: 93vh;
     object-fit: cover;
 }
+@media screen and (max-width:768px) {
+    .banner-img{
+        height: 450px;
+    }
+}

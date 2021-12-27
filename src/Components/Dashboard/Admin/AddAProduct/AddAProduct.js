@@ -10,9 +10,9 @@ const AddAProduct = () => {
     const [success, setSuccess] = useState(false);
     const onSubmit = data => {
         console.log(data.value)
-        axios.post('https://limitless-reaches-30016.herokuapp.com/products', data)
+        axios.post('https://agile-island-88744.herokuapp.com/products', data)
             .then(res => {
-                // console.log(res)
+                console.log(res)
                 if (res.data.insertedId) {
                     setSuccess(true)
                     reset();

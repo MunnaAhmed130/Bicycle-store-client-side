@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
 import Footer from '../../Shared/Footer/Footer';
+import FooterBottom from '../../Shared/FooterBottom/Footer';
 import Header from '../../Shared/Header/Header';
 import './Register.css';
 
@@ -33,13 +34,17 @@ const Register = () => {
                     <input type="password" {...register("password2", { required: true })} placeholder="Confirm your password" required="required" /> <br />
                     <Link to='/login'>Already Registered? Login</Link> <br />
                     <Button className="mb-3" variant="contained" type="submit">Register</Button>
+                    {error && <Alert severity="error">{error}</Alert>}
                 </form>}
-            {loading && <div>
+            {loading && <div className='circle'>
                 <CircularProgress /> <br />
             </div>}
-            {user?.email && <Alert severity="success">This is a success alert — check it out!</Alert>}
-            {error && <Alert severity="error">{error}</Alert>}
-            <Footer />
+            {user?.email && <div className='circle'>
+                <Alert severity="success" >This is a success alert — check it out!</Alert>
+            </div>}
+
+            {!loading && <Footer />}
+            {loading && <FooterBottom />}
         </div>
     );
 };

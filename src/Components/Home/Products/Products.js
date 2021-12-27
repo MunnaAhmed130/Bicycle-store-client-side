@@ -7,8 +7,9 @@ import './Products.css';
 // import Swiper core and required modules
 import SwiperCore, { Navigation, Pagination, Scrollbar, EffectCoverflow } from 'swiper/core';
 
-import { Button, Card, Col, Container } from 'react-bootstrap';
+import { Card, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { Button } from '@mui/material';
 
 SwiperCore.use([EffectCoverflow, Scrollbar, Navigation, Pagination]);
 
@@ -24,13 +25,24 @@ const Products = () => {
 
     console.log(products)
     return (
-        <Container>
+        <div className='products'>
+            <h2 className='text-center'>Some Featured Bicycles</h2>
         <Swiper
-            className="mySwiper"
+                className="mySwiper"
+                breakpoints={{
+                    800: {
+                        slidesPerView: 2,
+                        // coverflowEffect: {
+                        //     depth: 0,
+                        // }
+                    },
+                    1200: {
+                        slidesPerView: 3,
+                    },
+                }}
             effect={'coverflow'}
             grabCursor={true}
-            centeredSlides={true}
-            slidesPerView={3}
+                centeredSlides={true}
             coverflowEffect={{
                 "rotate": 50,
                 "stretch": 0,
@@ -38,34 +50,35 @@ const Products = () => {
                 "modifier": 1,
                 "slideShadows": false
             }}
-            spaceBetween={50}
-            onSlideChange={() => console.log('slide change')}
-            onSwiper={(swiper) => console.log(swiper)}
+                spaceBetween={20}
+                onSlideChange={() => console.log('slide change')}
+                onSwiper={(swiper) => console.log(swiper)}
                 navigation
                 pagination={{ clickable: true }}
-                // scrollbar={{ draggable: true }}
-        >
+            // scrollbar={{ draggable: true }}
+            >
                 <div className='products'>
-                {
-                    products.map(product => <SwiperSlide key={product.name} >
-                        <Col className='product text-center' >
-                            <Card>
-                                <Card.Img variant="top" src={product.url} />
-                                <Card.Body>
-                                    <Card.Title>{product.name}</Card.Title>
-                                    {/* <Card.Text>
-                        {description}
-                    </Card.Text> */}
-                                    <p>{product.prize}</p>
-                                    <Link to={`/placeOrder/${product._id}`}><Button variant="outline-primary" className=''>BUY NOW</Button></Link>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                    </SwiperSlide>)
-                }
-            </div>
+                    {
+                        products.map(product => <SwiperSlide key={product.name} >
+                            <Col className='product text-center' >
+                                <Card>
+                                    <Card.Img variant="top" src={product.url} />
+                                    <Card.Body>
+                                        <Card.Title>{product.name}</Card.Title>
+                                        <Card.Text>
+                                            {product.description}
+                                        </Card.Text>
+                                        <p>Price: ${product.price}</p>
+                                        <Link to={`/placeOrder/${product._id}`}><Button variant="contained" className=''>BUY NOW</Button></Link>
+                                    </Card.Body>
+                                </Card>
+                            </Col>
+                        </SwiperSlide>)
+                    }
+                </div>
             </Swiper>
-        </Container>
+
+        </div>
     );
 };
 
