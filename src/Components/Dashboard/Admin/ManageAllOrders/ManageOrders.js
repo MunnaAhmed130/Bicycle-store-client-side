@@ -12,7 +12,7 @@ const ManageOrders = () => {
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [])
-    console.log()
+    console.log(orders)
     const handleDeleteOrder = _id => {
         const proceed = window.confirm('Are you sure, you want to delete?')
         if (proceed) {
@@ -44,6 +44,7 @@ const ManageOrders = () => {
                                 <Card.Img variant="top" src={order.url} />
                                 <Card.Body>
                                     <Card.Title>{order.productName}</Card.Title>
+                                    <h6>Order From: {order.email}</h6>
                                     <Card.Text>
                                         {order.description}
                                     </Card.Text>

@@ -1,26 +1,17 @@
 [
     {
-        "_id": "618f9f55a855c66d1c372437",
         "name": "David Woods",
-        "profession": "Professional Photographer",
+        "profession": "Professional Cyclist",
         "rating": "5",
         "url": "https://i.ibb.co/s3NXZ1V/man-g1de523124-640.jpg",
-        "description": "If you want to take up photography as a hobby, or aspire to be a photojournalist or wedding pro, you'll want to get a camera that gives you room to grow and learn the craft."
+        "description": "Masterful performance on all terrain types thanks to impeccable suspension and great geometry.Expensive but worth the money."
     },
     {
-        "_id": "618f9f55a855c66d1c372438",
         "name": "Sofia Rocks",
-        "profession": "Professional Photographer",
+        "profession": "Cycle Racer",
         "url": "https://i.ibb.co/q1KKJ5L/woman-g5e3f7c984-640.jpg",
         "rating": "5",
-        "description": "If you want to take up photography as a hobby, or aspire to be a photojournalist or wedding pro, you'll want to get a camera that gives you room to grow and learn the craft."
-    },
-    {
-        "_id": "618f9fcb1e17016f827d49ec",
-        "name": "Munna Ahmed",
-        "profession": "Professional Photographer",
-        "url": "https://lh3.googleusercontent.com/a-/AOh14GjyfVVXxpRh6sD7z6uGiZlXO6VBh",
-        "rating": "4",
-        "description": "If you want to take up photography as a hobby, or aspire to be a photojournalist or wedding pro, you'll want to get a camera that gives you room to grow and learn the craft."
+        "description": "Masterful performance on all terrain types thanks to impeccable suspension and great geometry.Expensive but worth the money."
     }
+
 ]
