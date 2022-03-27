@@ -1,4 +1,48 @@
- .header .logOut-btn{
+
+.links .link{
+    display: inline-block;
+    margin-left: 10px;
+    font-weight: 500;
+    font-size: 1.1rem;
+} 
+
+.nav{
+    transition: 2s;
+}
+
+
+.navbar{
+    /* background-color: transparent; */
+    color: white;
+    transition: .2s;
+}
+
+.navbar a{
+    color:white;
+}
+
+.navbar.active{
+    /* background-color: black; */
+     
+    /* background-image: linear-gradient(#212529,#212529); */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.4));
+    /* animation: nav 1s linear */
+}
+
+.navbar-brand{
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+/* @keyframes nav {
+    100%{
+        transform: translateY(-100%)
+    }
+} */
+
+
+
+.header .logOut-btn{
     border: 1px solid transparent;
     font-weight: 500;
     margin-left: 5px;
@@ -10,7 +54,7 @@
     background-color: #D32F2F !important;
 }
 
-.profile-pic{
+.links .profile-pic{
     height: 40px;
     width: 40px;
     border-radius: 50%;

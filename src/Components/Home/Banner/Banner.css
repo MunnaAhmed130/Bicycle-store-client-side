@@ -1,6 +1,38 @@
 .banner-img{
-    height: 93vh;
+    /* margin-top: -100px; */
+    height: 100vh;
     object-fit: cover;
+}
+
+
+
+
+
+
+.carousel.carousel-fade .carousel-item {
+    display: block;
+    opacity: 0;
+    transition: opacity ease-in-out .3s;
+}
+
+.carousel.carousel-fade .carousel-item.active {
+    opacity: 1 !important;
+}
+
+@media screen and (min-width: 1024px){
+    .caption{
+        padding-bottom: 35vh;
+    }
+
+    .caption h3{
+        font-size: 3rem;
+    }
+    
+    .caption p{
+        width: 70%;
+        margin-inline:auto ;
+        font-size: 1.2rem;
+    }
 }
 @media screen and (max-width:768px) {
     .banner-img{
