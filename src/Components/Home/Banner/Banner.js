@@ -1,13 +1,13 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
-import Header from '../../Shared/Header/Header';
+// import Header from '../../Shared/Header/Header';
 import './Banner.css';
 
 const Banner = () => {
     const img1 = "https://i.ibb.co/SrxdJ8z/background.png"
     const img2 = "https://i.ibb.co/MNtH00X/luca-david-ia8u-TRs-ZZYY-unsplash.jpg"
     const img3 = "https://i.ibb.co/5L2LNjB/image-copyright-51.jpg"
-    const img4 = "https://i.ibb.co/GCKctkK/image-copyright-46.jpg"
+    // const img4 = "https://i.ibb.co/GCKctkK/image-copyright-46.jpg"
     return (
         <div>
 

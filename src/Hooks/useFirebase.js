@@ -1,61 +1,69 @@
-import React, { useEffect, useState } from 'react';
-import { getAuth, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, createUserWithEmailAndPassword, updateProfile, signInWithEmailAndPassword, signOut } from "firebase/auth";
-import initializeFirebase from '../Firebase/Firebase.init';
-import axios from 'axios';
+import React, { useEffect, useState } from "react";
+import {
+    getAuth,
+    onAuthStateChanged,
+    GoogleAuthProvider,
+    signInWithPopup,
+    createUserWithEmailAndPassword,
+    updateProfile,
+    signInWithEmailAndPassword,
+    signOut,
+} from "firebase/auth";
+import initializeFirebase from "../Firebase/Firebase.init";
+import axios from "axios";
 
 // initialize firebase
 initializeFirebase();
 
 const useFirebase = () => {
     const [user, setUser] = useState({});
-    const [error, setError] = useState('');
+    const [error, setError] = useState("");
     const [loading, setLoading] = useState(true);
     const [admin, setAdmin] = useState(false);
 
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
 
-
     //user registration
     const registerWithEmail = (email, password, name, history) => {
         setLoading(true);
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-                setError('');
+                setError("");
                 const newUser = { email, displayName: name };
                 setUser(newUser);
                 //save user to the database
                 saveUser(email, name);
-                console.log(user)
+                console.log(user);
                 // update firebase profile
                 updateProfile(auth.currentUser, {
-                    displayName: name
-                }).then(() => {
-                }).catch((error) => {
-                });
+                    displayName: name,
+                })
+                    .then(() => {})
+                    .catch((error) => {});
 
-                history('/')
+                history("/");
             })
             .catch((error) => {
                 setError(error.message);
             })
             .finally(() => setLoading(false));
-    }
+    };
     // use Login
     const loginWithEmail = (email, password, location, history) => {
         setLoading(true);
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-                const destination = location?.state?.from || '/';
+                const destination = location?.state?.from || "/";
                 history(destination);
-                setError('');
-                console.log(user)
+                setError("");
+                console.log(user);
             })
             .catch((error) => {
                 setError(error.message);
             })
             .finally(() => setLoading(false));
-    }
+    };
 
     const signInWithGoogle = (location, history) => {
         setLoading(true);
@@ -63,55 +71,62 @@ const useFirebase = () => {
             .then((result) => {
                 const user = result.user;
                 saveGoogleUser(user.email, user.displayName);
-                const destination = location?.state?.from || '/';
+                const destination = location?.state?.from || "/";
                 history(destination);
-                setError('');
-            }).catch((error) => {
+                setError("");
+            })
+            .catch((error) => {
                 setError(error.message);
             })
             .finally(() => setLoading(false));
-    }
+    };
 
     useEffect(() => {
         const unsubscribed = onAuthStateChanged(auth, (user) => {
             if (user) {
-                setUser(user)
-                console.log(user)
+                setUser(user);
+                console.log(user);
             } else {
-                setUser({})
+                setUser({});
             }
             setLoading(false);
         });
         return () => unsubscribed;
-    }, [auth])
+    }, [auth]);
 
     useEffect(() => {
-        fetch(`https://agile-island-88744.herokuapp.com/users/${user.email}`)
-            .then(res => res.json())
-            .then(data => setAdmin(data.admin))
-    }, [user.email])
+        fetch(
+            `https://bicycle-store-server-side.vercel.app/users/${user.email}`
+        )
+            .then((res) => res.json())
+            .then((data) => setAdmin(data.admin));
+    }, [user.email]);
 
     // user log out
     const logOut = () => {
         setLoading(true);
-        signOut(auth).then(() => {
-            setUser({})
-        }).catch((error) => {
-            setError(error.message)
-        })
-            .finally(() => setLoading(false))
-    }
+        signOut(auth)
+            .then(() => {
+                setUser({});
+            })
+            .catch((error) => {
+                setError(error.message);
+            })
+            .finally(() => setLoading(false));
+    };
 
     const saveUser = (email, displayName) => {
         const user = { email, displayName };
-        axios.post('https://agile-island-88744.herokuapp.com/users', user)
-            .then()
-    }
+        axios
+            .post("https://bicycle-store-server-side.vercel.app/users", user)
+            .then();
+    };
     const saveGoogleUser = (email, displayName) => {
         const user = { email, displayName };
-        axios.put('https://agile-island-88744.herokuapp.com/users', user)
-            .then()
-    }
+        axios
+            .put("https://bicycle-store-server-side.vercel.app/users", user)
+            .then();
+    };
 
     return {
         user,
@@ -121,8 +136,8 @@ const useFirebase = () => {
         registerWithEmail,
         loginWithEmail,
         signInWithGoogle,
-        logOut
-    }
+        logOut,
+    };
 };
 
 export default useFirebase;
