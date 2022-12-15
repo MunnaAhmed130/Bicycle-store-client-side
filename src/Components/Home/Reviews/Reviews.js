@@ -10,7 +10,7 @@ const Reviews = () => {
             .then((res) => res.json())
             .then((data) => setReviews(data));
     }, []);
-    console.log(reviews.name);
+    // console.log(reviews.name);
 
     return (
         <div className="reviews-container">

@@ -30,7 +30,7 @@ const Products = () => {
             .then((data) => setProducts(data));
     }, []);
 
-    console.log(products);
+    // console.log(products);
     return (
         <div className="products">
             <h2 className="text-center">Some Featured Bicycles</h2>
