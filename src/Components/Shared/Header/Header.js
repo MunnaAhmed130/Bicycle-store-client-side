@@ -1,7 +1,6 @@
 import { Button } from "@mui/material";
 import React, { useState } from "react";
 import { Col, Container, Nav, Navbar, Row } from "react-bootstrap";
-import { HashLink } from "react-router-hash-link";
 import useAuth from "../../../Hooks/useAuth";
 // import Footer from '../Footer/Footer';
 import "./Header.css";
@@ -35,17 +34,13 @@ const Header = () => {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav" className="">
             <Nav className="ms-auto links">
-              <Nav.Link as={HashLink} smooth className="link" to="/home">
+              <Nav.Link className="link" to="/home">
                 Home
               </Nav.Link>
-              <Nav.Link as={HashLink} className="link" to="/explore">
+              <Nav.Link className="link" to="/explore">
                 Explore
               </Nav.Link>
-              <Nav.Link
-                as={HashLink}
-                className="link"
-                to={`/dashboard/dashboard`}
-              >
+              <Nav.Link className="link" to={`/dashboard/dashboard`}>
                 Dashboard
               </Nav.Link>
               {user.displayName && (
@@ -66,7 +61,7 @@ const Header = () => {
                   Log out
                 </Button>
               ) : (
-                <Nav.Link as={HashLink} className="link" to="/login">
+                <Nav.Link className="link" to="/login">
                   Login
                 </Nav.Link>
               )}

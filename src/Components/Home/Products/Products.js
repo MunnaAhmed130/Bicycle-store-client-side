@@ -23,9 +23,6 @@ const Products = () => {
   const limit = 6;
 
   useEffect(() => {
-    // fetch(
-    //     `http://localhost:4000/products/limit?number=${limit}`
-    // )
     fetch(`http://localhost:4000/products/limit?number=${limit}`)
       .then((res) => res.json())
       .then((data) => setProducts(data));
