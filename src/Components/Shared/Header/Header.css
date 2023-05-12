@@ -1,37 +1,34 @@
-
-.links .link{
-    display: inline-block;
-    margin-left: 10px;
-    font-weight: 500;
-    font-size: 1.1rem;
-} 
-
-.nav{
-    transition: 2s;
+.links .link {
+  display: inline-block;
+  margin-left: 10px;
+  font-weight: 500;
+  font-size: 1.1rem;
 }
 
-
-.navbar{
-    /* background-color: transparent; */
-    color: white;
-    transition: .2s;
+.navbar {
+  color: white;
+  transition: 0.2s;
+}
+nav.navbar {
+  /* position: absolute; */
+  z-index: 10;
+  height: var(--navbar-height);
+  /* color: black; */
 }
 
-.navbar a{
-    color:white;
+.navbar a {
+  color: white;
+  /* color: black; */
 }
 
-.navbar.active{
-    /* background-color: black; */
-     
-    /* background-image: linear-gradient(#212529,#212529); */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.4));
-    /* animation: nav 1s linear */
+.navbar.active {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4));
+  /* animation: nav 1s linear */
 }
 
-.navbar-brand{
-    font-size: 1.4rem;
-    font-weight: 600;
+.navbar-brand {
+  font-size: 1.4rem;
+  font-weight: 600;
 }
 
 /* @keyframes nav {
@@ -40,37 +37,35 @@
     }
 } */
 
-
-
-.header .logOut-btn{
-    border: 1px solid transparent;
-    font-weight: 500;
-    margin-left: 5px;
-    transition: .2s;
+nav .logOut-btn {
+  border: 1px solid transparent;
+  font-weight: 500;
+  margin-left: 5px;
+  transition: 0.2s;
 }
 
-.logOut-btn:hover{
-    color: white;
-    background-color: #D32F2F !important;
+.logOut-btn:hover {
+  color: white;
+  background-color: #d32f2f !important;
 }
 
-.links .profile-pic{
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    object-fit: cover;
+.links .profile-pic {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
-.profile-pic-container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.profile-pic-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-@media screen and (max-width:992px) {
-    .logOut-btn{
-        width: 8rem;
-        margin-left: 0px;
-        margin-top: 10px;
-    }
+@media screen and (max-width: 992px) {
+  .logOut-btn {
+    width: 8rem;
+    margin-left: 0px;
+    margin-top: 10px;
+  }
 }
