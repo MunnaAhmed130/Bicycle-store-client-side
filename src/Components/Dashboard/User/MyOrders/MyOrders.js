@@ -1,8 +1,5 @@
-import React, { useEffect } from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Row } from "react-bootstrap";
-import Alert from "@mui/material/Alert";
-
 import useAuth from "../../../../Hooks/useAuth";
 import MyOrder from "../MyOrder/MyOrder";
 import "./MyOrders.css";
@@ -41,11 +38,7 @@ const MyOrders = () => {
   return (
     <div>
       <h1 className="text-center mt-4">My Orders</h1>
-      {success && (
-        <Alert severity="success">
-          This is a success alert — check it out!
-        </Alert>
-      )}
+      {success && <p>This is a success alert — check it out!</p>}
       <Row xs={1} md={2} lg={3} className="w-100 m-0">
         {myOrders.map((myOrder) => (
           <MyOrder

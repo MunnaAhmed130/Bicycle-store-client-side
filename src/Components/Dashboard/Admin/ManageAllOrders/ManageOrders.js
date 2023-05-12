@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Card, Col, Row } from "react-bootstrap";
-import Alert from "@mui/material/Alert";
 import "./ManageOrders.css";
-import { Button } from "@mui/material";
 
 const ManageOrders = () => {
   const [orders, setOrders] = useState([]);
@@ -35,9 +33,7 @@ const ManageOrders = () => {
     <div className="manage-order">
       <h1 className="text-center mt-4">Manage Orders</h1>
       {success && (
-        <Alert severity="success">
-          This is a success alert — check it out!
-        </Alert>
+        <p severity="success">This is a success alert — check it out!</p>
       )}
       {orders.length || <p className="no-order">THERE IS NO ORDER</p>}
       {orders.length !== 0 && (
@@ -51,17 +47,17 @@ const ManageOrders = () => {
                   <h6>Order From: {order.email}</h6>
                   <Card.Text>{order.description}</Card.Text>
                   <p>{order.price}</p>
-                  <Button variant="outlined" className="me-1 ship">
+                  <button variant="outlined" className="me-1 ship">
                     SHIP
-                  </Button>
+                  </button>
 
-                  <Button
+                  <button
                     variant="outlined"
                     color="error"
                     onClick={() => handleDeleteOrder(order._id)}
                   >
                     Delete
-                  </Button>
+                  </button>
                 </Card.Body>
               </Card>
             </Col>

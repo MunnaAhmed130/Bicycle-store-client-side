@@ -1,4 +1,3 @@
-import { Button } from "@mui/material";
 import React, { useState } from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import useAuth from "../../../Hooks/useAuth";
@@ -50,14 +49,14 @@ const Header = () => {
             )}
 
             {user.email ? (
-              <Button
+              <button
                 className="logOut-btn"
                 variant="outlined"
                 color="error"
                 onClick={logOut}
               >
                 Log out
-              </Button>
+              </button>
             ) : (
               <Nav.Link className="link" to="/login">
                 Login

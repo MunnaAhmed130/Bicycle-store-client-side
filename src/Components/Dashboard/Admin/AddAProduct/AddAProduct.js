@@ -1,7 +1,5 @@
-import { Button } from "@mui/material";
 import axios from "axios";
-import React, { useState } from "react";
-import Alert from "@mui/material/Alert";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import "./AddAProduct.css";
 
@@ -23,9 +21,7 @@ const AddAProduct = () => {
     <div className="add-product">
       <h2 className="my-4">Add a Product for admin</h2>
       {success && (
-        <Alert severity="success">
-          A New Product has been Successfully added
-        </Alert>
+        <p severity="success">A New Product has been Successfully added</p>
       )}
       <form className="add-form" onSubmit={handleSubmit(onSubmit)}>
         <input {...register("name")} placeholder="Product Name" /> <br /> <br />
@@ -42,9 +38,9 @@ const AddAProduct = () => {
         </label>
         <br /> <br />
         <input {...register("img")} type="file" id="upload-photo" /> <br />
-        <Button type="submit" style={{ marginTop: "5px" }} variant="contained">
+        <button type="submit" style={{ marginTop: "5px" }} variant="contained">
           Add
-        </Button>
+        </button>
       </form>
     </div>
   );

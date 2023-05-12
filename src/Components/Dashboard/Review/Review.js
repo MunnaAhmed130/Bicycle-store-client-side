@@ -1,8 +1,5 @@
-import { Button } from "@mui/material";
-import Alert from "@mui/material/Alert";
-import Rating from "@mui/material/Rating";
 import axios from "axios";
-import React, { useState } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import useAuth from "../../../Hooks/useAuth";
 import "./Review.css";
@@ -10,7 +7,7 @@ import "./Review.css";
 const Review = () => {
   let { user } = useAuth();
   const [success, setSuccess] = useState(false);
-  const [value, setValue] = React.useState(1);
+  const [value, setValue] = useState(1);
   const { register, handleSubmit } = useForm();
   const initialvalue = {
     name: user.displayName,
@@ -35,11 +32,7 @@ const Review = () => {
   return (
     <div id="review">
       <h2 className="mb-5">Please Give Us Your valuable opinion!</h2>
-      {success && (
-        <Alert severity="success" className="review-success">
-          You have successfully add a review
-        </Alert>
-      )}
+      {success && <p>You have successfully add a review</p>}
       {success || (
         <form className="review-form" onSubmit={handleSubmit(onSubmit)}>
           <input
@@ -57,14 +50,14 @@ const Review = () => {
           <br />
           <div className="">
             <p className="mb-0">Please give us a rating</p>
-            <Rating
+            {/* <Rating
               name="simple-controlled"
               value={value}
               required="required"
               onChange={(event, newValue) => {
                 setValue(newValue);
               }}
-            />
+            /> */}
           </div>
           <textarea
             type="text"
@@ -73,9 +66,9 @@ const Review = () => {
             required="required"
           />{" "}
           <br />
-          <Button type="submit" variant="contained">
+          <button type="submit" variant="contained">
             Submit
-          </Button>
+          </button>
         </form>
       )}
     </div>

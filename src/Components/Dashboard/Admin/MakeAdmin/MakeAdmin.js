@@ -1,6 +1,5 @@
-import { Alert, Button } from "@mui/material";
 import axios from "axios";
-import React, { useState } from "react";
+import { useState } from "react";
 import { Container } from "react-bootstrap";
 import "./MakeAdmin.css";
 
@@ -32,13 +31,13 @@ const MakeAdmin = () => {
           variant="standard"
         />{" "}
         <br />
-        <Button type="submit" variant="contained">
+        <button type="submit" variant="contained">
           Make Admin
-        </Button>
+        </button>
         {success && (
-          <Alert severity="success" className="alert">
+          <p severity="success" className="alert">
             Your have successfully made a new admin
-          </Alert>
+          </p>
         )}
       </form>
     </Container>

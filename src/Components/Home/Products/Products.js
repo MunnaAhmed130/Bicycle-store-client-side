@@ -14,7 +14,6 @@ import SwiperCore, {
 
 import { Card, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { Button } from "@mui/material";
 
 SwiperCore.use([EffectCoverflow, Scrollbar, Navigation, Pagination]);
 
@@ -73,9 +72,9 @@ const Products = () => {
                     <Card.Text>{product.description}</Card.Text>
                     <p>Price: ${product.price}</p>
                     <Link to={`/placeOrder/${product._id}`}>
-                      <Button variant="contained" className="">
+                      <button variant="contained" className="">
                         BUY NOW
-                      </Button>
+                      </button>
                     </Link>
                   </Card.Body>
                 </Card>

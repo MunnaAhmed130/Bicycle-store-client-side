@@ -1,7 +1,6 @@
-import { Alert, Button } from "@mui/material";
 import axios from "axios";
-import React, { useEffect, useState } from "react";
-import { Card, Col, Container, Row } from "react-bootstrap";
+import { useEffect, useState } from "react";
+import { Col, Container, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { useParams } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
@@ -79,11 +78,7 @@ const PlaceOrder = () => {
             <img className="purchase-img" src={order.url} alt="" />
           </Col>
           <Col md={6} sm={12} lg={6} className="">
-            {success && (
-              <Alert severity="success" className="alert">
-                Order Placed Successfully
-              </Alert>
-            )}
+            {success && <p>Order Placed Successfully</p>}
             {success || (
               <form className="purchase-form" onSubmit={handleSubmit(onSubmit)}>
                 <input name="userName" defaultValue={userName} disabled />{" "}
@@ -128,13 +123,13 @@ const PlaceOrder = () => {
                   variant="outlined"
                 />{" "}
                 <br />
-                <Button
+                <button
                   type="submit"
                   variant="contained"
                   className="purchase-btn"
                 >
                   Purchase
-                </Button>
+                </button>
               </form>
             )}
           </Col>

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Alert, Button } from "@mui/material";
 import { Row, Card, Col } from "react-bootstrap";
 import "./ManageProducts.css";
 
@@ -45,22 +44,18 @@ const ManageProducts = () => {
                   {product.description}
                 </Card.Text>
                 <h6>Price: &#x24;{product.price}</h6>
-                <Button
+                <button
                   onClick={() => handleDeleteOrder(product._id)}
                   variant="outlined"
                   color="error"
                 >
                   DELETE
-                </Button>
+                </button>
               </Card.Body>
             </Card>
           </Col>
         ))}
-        {success && (
-          <Alert severity="error" className="alert">
-            This Product has been Successfully Deleted
-          </Alert>
-        )}
+        {success && <p>This Product has been Successfully Deleted</p>}
       </Row>
     </div>
   );

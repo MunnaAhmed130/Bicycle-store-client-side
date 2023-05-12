@@ -1,6 +1,5 @@
-import { CircularProgress } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import { Row } from "react-bootstrap";
+import { Row, Spinner } from "react-bootstrap";
 import useAuth from "../../../Hooks/useAuth";
 import Footer from "../../Shared/Footer/Footer";
 import Header from "../../Shared/Header/Header";
@@ -25,7 +24,7 @@ const Explore = () => {
       </h2>
       {!products.length && (
         <div className="center">
-          <CircularProgress></CircularProgress>
+          <Spinner></Spinner>
         </div>
       )}
       {!loading && (
