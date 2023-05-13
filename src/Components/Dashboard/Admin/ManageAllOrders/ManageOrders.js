@@ -1,16 +1,18 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Card, Col, Row } from "react-bootstrap";
 import "./ManageOrders.css";
 
 const ManageOrders = () => {
   const [orders, setOrders] = useState([]);
   const [success, setSuccess] = useState(false);
+
   useEffect(() => {
     fetch("http://localhost:4000/purchase")
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, []);
-  console.log(orders);
+
+  // console.log(orders);
   const handleDeleteOrder = (_id) => {
     const proceed = window.confirm("Are you sure, you want to delete?");
     if (proceed) {

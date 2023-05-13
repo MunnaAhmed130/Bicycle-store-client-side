@@ -1,28 +1,31 @@
-import "./App.css";
-import Home from "./Components/Home/Home/Home";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Login from "./Components/Authentication/Login/Login";
-import Register from "./Components/Authentication/Register/Register";
-import Explore from "./Components/Explore/Explore/Explore";
-import Dashboard from "./Components/Dashboard/Dashboard/Dashboard";
-import DashboardHome from "./Components/Dashboard/DashboardHome/DashboardHome";
-import Review from "./Components/Dashboard/Review/Review";
-import PlaceOrder from "./Components/PlaceOrders/PlaceOrder/PlaceOrder";
+// import Home from "./Components/Home/Home/Home";
+import { RouterProvider } from "react-router-dom";
+// import Login from "./Components/Authentication/Login/Login";
+// import Register from "./Components/Authentication/Register/Register";
+// import Explore from "./Components/Explore/Explore/Explore";
+// import Dashboard from "./Components/Dashboard/Dashboard/Dashboard";
+// import DashboardHome from "./Components/Dashboard/DashboardHome/DashboardHome";
+// import Review from "./Components/Dashboard/Review/Review";
+// import PlaceOrder from "./Components/PlaceOrders/PlaceOrder/PlaceOrder";
 import AuthProvider from "./Context/AuthProvider";
-import MyOrders from "./Components/Dashboard/User/MyOrders/MyOrders";
-import ManageOrders from "./Components/Dashboard/Admin/ManageAllOrders/ManageOrders";
-import AddAProduct from "./Components/Dashboard/Admin/AddAProduct/AddAProduct";
-import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
-import AdminRoute from "./Components/AdminRoute/AdminRoute";
-import NotFound from "./Components/NotFound/NotFound";
-import MakeAdmin from "./Components/Dashboard/Admin/MakeAdmin/MakeAdmin";
-import ManageProducts from "./Components/Dashboard/Admin/ManageProducts/ManageProducts";
-import Pay from "./Components/Dashboard/User/Pay/Pay";
+// import MyOrders from "./Components/Dashboard/User/MyOrders/MyOrders";
+// import ManageOrders from "./Components/Dashboard/Admin/ManageAllOrders/ManageOrders";
+// import AddAProduct from "./Components/Dashboard/Admin/AddAProduct/AddAProduct";
+// import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
+// import AdminRoute from "./Components/AdminRoute/AdminRoute";
+// import NotFound from "./Components/NotFound/NotFound";
+// import MakeAdmin from "./Components/Dashboard/Admin/MakeAdmin/MakeAdmin";
+// import ManageProducts from "./Components/Dashboard/Admin/ManageProducts/ManageProducts";
+// import Pay from "./Components/Dashboard/User/Pay/Pay";
+import routes from "./routes/routes";
+import "./App.css";
 
 function App() {
   return (
     <AuthProvider>
-      <BrowserRouter>
+      <RouterProvider router={routes} />
+
+      {/* <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
@@ -43,14 +46,14 @@ function App() {
             <Route path="manageProducts" element={<ManageProducts />} />
             <Route path="makeAdmin" element={<MakeAdmin />} />
             <Route path="addAProduct" element={<AddAProduct />} />
-            {/* <Route
+             <Route
               path="addAProduct"
               element={
                 <AdminRoute>
                   <AddAProduct />
                 </AdminRoute>
               }
-            /> */}
+            /> 
           </Route>
           <Route
             path="/placeOrder/:id"
@@ -64,7 +67,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter> */}
     </AuthProvider>
   );
 }

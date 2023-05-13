@@ -72,9 +72,9 @@ const Dashboard = () => {
           <div className="dropdown mt-3"></div>
         </div>
       </div>
-      <main>
-        <Outlet></Outlet>
-      </main>
+      {/* <main> */}
+      <Outlet />
+      {/* </main> */}
     </div>
   );
 };

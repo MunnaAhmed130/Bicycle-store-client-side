@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import useAuth from "../../../Hooks/useAuth";
 import "./Header.css";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [navbar, setNavbar] = useState(false);
@@ -31,17 +32,28 @@ const Header = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav" className="">
           <Nav className="ms-auto links">
-            <Nav.Link className="link" to="/home">
+            <Link
+              className="link d-inline-block  py-2 px-0 px-lg-2 text-decoration-none"
+              to="/home"
+            >
               Home
-            </Nav.Link>
-            <Nav.Link className="link" to="/explore">
+            </Link>
+            <Link
+              className="link d-inline-block  py-2 px-0 px-lg-2  text-decoration-none"
+              to="/explore"
+            >
               Explore
-            </Nav.Link>
-            <Nav.Link className="link" to={`/dashboard/dashboard`}>
+            </Link>
+            <Link
+              className="link d-inline-block py-2 px-0 px-lg-2 text-decoration-none"
+              to={`/dashboard/dashboard`}
+            >
               Dashboard
-            </Nav.Link>
+            </Link>
             {user.displayName && (
-              <Nav.Link className="link">{user.displayName}</Nav.Link>
+              <Link className="link d-inline-block  py-2 px-0 px-lg-2  text-decoration-none">
+                {user.displayName}
+              </Link>
             )}
 
             {user.photoURL && (
@@ -58,9 +70,12 @@ const Header = () => {
                 Log out
               </button>
             ) : (
-              <Nav.Link className="link" to="/login">
+              <Link
+                className="link d-inline-block  py-2 px-0 px-lg-2  text-decoration-none"
+                to="/login"
+              >
                 Login
-              </Nav.Link>
+              </Link>
             )}
           </Nav>
         </Navbar.Collapse>
