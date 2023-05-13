@@ -44,7 +44,7 @@ const Dashboard = () => {
         </div>
         <div className="offcanvas-body sidebar-content">
           <Link to="/home">Home</Link> <br />
-          <Link to="dashboard">Dashboard Home</Link> <br />
+          <Link to="/dashborad/dashboard">Dashboard Home</Link> <br />
           {!admin && (
             <>
               <Link to="myOrders">My Order</Link> <br />
@@ -59,7 +59,7 @@ const Dashboard = () => {
               <Link to="manageOrders">Manage Orders</Link> <br />
               <Link to="manageProducts">Manage Products</Link> <br />
               <Link to="addAProduct">Add Product</Link> <br />
-              <Link to="makeAdmin">Make Admin</Link> <br />{" "}
+              <Link to="makeAdmin">Make Admin</Link> <br />
             </>
           )}
           <Button

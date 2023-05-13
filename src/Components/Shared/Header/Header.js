@@ -46,7 +46,7 @@ const Header = () => {
             </Link>
             <Link
               className="link d-inline-block py-2 px-0 px-lg-2 text-decoration-none"
-              to={`/dashboard/dashboard`}
+              to="/dashboard"
             >
               Dashboard
             </Link>

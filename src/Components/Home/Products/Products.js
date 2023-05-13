@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-// import {EffectCoverflow} from 'swiper';
+// import { EffectCoverflow } from "swiper";
 import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
 import "./Products.css";
@@ -57,7 +57,7 @@ const Products = () => {
         spaceBetween={20}
         onSlideChange={() => console.log("slide change")}
         onSwiper={(swiper) => console.log(swiper)}
-        navigation
+        // navigation
         pagination={{ clickable: true }}
         // scrollbar={{ draggable: true }}
       >

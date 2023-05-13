@@ -7,6 +7,8 @@ import Login from "../Components/Authentication/Login/Login";
 import Register from "../Components/Authentication/Register/Register";
 import Dashboard from "../Components/Dashboard/Dashboard/Dashboard";
 import DashboardHome from "../Components/Dashboard/DashboardHome/DashboardHome";
+import PrivateRoute from "../Components/PrivateRoute/PrivateRoute";
+import Pay from "../Components/Dashboard/User/Pay/Pay";
 
 const routes = createBrowserRouter([
   {
@@ -22,28 +24,24 @@ const routes = createBrowserRouter([
         path: "/explore",
         element: <Explore />,
       },
-      {
-        path: "/",
-        element: <Home />,
-      },
     ],
   },
   {
     path: "/dashboard",
-    element: <Dashboard />,
+    element: (
+      <PrivateRoute>
+        <Dashboard />
+      </PrivateRoute>
+    ),
     children: [
       {
         path: "/dashboard",
         element: <DashboardHome />,
       },
-      // {
-      //   path: "/explore",
-      //   element: <Explore />,
-      // },
-      // {
-      //   path: "/",
-      //   element: <Home />,
-      // },
+      {
+        path: "/dashboard/pay",
+        element: <Pay />,
+      },
     ],
   },
   {
