@@ -17,5 +17,5 @@ code {
 
 :root {
   --navbar-height: 64px;
-  --carousel-mt: calc(var(--navbar-height) * -1);
+  --section-mt: calc(var(--navbar-height) * -1);
 }

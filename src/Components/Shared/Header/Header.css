@@ -1,24 +1,33 @@
-.links .link {
+.links {
+}
+
+.link {
   display: inline-block;
   margin-left: 10px;
   font-weight: 500;
   font-size: 1.1rem;
 }
 
+.links .active {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.link:hover {
+  /* color: white; */
+}
+
 .navbar {
   color: white;
   transition: 0.2s;
 }
+
 nav.navbar {
-  /* position: absolute; */
   z-index: 10;
   height: var(--navbar-height);
-  /* color: black; */
 }
 
 .navbar a {
   color: white;
-  /* color: black; */
 }
 
 .navbar.active {

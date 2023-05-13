@@ -3,8 +3,9 @@
 }
 
 .carousel {
-  margin-top: var(--carousel-mt);
+  margin-top: var(--section-mt);
 }
+
 .carousel.carousel-fade .carousel-item {
   display: block;
   opacity: 0;

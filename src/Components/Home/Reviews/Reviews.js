@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Col, Row } from "react-bootstrap";
+import { Row } from "react-bootstrap";
 import "./Reviews.css";
 import SingleReview from "../SingleReview/SingleReview";
 
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
+
   useEffect(() => {
     // fetch("http://localhost:4000/reviews")
     fetch("http://localhost:4000/reviews")
