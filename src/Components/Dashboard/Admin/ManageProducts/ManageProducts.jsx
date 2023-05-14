@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Row, Card, Col } from "react-bootstrap";
 import "./ManageProducts.css";
 
@@ -46,7 +46,6 @@ const ManageProducts = () => {
                 <h6>Price: &#x24;{product.price}</h6>
                 <button
                   onClick={() => handleDeleteOrder(product._id)}
-                  variant="outlined"
                   color="error"
                 >
                   DELETE

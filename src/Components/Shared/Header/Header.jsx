@@ -84,12 +84,7 @@ const Header = () => {
             )} */}
 
             {user.email ? (
-              <button
-                className="logOut-btn"
-                variant="outlined"
-                color="error"
-                onClick={logOut}
-              >
+              <button className="logOut-btn" color="error" onClick={logOut}>
                 Log out
               </button>
             ) : (

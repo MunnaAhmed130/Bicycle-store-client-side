@@ -66,9 +66,7 @@ const Review = () => {
             required="required"
           />{" "}
           <br />
-          <button type="submit" variant="contained">
-            Submit
-          </button>
+          <button type="submit">Submit</button>
         </form>
       )}
     </div>

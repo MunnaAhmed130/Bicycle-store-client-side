@@ -34,9 +34,7 @@ const ManageOrders = () => {
   return (
     <div className="manage-order">
       <h1 className="text-center mt-4">Manage Orders</h1>
-      {success && (
-        <p severity="success">This is a success alert — check it out!</p>
-      )}
+      {success && <p>This is a success alert — check it out!</p>}
       {orders.length || <p className="no-order">THERE IS NO ORDER</p>}
       {orders.length !== 0 && (
         <Row xs={1} md={2} lg={3} className="w-100 m-0">
@@ -49,12 +47,9 @@ const ManageOrders = () => {
                   <h6>Order From: {order.email}</h6>
                   <Card.Text>{order.description}</Card.Text>
                   <p>{order.price}</p>
-                  <button variant="outlined" className="me-1 ship">
-                    SHIP
-                  </button>
+                  <button className="me-1 ship">SHIP</button>
 
                   <button
-                    variant="outlined"
                     color="error"
                     onClick={() => handleDeleteOrder(order._id)}
                   >

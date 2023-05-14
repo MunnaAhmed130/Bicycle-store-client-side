@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
 import { Carousel } from "react-bootstrap";
 import "./Banner.css";
-import { Blurhash } from "react-blurhash";
+import ImageLoading from "./ImageLoading";
 
 const CarouselInfo = () => {
   return (
@@ -54,41 +53,6 @@ const Banner = () => {
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
-  );
-};
-
-const ImageLoading = ({ image, alt, className }) => {
-  const [imageLoading, setImageLoading] = useState(true);
-  let src = image.src;
-
-  useEffect(() => {
-    const img = new Image();
-    img.onload = () => {
-      setImageLoading(false);
-    };
-    img.src = src;
-  }, [src]);
-
-  return (
-    <>
-      {imageLoading && (
-        <div className="vh-100 vw-100 overflow-hidden">
-          <Blurhash
-            hash={image.blurHash}
-            width={3000}
-            height={1224}
-            resolutionX={32}
-            resolutionY={32}
-            punch={1}
-          />
-        </div>
-      )}
-      <img
-        className={`${imageLoading ? "d-none" : "loaded-img"}  ${className}`}
-        src={image.src}
-        alt={alt}
-      />
-    </>
   );
 };
 

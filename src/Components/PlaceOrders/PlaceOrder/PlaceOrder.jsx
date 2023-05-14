@@ -6,7 +6,6 @@ import { useParams } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
 import Footer from "../../Shared/Footer/Footer";
 import FooterBottom from "../../Shared/FooterBottom/Footer";
-import Header from "../../Shared/Header/Header";
 import "./PlaceOrder.css";
 
 const PlaceOrder = () => {
@@ -83,25 +82,17 @@ const PlaceOrder = () => {
               <form className="purchase-form" onSubmit={handleSubmit(onSubmit)}>
                 <input name="userName" defaultValue={userName} disabled />{" "}
                 <br />
-                <input
-                  name="email"
-                  defaultValue={email}
-                  disabled
-                  variant="outlined"
-                />{" "}
-                <br />
+                <input name="email" defaultValue={email} disabled /> <br />
                 <input
                   name="productName"
                   defaultValue={order.name}
                   disabled
-                  variant="outlined"
                 />{" "}
                 <br />
                 <input
                   name="address"
                   onBlur={handleOnBlur}
                   placeholder="Address"
-                  variant="outlined"
                   required
                 />{" "}
                 <br />
@@ -110,7 +101,6 @@ const PlaceOrder = () => {
                   type="tel"
                   onBlur={handleOnBlur}
                   placeholder="Phone"
-                  variant="outlined"
                   required
                 />{" "}
                 <br />
@@ -120,14 +110,9 @@ const PlaceOrder = () => {
                   value={price}
                   onChange={handleOnBlur}
                   disabled
-                  variant="outlined"
                 />{" "}
                 <br />
-                <button
-                  type="submit"
-                  variant="contained"
-                  className="purchase-btn"
-                >
+                <button type="submit" className="purchase-btn">
                   Purchase
                 </button>
               </form>

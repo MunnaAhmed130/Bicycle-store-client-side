@@ -28,16 +28,11 @@ const MakeAdmin = () => {
           label="Email"
           placeholder="Enter admin email"
           onBlur={handleOnBlur}
-          variant="standard"
         />{" "}
         <br />
-        <button type="submit" variant="contained">
-          Make Admin
-        </button>
+        <button type="submit">Make Admin</button>
         {success && (
-          <p severity="success" className="alert">
-            Your have successfully made a new admin
-          </p>
+          <p className="alert">Your have successfully made a new admin</p>
         )}
       </form>
     </Container>

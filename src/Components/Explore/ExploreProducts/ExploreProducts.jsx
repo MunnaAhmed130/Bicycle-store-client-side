@@ -14,9 +14,7 @@ const ExploreProducts = ({ product }) => {
           <Card.Text>{description}</Card.Text>
           <p>Price: ${price}</p>
           <Link to={`/placeOrder/${product._id}`} className="btn-link">
-            <button variant="contained" className="buy-btn">
-              BUY NOW
-            </button>
+            <button className="buy-btn">BUY NOW</button>
           </Link>
         </Card.Body>
       </Card>
