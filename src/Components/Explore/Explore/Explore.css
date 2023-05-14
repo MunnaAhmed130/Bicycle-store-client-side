@@ -1,6 +1,11 @@
 .explore {
   margin-top: var(--section-mt);
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.05)); */
+  /* background-image: linear-gradient(#010953db, #004e92); */
+  background-color: rgba(0, 0, 0, 0.835);
+  padding-top: 10px;
 }
+
 .explore h2 {
   padding-top: 45px;
   font-size: 2.2em;

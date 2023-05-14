@@ -44,11 +44,11 @@ const Header = () => {
             >
               Dashboard
             </NavLink>
-            {user.displayName && (
+            {/* {user.displayName && (
               <p className="link d-inline-block text-white py-2 px-0 px-lg-2 my-0 text-decoration-none">
                 {user.displayName}
               </p>
-            )}
+            )} */}
 
             {user.photoURL ? (
               <img className="profile-pic" src={user.photoURL} alt="dd" />

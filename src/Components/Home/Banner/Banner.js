@@ -18,14 +18,12 @@ const CarouselInfo = () => {
 const Banner = () => {
   const bannerImg = {
     banner1: {
-      src: "https://i.ibb.co/hK5zTvv/background.png",
-      // blurHash:
-      //   "Y49@3M00=Hn564*|PUMd00~CJTxaxZTKv#X-%h-paeS~n4S#Rjrr_3IAe.E1%2M{x]so",
+      src: "https://i.ibb.co/MNtH00X/luca-david-ia8u-TRs-ZZYY-unsplash.jpg",
       blurHash:
         "Y15OZ@~q004nogRPRkWV004n-;-;WBxuoLay?as.t8t8oLNGozofIUbIV@RjV@kCWBf6",
     },
     banner2: {
-      src: "https://i.ibb.co/MNtH00X/luca-david-ia8u-TRs-ZZYY-unsplash.jpg",
+      src: "https://i.ibb.co/hK5zTvv/background.png",
       blurHash:
         "Y15OZ@~q004nogRPRkWV004n-;-;WBxuoLay?as.t8t8oLNGozofIUbIV@RjV@kCWBf6",
     },
@@ -36,11 +34,6 @@ const Banner = () => {
   return (
     <Carousel fade>
       <Carousel.Item interval={interval}>
-        {/* <img
-          className="d-block w-100 object-fit-cover vh-100 banner-img "
-          src={bannerImg.banner1.img}
-          alt="First slide"
-        /> */}
         <ImageLoading
           image={bannerImg.banner1}
           className="d-block w-100 object-fit-cover vh-100 banner-img "
@@ -51,10 +44,10 @@ const Banner = () => {
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item interval={interval}>
-        <img
-          className="d-block w-100 object-fit-cover  vh-100 banner-img"
-          src={bannerImg.banner2.src}
-          alt="Second slide"
+        <ImageLoading
+          image={bannerImg.banner2}
+          className="d-block w-100 object-fit-cover vh-100 banner-img "
+          alt="second slide"
         />
         <Carousel.Caption className="caption">
           <CarouselInfo />
@@ -71,9 +64,6 @@ const ImageLoading = ({ image, alt, className }) => {
   useEffect(() => {
     const img = new Image();
     img.onload = () => {
-      // setTimeout(() => {
-      //   setImageLoading(false);
-      // }, 2000);
       setImageLoading(false);
     };
     img.src = src;
@@ -94,7 +84,7 @@ const ImageLoading = ({ image, alt, className }) => {
         </div>
       )}
       <img
-        className={`${imageLoading ? "d-none" : ""}  ${className}`}
+        className={`${imageLoading ? "d-none" : "loaded-img"}  ${className}`}
         src={image.src}
         alt={alt}
       />

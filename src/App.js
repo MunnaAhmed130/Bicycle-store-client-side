@@ -3,7 +3,7 @@ import AuthProvider from "./Context/AuthProvider";
 import routes from "./routes/routes";
 import "./App.css";
 
-function App() {
+const App = () => {
   return (
     <AuthProvider>
       <RouterProvider router={routes} />
@@ -47,6 +47,6 @@ function App() {
       </BrowserRouter> */}
     </AuthProvider>
   );
-}
+};
 
 export default App;
