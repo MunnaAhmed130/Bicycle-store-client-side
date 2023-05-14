@@ -1,40 +1,63 @@
+.navbar-brand a {
+  letter-spacing: 2px;
+  font-size: 22px;
+}
+
+@media screen and (max-width: 991px) {
+  .navbar-menu {
+    position: absolute;
+    top: var(--navbar-height);
+    right: 0;
+    width: 140px;
+    margin-inline: 10px;
+    text-align: center;
+    padding-inline: 10px;
+    background-color: rgb(65, 65, 65);
+    border-radius: 2px;
+  }
+}
+
+.navbar .navbar-toggler {
+  border: 1px solid transparent;
+  color: white;
+}
+
+.navbar .navbar-toggler:focus {
+  box-shadow: none;
+  border: 1px solid transparent;
+}
+
+.navbar .navbar-toggler:hover {
+  /* border: 1px solid rgb(122, 122, 122); */
+}
+
+.navbar .navbar-toggler-icon {
+  color: black;
+}
 .link {
-  display: inline-block;
-  margin-left: 10px;
-  font-weight: 500;
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
 .links .active {
   color: rgba(255, 255, 255, 0.85);
 }
 
-.link:hover {
-  /* color: white; */
-}
-
 .navbar {
   color: white;
-  transition: 0.2s;
 }
 
 nav.navbar {
   z-index: 10;
   height: var(--navbar-height);
+  transition: 0.2s;
 }
 
 .navbar a {
   color: white;
 }
 
-.navbar.active {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4));
-  /* animation: nav 1s linear */
-}
-
 .navbar-brand {
   font-size: 1.4rem;
-  font-weight: 600;
 }
 
 /* @keyframes nav {
@@ -56,16 +79,12 @@ nav .logOut-btn {
 }
 
 .links .profile-pic {
-  height: 40px;
-  width: 40px;
+  display: inline-block;
+  --box: 30px;
+  height: var(--box);
+  width: var(--box);
   border-radius: 50%;
   object-fit: cover;
-}
-
-.profile-pic-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 @media screen and (max-width: 992px) {
