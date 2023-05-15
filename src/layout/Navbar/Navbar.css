@@ -3,3 +3,7 @@ nav {
   height: var(--navbar-height);
   transition: 0.2s;
 }
+
+.nav-link {
+  @apply tracking-widest xs:text-base text-sm hover:text-slate-300 transition-colors duration-100;
+}
