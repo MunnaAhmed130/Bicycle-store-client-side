@@ -1,24 +1,22 @@
-import React from "react";
-import { Card, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./ExploreProducts.css";
 
 const ExploreProducts = ({ product }) => {
   const { name, url, price, description } = product;
   return (
-    <Col className="explore-products text-center">
-      <Card className="card">
-        <Card.Img variant="top" src={url} />
-        <Card.Body>
-          <Card.Title>{name}</Card.Title>
-          <Card.Text>{description}</Card.Text>
+    <div className="explore-products text-center">
+      <div className="card">
+        <img src={url} alt="" />
+        <div>
+          <h3>{name}</h3>
+          <p>{description}</p>
           <p>Price: ${price}</p>
           <Link to={`/placeOrder/${product._id}`} className="btn-link">
             <button className="buy-btn">BUY NOW</button>
           </Link>
-        </Card.Body>
-      </Card>
-    </Col>
+        </div>
+      </div>
+    </div>
   );
 };
 

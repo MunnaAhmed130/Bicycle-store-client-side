@@ -1,4 +1,4 @@
-import { Col, Row } from "react-bootstrap";
+// import { Col, Row } from "react-bootstrap";
 import "./SingleReview.css";
 
 const SingleReview = ({ review }) => {
@@ -7,9 +7,9 @@ const SingleReview = ({ review }) => {
   // console.log(value)
   return (
     <div>
-      <Col>
-        <Row className="single-review">
-          <Col>
+      <div>
+        <div className="single-review">
+          <div className="col">
             <div className="reviewer">
               <h3>{name}</h3>
               {url && <img className="review-img" src={url} alt="" />}
@@ -20,9 +20,9 @@ const SingleReview = ({ review }) => {
             {/* <Rating name="read-only" value={value} readOnly /> */}
             <br />
             <p className="">{description}</p>
-          </Col>
-        </Row>
-      </Col>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

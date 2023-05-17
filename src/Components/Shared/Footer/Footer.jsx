@@ -1,11 +1,11 @@
-import { Col, Row } from "react-bootstrap";
+// import { Col, Row } from "react-bootstrap";
 import "./Footer.css";
 
 const Footer = () => {
   return (
     <div className="footer">
       <div className="footer-top">
-        <Row xs={1} md={2} lg={4} className="w-100 m-0 pb-4 pt-3">
+        {/* <Row xs={1} md={2} lg={4} className="w-100 m-0 pb-4 pt-3">
           <Col className="footer-col ps-5" xs={12} sm={6} md={6} lg={3}>
             <h5>About Bicycle Zone</h5>
             <a href="#">About Us</a>
@@ -31,7 +31,7 @@ const Footer = () => {
             <a href="#">Terms &amp; Conditions</a>
             <a href="#">Disclaimer</a>
           </Col>
-        </Row>
+        </Row> */}
       </div>
       <div className="footer-bottom">
         <p className="mb-0">All Rights Reserved by Munna Ahmed</p>

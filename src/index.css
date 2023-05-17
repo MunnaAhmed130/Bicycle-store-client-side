@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -12,6 +13,7 @@ body {
   /* -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; */
 }
+
 * {
   font-family: "Roboto", sans-serif;
 }
@@ -23,6 +25,32 @@ code {
 
 :root {
   font-family: "Roboto", sans-serif;
-  --navbar-height: 64px;
+  --navbar-height: 80px;
   --section-mt: calc(var(--navbar-height) * -1);
+}
+
+.animate-fade {
+  animation: fade 300ms linear;
+}
+
+.animate-fadeOut {
+  animation: fadeOut 300ms linear;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }

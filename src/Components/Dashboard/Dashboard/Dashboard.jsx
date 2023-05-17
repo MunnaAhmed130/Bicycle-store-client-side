@@ -1,4 +1,4 @@
-import { Button } from "react-bootstrap";
+// import { Button } from "react-bootstrap";
 import { Outlet } from "react-router-dom";
 import { Link } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
@@ -61,13 +61,9 @@ const Dashboard = () => {
               <Link to="makeAdmin">Make Admin</Link> <br />
             </>
           )}
-          <Button
-            className="logOut-btn"
-            variant="outline-danger"
-            onClick={logOut}
-          >
+          <button className="logOut-btn" onClick={logOut}>
             Log out
-          </Button>
+          </button>
           <div className="dropdown mt-3"></div>
         </div>
       </div>

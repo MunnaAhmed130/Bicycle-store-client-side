@@ -30,24 +30,24 @@ const routes = createBrowserRouter([
       },
     ],
   },
-  {
-    path: "/dashboard",
-    element: (
-      <PrivateRoute>
-        <Dashboard />
-      </PrivateRoute>
-    ),
-    children: [
-      {
-        path: "/dashboard",
-        element: <DashboardHome />,
-      },
-      {
-        path: "/dashboard/pay",
-        element: <Pay />,
-      },
-    ],
-  },
+  // {
+  //   path: "/dashboard",
+  //   element: (
+  //     <PrivateRoute>
+  //       <Dashboard />
+  //     </PrivateRoute>
+  //   ),
+  //   children: [
+  //     {
+  //       path: "/dashboard",
+  //       element: <DashboardHome />,
+  //     },
+  //     {
+  //       path: "/dashboard/pay",
+  //       element: <Pay />,
+  //     },
+  //   ],
+  // },
   {
     path: "/login",
     element: <Login />,

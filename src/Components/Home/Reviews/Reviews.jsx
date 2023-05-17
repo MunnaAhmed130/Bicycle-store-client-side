@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { Row } from "react-bootstrap";
+import { useEffect, useState } from "react";
+// import { Row } from "react-bootstrap";
 import "./Reviews.css";
 import SingleReview from "../SingleReview/SingleReview";
 
@@ -20,11 +20,11 @@ const Reviews = () => {
         <h2>Some Valuable Opinions!</h2>
         <h3>Reviews</h3>
       </div>
-      <Row xs={1} sm={1} md={2} lg={2} xl={3} className="reviews">
+      <div className="reviews">
         {reviews.map((review) => (
           <SingleReview key={review._id} review={review}></SingleReview>
         ))}
-      </Row>
+      </div>
     </div>
   );
 };

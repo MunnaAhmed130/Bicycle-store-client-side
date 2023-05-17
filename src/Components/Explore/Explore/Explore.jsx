@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { Container, Row, Spinner } from "react-bootstrap";
+import { useEffect, useState } from "react";
+// import { Container, Row, Spinner } from "react-bootstrap";
 import useAuth from "../../../Hooks/useAuth";
 import Footer from "../../Shared/Footer/Footer";
 import Header from "../../Shared/Header/Header";
@@ -24,20 +24,20 @@ const Explore = () => {
       </h2>
       {!products.length && (
         <div className="center">
-          <Spinner></Spinner>
+          <p>no producs</p>
         </div>
       )}
       {!loading && (
-        <Container>
-          <Row xs={1} md={2} lg={2} xl={3} className="w-100 m-0 ">
+        <div>
+          <div className="w-100 m-0 ">
             {products.map((product) => (
               <ExploreProducts
                 key={product._id}
                 product={product}
               ></ExploreProducts>
             ))}
-          </Row>
-        </Container>
+          </div>
+        </div>
       )}
 
       {!products.length || <Footer />}

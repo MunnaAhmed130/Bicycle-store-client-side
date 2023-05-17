@@ -1,7 +1,7 @@
 import { RouterProvider } from "react-router-dom";
 import AuthProvider from "./Context/AuthProvider";
 import routes from "./routes/routes";
-import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
 const App = () => {
