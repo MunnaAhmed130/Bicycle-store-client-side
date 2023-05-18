@@ -1,5 +1,5 @@
 .animate-fade {
-  animation: fade 1000ms linear;
+  animation: fade 500ms linear;
 }
 
 @keyframes fade {
@@ -12,7 +12,7 @@
 }
 
 .animate-fadeOut {
-  animation: fadeOut 1000ms linear;
+  animation: fadeOut 10000ms linear;
 }
 
 @keyframes fadeOut {

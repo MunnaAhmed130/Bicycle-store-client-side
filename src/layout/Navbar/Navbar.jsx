@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { IoMenuOutline, IoCloseOutline } from "react-icons/io5";
+import NavList from "./NavList";
 import "./Navbar.css";
 
 const Navbar = () => {
@@ -14,7 +15,6 @@ const Navbar = () => {
           className=" text-white lg:text-[1.75rem] text-2xl font-bold no-underline uppercase"
         >
           Bicycle zone
-          {/* <span className="w-1.5 h-1.5  color-dot inline-block rounded-full bg-white" /> */}
         </Link>
 
         {/* list of links  */}
@@ -36,7 +36,7 @@ const Navbar = () => {
           >
             {/* list of links  */}
             <ul className="flex flex-col items-center justify-end gap-2 bg-white/10 py-1 px-2 rounded-sm text-white ">
-              <NavList />
+              <NavList toggle={toggle} setToggle={setToggle} />
             </ul>
           </div>
         </div>
@@ -45,41 +45,4 @@ const Navbar = () => {
   );
 };
 
-const NavList = ({ toggle, setToggle }) => {
-  const navLinks = [
-    {
-      id: "/",
-      title: "Home",
-    },
-    {
-      id: "explore",
-      title: "Explore",
-    },
-    {
-      id: "dashboard",
-      title: "Dashboard",
-    },
-  ];
-  return (
-    <>
-      {navLinks.map((link) => (
-        <li key={link.id}>
-          <NavLink
-            to={`${link.id}`}
-            className={({ isActive }) =>
-              isActive
-                ? `text-white tracking-widest xs:text-base hover:text-black text-sm  transition-colors duration-100`
-                : `text-gray-200 tracking-widest xs:text-base text-sm  transition-colors duration-100`
-            }
-            onClick={() => {
-              setToggle(!toggle);
-            }}
-          >
-            {link.title}
-          </NavLink>
-        </li>
-      ))}
-    </>
-  );
-};
 export default Navbar;

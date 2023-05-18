@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
-import { BsChevronRight, BsChevronLeft } from "react-icons/bs";
+import { useState } from "react";
+import Carousel from "./Carousel";
+import "./Banner.css";
 
 const Banner = () => {
   const [curr, setCurr] = useState(0);
@@ -44,7 +45,7 @@ const Banner = () => {
         setCurr={setCurr}
         setLast={setLast}
         fade={fade}
-        setSlideInterval={4000}
+        setSlideInterval={10000}
         autoSlide={true}
       >
         {bannerImg.map((banner, i) => (
@@ -55,13 +56,13 @@ const Banner = () => {
               backgroundImage: `url(${banner.src})`,
             }}
             // style={{
-            //   background: ` linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${banner.src})`,
+            //   background: `linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(${banner.src}) no-repeat center cover`,
             // }}
             className={`${fade && "absolute"} ${
-              fade && `${i == curr ? "opacity-0" : "animate-fade"}`
+              fade && `${i == curr ? "animate-fade" : "opacity-0"}`
             }  ${
-              fade && `${i == last ? "animate-fadeOut" : ""}`
-            }  min-w-full h-screen bg-cover bg-center w-full  `}
+              fade && `${i == last && "animate-fadeOut"}`
+            }  min-w-full h-screen bg-cover bg-no-repeat bg-center w-full  `}
           >
             {banner.text && (
               <div
@@ -78,79 +79,4 @@ const Banner = () => {
   );
 };
 
-const Carousel = ({
-  children: banner,
-  autoSlide = false,
-  setSlideInterval,
-  curr,
-  setCurr,
-  fade,
-  setLast,
-}) => {
-  const prev = () => {
-    setLast(curr);
-    // setTimeout(() => {
-    setCurr((curr) => (curr === 0 ? banner.length - 1 : curr - 1));
-    // }, 500);
-  };
-
-  const next = () => {
-    setLast(curr);
-    setCurr((curr) => (curr === banner.length - 1 ? 0 : curr + 1));
-  };
-
-  const goToSlide = (i) => {
-    setLast(curr);
-    setCurr(i);
-  };
-
-  useEffect(() => {
-    if (!autoSlide) return;
-    const slideInterval = setInterval(next, setSlideInterval);
-    return () => clearInterval(slideInterval);
-  }, [curr, setSlideInterval]);
-
-  return (
-    <div className="overflow-hidden relative h-screen w-full">
-      <div
-        className="flex transition-transform ease-out duration-500 relative "
-        // className={`${
-        //   fade && banner.id !== curr ? `hidden` : `animate-fade`
-        // } min-w-full h-screen object-cover w-full flex transition-transform ease-out duration-500 relative`}
-        style={{ transform: `${!fade && `translateX(-${curr * 100}%)`}` }}
-      >
-        {banner}
-      </div>
-      <div className="absolute inset-0 flex items-center justify-between p-4 ">
-        <button
-          onClick={prev}
-          className="p-3 rounded-full shadow bg-black/50 text-white-800 hover:text-white z-20"
-        >
-          <BsChevronLeft size={30} />
-        </button>
-        <button
-          onClick={next}
-          className="p-3 rounded-full shadow bg-black/50 text-white-800 hover:text-white z-20"
-        >
-          <BsChevronRight size={30} />
-        </button>
-      </div>
-
-      <div className="absolute bottom-4 right-0 left-0">
-        <div className="flex items-center justify-center gap-2">
-          {banner.map((_, i) => (
-            <div
-              key={i}
-              onClick={() => goToSlide(i)}
-              className={`
-          transition-all w-3 h-3 bg-white rounded-full
-          ${curr === i ? "p-2" : "bg-opacity-50"}
-        `}
-            />
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-};
 export default Banner;

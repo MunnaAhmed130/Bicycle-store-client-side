@@ -5,8 +5,9 @@ const SingleReview = ({ review }) => {
   const { name, url, profession, description, rating } = review;
   //   const [value, setValue] = React.useState(rating);
   // console.log(value)
+  const animate = true;
   return (
-    <div>
+    <div className={animate && `animate-fadeOut`}>
       <div>
         <div className="single-review">
           <div className="col">
