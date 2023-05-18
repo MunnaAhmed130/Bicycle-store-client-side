@@ -1,48 +1,25 @@
-.banner-img {
-  object-position: left;
+.animate-fade {
+  animation: fade 1000ms linear;
 }
 
-.carousel {
-  margin-top: var(--section-mt);
-}
-
-.carousel-caption {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  right: 5%;
-  left: 5%;
-}
-
-/* .carousel.carousel-fade .carousel-item {
-  display: block;
-  opacity: 0;
-  transition: opacity ease-in-out 0.3s;
-}
-
-.carousel.carousel-fade .carousel-item.active {
-  opacity: 1 !important;
-} */
-
-.carousel :is(.carousel-control-prev, .carousel-control-next) {
-  opacity: 0;
-  visibility: hidden;
-}
-
-@media screen and (min-width: 1024px) {
-  .caption {
-    padding-bottom: 35vh;
+@keyframes fade {
+  from {
+    opacity: 0;
   }
-
-  .caption h3 {
-    font-size: 3rem;
+  to {
+    opacity: 1;
   }
+}
 
-  .caption p {
-    width: 70%;
-    margin-inline: auto;
-    font-size: 1.2rem;
+.animate-fadeOut {
+  animation: fadeOut 1000ms linear;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 }
