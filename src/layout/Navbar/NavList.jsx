@@ -2,13 +2,18 @@ import { NavLink } from "react-router-dom";
 import { navLinks } from "../../utils/constants";
 import useAuth from "../../Hooks/useAuth";
 
-const NavList = ({ toggle, setToggle }) => {
+const NavList = ({ toggle, setToggle, dropdown }) => {
   const { user } = useAuth();
   console.log(user.email);
   return (
     <>
       {navLinks.map((link) => (
-        <li key={link.id}>
+        <li
+          key={link.id}
+          className={`${
+            dropdown && `hover:bg-black/30 block w-full py-1 my-1`
+          }`}
+        >
           <NavLink
             to={`${link.id}`}
             className={({ isActive }) =>
@@ -27,7 +32,9 @@ const NavList = ({ toggle, setToggle }) => {
           <img
             src={user.photoURL}
             referrerPolicy="no-referrer"
-            className="w-10 h-10 rounded-full"
+            className={`${
+              dropdown && ` block w-full  my-1`
+            } w-10 h-10 rounded-full`}
           />
         ) : (
           <NavLink to="/login">Login</NavLink>

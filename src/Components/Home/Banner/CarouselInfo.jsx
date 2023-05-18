@@ -29,6 +29,7 @@ const CarouselInfo = ({ banner, i, fade, curr, last, alt }) => {
               />
             </div>
           )}
+
           <img
             src={banner.src}
             alt={alt}
@@ -37,6 +38,7 @@ const CarouselInfo = ({ banner, i, fade, curr, last, alt }) => {
               imageLoading ? "hidden" : "animate-fade"
             }  absolute min-w-full h-screen object-cover brightness-75 object-center w-full  `}
           />
+
           {banner.text && (
             <div
               className={` ${

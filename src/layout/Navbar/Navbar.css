@@ -1,3 +1,22 @@
 .nav-link {
-  @apply tracking-widest xs:text-base uppercase hover:text-white text-sm  transition-colors duration-100;
+  @apply tracking-widest font-semibold xs:text-base uppercase hover:text-white text-sm  transition-all duration-100;
+}
+
+.flex-center {
+  @apply flex flex-col justify-center items-center;
+}
+
+.nav-in {
+  animation: navIn 200ms ease-in-out;
+}
+
+@keyframes navIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
 }
