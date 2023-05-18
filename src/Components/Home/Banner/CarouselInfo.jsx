@@ -44,13 +44,13 @@ const CarouselInfo = ({ banner, i, fade, curr, last, alt }) => {
               className={` ${
                 fade && `${i == curr ? "animate-fade" : "opacity-0"}`
               } animate-fade
-        flex w-full h-screen text-center  items-center justify-center  absolute z-10`}
+        flex w-full  h-screen text-center  items-center justify-center  absolute z-10`}
             >
-              <div className=" flex flex-col gap-3 max-w-2xl mx-auto">
-                <h3 className="text-8xl uppercase font-semibold text-white">
+              <div className=" flex flex-col gap-3 w-3/4 max-w-2xl mx-auto">
+                <h3 className="lg:text-8xl md:text-6xl sm:text-5xl text-4xl uppercase sm:font-semibold font-extrabold text-white">
                   {banner.text.title}
                 </h3>
-                <p className="text-[22px] text-white/95">
+                <p className="lg:text-[22px] text  text-white/95">
                   {banner.text.description}
                 </p>
               </div>

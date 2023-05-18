@@ -14,12 +14,13 @@ const routes = createBrowserRouter([
   {
     path: "/",
     element: <Main />,
-    errorElement: <NotFound />,
+    // errorElement: <NotFound />,
     children: [
       {
         path: "/",
         loader: async () => {
-          return fetch("http://localhost:4000/products/limit?number=4");
+          // return fetch("http://localhost:4000/products/limit?number=4");
+          return fetch("fakeData.json");
         },
         element: <Home />,
       },
