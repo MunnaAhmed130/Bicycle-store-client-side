@@ -12,9 +12,7 @@ const Carousel = ({
 }) => {
   const prev = () => {
     setLast(curr);
-    // setTimeout(() => {
     setCurr((curr) => (curr === 0 ? banner.length - 1 : curr - 1));
-    // }, 500);
   };
 
   const next = () => {
@@ -37,11 +35,8 @@ const Carousel = ({
     <div className="overflow-hidden relative h-screen w-full">
       <div
         className={`${
-          fade ? "relative" : "flex"
-        }  transition-transform ease-out duration-1000 `}
-        // className={`${
-        //   fade && banner.id !== curr ? `hidden` : `animate-fade`
-        // } min-w-full h-screen object-cover w-full flex transition-transform ease-out duration-500 relative`}
+          fade ? "relative" : "flex "
+        }  transition-transform ease-out duration-1000 h-screen w-full`}
         style={{ transform: `${!fade && `translateX(-${curr * 100}%)`}` }}
       >
         {banner}
