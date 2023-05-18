@@ -1,5 +1,5 @@
-// import Products from "../Products/Products";
 import Banner from "../../Components/Home/Banner/Banner";
+import Products from "../../Components/Home/Products/Products";
 import Reviews from "../../Components/Home/Reviews/Reviews";
 import Footer from "../../Components/Shared/Footer/Footer";
 import "./Home.css";
@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <>
       <Banner />
-      {/* <Products /> */}
+      <Products />
       <Reviews />
       <Footer />
     </>

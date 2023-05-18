@@ -12,7 +12,7 @@
 }
 
 .animate-fadeOut {
-  animation: fadeOut 10000ms linear;
+  animation: fadeOut 500ms linear;
 }
 
 @keyframes fadeOut {

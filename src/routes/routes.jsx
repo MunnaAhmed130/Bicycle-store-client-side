@@ -18,10 +18,9 @@ const routes = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home />,
-      },
-      {
-        path: "/home",
+        loader: async () => {
+          return fetch("http://localhost:4000/products/limit?number=4");
+        },
         element: <Home />,
       },
       {

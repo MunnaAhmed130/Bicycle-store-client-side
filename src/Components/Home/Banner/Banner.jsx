@@ -12,6 +12,7 @@ const Banner = () => {
     {
       // id: 0,
       src: "https://i.ibb.co/MNtH00X/luca-david-ia8u-TRs-ZZYY-unsplash.jpg",
+      alt: "a cycle indoor",
       blurHash:
         "Y15OZ@~q004nogRPRkWV004n-;-;WBxuoLay?as.t8t8oLNGozofIUbIV@RjV@kCWBf6",
       text: {
@@ -23,6 +24,7 @@ const Banner = () => {
     {
       // id: 1,
       src: "https://i.ibb.co/hK5zTvv/background.png",
+      alt: "outdoor cycling",
       blurHash:
         "Y15OZ@~q004nogRPRkWV004n-;-;WBxuoLay?as.t8t8oLNGozofIUbIV@RjV@kCWBf6",
       text: {
@@ -46,8 +48,8 @@ const Banner = () => {
         setCurr={setCurr}
         setLast={setLast}
         fade={fade}
-        setSlideInterval={10000}
-        autoSlide={false}
+        setSlideInterval={4000}
+        autoSlide={true}
       >
         {bannerImg.map((banner, i) => (
           <CarouselInfo
@@ -57,6 +59,7 @@ const Banner = () => {
             key={banner.src}
             curr={curr}
             last={last}
+            alt={banner.alt}
           />
         ))}
       </Carousel>

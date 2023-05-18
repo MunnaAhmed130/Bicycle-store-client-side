@@ -32,12 +32,14 @@ const Navbar = () => {
 
           <div
             className={`${toggle ? "absolute" : "hidden"}  
-            top-10 `}
+            top-10 w-screen left-100`}
           >
             {/* list of links  */}
-            <ul className="flex flex-col items-center justify-end gap-2 bg-white/10 py-1 px-2 rounded-sm text-white ">
-              <NavList toggle={toggle} setToggle={setToggle} />
-            </ul>
+            <div className="absolute right-0 w-[calc(100%_-_96px)]  h-auto border ">
+              <ul className="flex flex-col items-center justify-end gap-2 bg-white/10 py-1 px-2 rounded-sm text-white  ">
+                <NavList toggle={toggle} setToggle={setToggle} />
+              </ul>
+            </div>
           </div>
         </div>
       </div>

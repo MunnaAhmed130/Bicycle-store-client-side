@@ -1,3 +1,3 @@
 .nav-link {
-  @apply tracking-widest xs:text-base text-sm  transition-colors duration-100;
+  @apply tracking-widest xs:text-base uppercase hover:text-white text-sm  transition-colors duration-100;
 }
