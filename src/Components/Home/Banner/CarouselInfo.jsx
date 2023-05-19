@@ -46,11 +46,11 @@ const CarouselInfo = ({ banner, i, fade, curr, last, alt }) => {
               } animate-fade
         flex w-full  h-screen text-center  items-center justify-center  absolute z-10`}
             >
-              <div className=" flex flex-col gap-3 w-3/4 max-w-2xl mx-auto">
-                <h3 className="lg:text-8xl md:text-6xl sm:text-5xl text-4xl uppercase sm:font-semibold font-extrabold text-white">
+              <div className=" flex flex-col gap-3 w-3/4 max-w-2xl mx-auto transition-all">
+                <h3 className="lg:text-8xl md:text-6xl sm:text-5xl text-4xl uppercase sm:font-semibold font-extrabold text-white transition-all">
                   {banner.text.title}
                 </h3>
-                <p className="lg:text-[22px] text  text-white/95">
+                <p className="lg:text-[22px] text  text-white/95 transition-all">
                   {banner.text.description}
                 </p>
               </div>
@@ -90,7 +90,7 @@ const CarouselInfo = ({ banner, i, fade, curr, last, alt }) => {
                 } }`}
               >
                 <div className=" flex flex-col gap-3 max-w-2xl mx-auto">
-                  <h3 className="text-8xl uppercase font-semibold text-white">
+                  <h3 className="text-8xl uppercase font-semibold text-white transition">
                     {banner.text.title}
                   </h3>
                   <p className="text-[22px] text-white/95">

@@ -8,16 +8,24 @@ const NavList = ({ toggle, setToggle, dropdown }) => {
   return (
     <>
       {navLinks.map((link) => (
-        <li
-          key={link.id}
-          className={`${
-            dropdown && `hover:bg-black/30 block w-full py-1 my-1`
-          }`}
-        >
+        <li key={link.id} className={`${dropdown && ` w-full `}`}>
           <NavLink
             to={`${link.id}`}
+            // className={({ isActive }) =>
+            //   isActive ? `text-slate-400 nav-link` : `text-gray-300 nav-link`
+            // }
             className={({ isActive }) =>
-              isActive ? `text-slate-400 nav-link` : `text-gray-300 nav-link`
+              isActive
+                ? `${
+                    dropdown
+                      ? `text-slate-400 nav-link hover:bg-white/20  inline-block w-full py-1 mt-1`
+                      : "text-slate-400 nav-link "
+                  }`
+                : `${
+                    dropdown
+                      ? `text-gray-300 nav-link hover:bg-white/20  inline-block w-full py-1 mt-1`
+                      : "text-gray-300 nav-link "
+                  }`
             }
             onClick={() => {
               setToggle(!toggle);
@@ -33,7 +41,7 @@ const NavList = ({ toggle, setToggle, dropdown }) => {
             src={user.photoURL}
             referrerPolicy="no-referrer"
             className={`${
-              dropdown && ` block w-full  my-1`
+              dropdown && ` block w-full  my-2`
             } w-10 h-10 rounded-full`}
           />
         ) : (

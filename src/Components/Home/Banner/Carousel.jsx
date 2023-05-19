@@ -41,6 +41,7 @@ const Carousel = ({
       >
         {banner}
       </div>
+
       <div className="absolute inset-0 flex items-center justify-between p-4 ">
         <button
           onClick={prev}
@@ -48,6 +49,7 @@ const Carousel = ({
         >
           <BsChevronLeft size={30} />
         </button>
+
         <button
           onClick={next}
           className="p-3 rounded-full shadow bg-black/50 text-white-800 hover:text-white z-20"
@@ -62,9 +64,13 @@ const Carousel = ({
             <div
               key={i}
               onClick={() => goToSlide(i)}
-              className={`
-          transition-all w-3 h-3 bg-white rounded-full
-          ${curr === i ? "p-2" : "bg-opacity-50"}
+              className={`cursor-pointer z-10
+          transition-all w-3 h-3  rounded-full
+          ${
+            curr === i
+              ? "p-[7px] bg-opacity-100 bg-[#dddddd]"
+              : "bg-opacity-50 bg-white"
+          }
         `}
             />
           ))}
