@@ -3,8 +3,8 @@ import { navLinks } from "../../utils/constants";
 import useAuth from "../../Hooks/useAuth";
 
 const NavList = ({ toggle, setToggle, dropdown }) => {
-  const { user } = useAuth();
-  console.log(user.email);
+  const { user, logOut } = useAuth();
+  // console.log(user.email);
   return (
     <>
       {navLinks.map((link) => (
@@ -18,13 +18,13 @@ const NavList = ({ toggle, setToggle, dropdown }) => {
               isActive
                 ? `${
                     dropdown
-                      ? `text-slate-400 nav-link hover:bg-white/20  inline-block w-full py-1 mt-1`
-                      : "text-slate-400 nav-link "
+                      ? `text-slate-400 nav-link hover:text-slate-300 dropdown-link`
+                      : `text-slate-400 nav-link hover:text-slate-300`
                   }`
                 : `${
                     dropdown
-                      ? `text-gray-300 nav-link hover:bg-white/20  inline-block w-full py-1 mt-1`
-                      : "text-gray-300 nav-link "
+                      ? `text-gray-300 nav-link hover:text-gray-100 dropdown-link`
+                      : `text-gray-300 nav-link hover:text-gray-100`
                   }`
             }
             onClick={() => {
@@ -45,9 +45,31 @@ const NavList = ({ toggle, setToggle, dropdown }) => {
             } w-10 h-10 rounded-full`}
           />
         ) : (
-          <NavLink to="/login">Login</NavLink>
+          <NavLink
+            to="/login"
+            className={({ isActive }) =>
+              isActive
+                ? `${
+                    dropdown
+                      ? `text-slate-400 nav-link hover:text-slate-300 dropdown-link`
+                      : `text-slate-400 nav-link hover:text-slate-300`
+                  }`
+                : `${
+                    dropdown
+                      ? `text-gray-300 nav-link hover:text-gray-100 dropdown-link`
+                      : `text-gray-300 nav-link hover:text-gray-100`
+                  }`
+            }
+          >
+            Login
+          </NavLink>
         )}
       </li>
+      {/* {user.email && (
+        <li>
+          <button>LogOut</button>
+        </li>
+      )} */}
     </>
   );
 };

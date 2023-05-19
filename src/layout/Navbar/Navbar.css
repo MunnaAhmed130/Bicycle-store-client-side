@@ -1,5 +1,9 @@
 .nav-link {
-  @apply tracking-widest font-semibold xs:text-base uppercase hover:text-white text-sm  transition-all duration-100;
+  @apply tracking-widest font-semibold xs:text-base uppercase  text-sm  transition-all duration-100;
+}
+
+.dropdown-link {
+  @apply hover:bg-white/20 inline-block w-full py-1 mt-1;
 }
 
 .flex-center {
