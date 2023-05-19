@@ -42,7 +42,7 @@ const Dashboard = () => {
           ></button>
         </div>
         <div className="offcanvas-body sidebar-content">
-          <Link to="/home">Home</Link> <br />
+          <Link to="/">Home</Link> <br />
           <Link to="/dashborad/dashboard">Dashboard Home</Link> <br />
           {!admin && (
             <>

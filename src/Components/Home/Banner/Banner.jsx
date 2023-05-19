@@ -2,43 +2,15 @@ import { useState } from "react";
 import Carousel from "./Carousel";
 import "./Banner.css";
 import CarouselInfo from "./CarouselInfo";
+import { bannerImg } from "../../../utils/constants";
 
 const Banner = () => {
   const [curr, setCurr] = useState(0);
   const [last, setLast] = useState();
-  // console.log(curr, last);
-
-  const bannerImg = [
-    {
-      // id: 0,
-      src: "https://i.ibb.co/MNtH00X/luca-david-ia8u-TRs-ZZYY-unsplash.jpg",
-      alt: "a cycle indoor",
-      blurHash:
-        "Y15OZ@~q004nogRPRkWV004n-;-;WBxuoLay?as.t8t8oLNGozofIUbIV@RjV@kCWBf6",
-      text: {
-        title: "Bicycles for Adventures",
-        description:
-          "We create the best Cycling Experiences of a lifetime. We can fit you with the perfect bike because we carry all sizes and types of bikes",
-      },
-    },
-    {
-      // id: 1,
-      src: "https://i.ibb.co/hK5zTvv/background.png",
-      alt: "outdoor cycling",
-      blurHash:
-        "Y15OZ@~q004nogRPRkWV004n-;-;WBxuoLay?as.t8t8oLNGozofIUbIV@RjV@kCWBf6",
-      text: {
-        title: "Bicycles for Adventures",
-        description:
-          "We create the best Cycling Experiences of a lifetime. We can fit you with the perfect bike because we carry all sizes and types of bikes",
-      },
-    },
-  ];
-
   const fade = true;
 
   return (
-    <div
+    <section
       className={`${
         fade && `relative`
       } h-screen min-w-full w-full bg-[black] -mt-20 `}
@@ -63,7 +35,7 @@ const Banner = () => {
           />
         ))}
       </Carousel>
-    </div>
+    </section>
   );
 };
 

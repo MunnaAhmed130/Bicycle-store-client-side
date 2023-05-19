@@ -4,16 +4,13 @@ import useAuth from "../../Hooks/useAuth";
 
 const NavList = ({ toggle, setToggle, dropdown }) => {
   const { user, logOut } = useAuth();
-  // console.log(user.email);
+
   return (
     <>
       {navLinks.map((link) => (
         <li key={link.id} className={`${dropdown && ` w-full `}`}>
           <NavLink
             to={`${link.id}`}
-            // className={({ isActive }) =>
-            //   isActive ? `text-slate-400 nav-link` : `text-gray-300 nav-link`
-            // }
             className={({ isActive }) =>
               isActive
                 ? `${
