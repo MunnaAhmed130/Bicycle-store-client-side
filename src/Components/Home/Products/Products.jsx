@@ -1,33 +1,47 @@
-import { useState } from "react";
 import { useLoaderData } from "react-router-dom";
-// import function to register Swiper custom elements
-import { register } from "swiper/element/bundle";
-// register Swiper custom elements
-register();
+// import Swiper core and required modules
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+// Import Swiper styles
+import "swiper/css";
 
 const Products = () => {
   const data = useLoaderData();
-  // console.log(data);
-  // const data = false;
-  // grid lg:grid-cols-3 sm:grid-cols-2 grids-cols-1
-  const [curr, setCurr] = useState(0);
+
   return (
     <section className="py-10 bg-[#1d1d1d]">
       <h3 className="text-center text-5xl uppercase font-bold text-white tracking-widest py-5">
         Featured Bicycles
       </h3>
-      <swiper-container>
-        <swiper-slide>Slide 1</swiper-slide>
-        <swiper-slide>Slide 2</swiper-slide>
-        <swiper-slide>Slide 3</swiper-slide>
-      </swiper-container>
-      {data && (
+
+      <Swiper
+        spaceBetween={30}
+        slidesPerView={3}
+        loop={true}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={true}
+        modules={[Pagination, Navigation, Scrollbar, A11y]}
+        className="max-w-7xl"
+        // onSlideChange={() => console.log("slide change")}
+        // onSwiper={(swiper) => console.log(swiper)}
+      >
+        {data.map((product) => (
+          <SwiperSlide key={product.name}>
+            <Product key={product.name} product={product} />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+
+      {/* {data && (
         <div className=" grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 max-w-7xl mx-auto p-section transition-all">
           {data.map((product) => (
             <Product key={product.name} product={product} />
           ))}
         </div>
-      )}
+      )} */}
     </section>
   );
 };

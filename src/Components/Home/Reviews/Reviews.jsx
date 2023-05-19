@@ -7,8 +7,8 @@ const Reviews = () => {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    // fetch("http://localhost:4000/reviews")
-    fetch("http://localhost:4000/reviews")
+    fetch("fakeReview.json")
+      // fetch("http://localhost:4000/reviews")
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);
