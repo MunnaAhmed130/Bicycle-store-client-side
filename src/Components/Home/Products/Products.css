@@ -59,6 +59,7 @@
 } */
 .mySwiper .swiper-pagination {
   position: static;
+  display: none;
 }
 
 .mySwiper .swiper-pagination-bullet {

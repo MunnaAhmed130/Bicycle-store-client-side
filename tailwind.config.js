@@ -6,6 +6,10 @@ export default {
       screens: {
         xs: "450px",
       },
+      fontFamily: {
+        poppins: ["Poppins", "sans-serif"],
+        lato: ["Lato", "sans-serif"],
+      },
     },
   },
   plugins: [],

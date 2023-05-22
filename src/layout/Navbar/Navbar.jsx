@@ -19,7 +19,7 @@ const Navbar = () => {
         </Link>
 
         {/* list of links  */}
-        <ul className="hidden md:flex flex-row items-center justify-center lg:gap-x-7 gap-x-6 text-white mb-0 transition-all">
+        <ul className="hidden md:flex flex-row items-center justify-center lg:gap-x-7 gap-x-4 text-white mb-0 transition-all">
           <NavList toggle={toggle} setToggle={setToggle} dropdown={false} />
         </ul>
 

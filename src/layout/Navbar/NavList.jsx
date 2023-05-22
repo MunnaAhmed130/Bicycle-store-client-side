@@ -62,11 +62,13 @@ const NavList = ({ toggle, setToggle, dropdown }) => {
           </NavLink>
         )}
       </li>
-      {/* {user.email && (
+      {user.email && (
         <li>
-          <button>LogOut</button>
+          <button className="tracking-widest font-semibold  uppercase text-red-600 text-sm transition-all duration-100  py-1 px-2 rounded-sm border border-red-600/50 hover:shadow-red-400 hover:shadow-[0_0_1.5rem_0]">
+            LogOut
+          </button>
         </li>
-      )} */}
+      )}
     </>
   );
 };
