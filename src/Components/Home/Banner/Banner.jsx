@@ -13,7 +13,7 @@ const Banner = () => {
     <section
       className={`${
         fade && `relative`
-      } h-screen min-w-full w-full bg-[black] -mt-20 `}
+      } h-screen min-w-full w-full bg-[black] -mt-[--navbar-height] `}
     >
       <Carousel
         curr={curr}

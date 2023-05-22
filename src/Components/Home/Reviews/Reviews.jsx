@@ -12,7 +12,6 @@ const Reviews = () => {
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);
-  // console.log(reviews.name);
 
   return (
     <div className="reviews-container">
@@ -20,6 +19,7 @@ const Reviews = () => {
         <h2>Some Valuable Opinions!</h2>
         <h3>Reviews</h3>
       </div>
+
       <div className="reviews">
         {reviews.map((review) => (
           <SingleReview key={review._id} review={review}></SingleReview>

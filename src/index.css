@@ -10,8 +10,7 @@
   /* color-scheme: light dark; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  --navbar-height: 80px;
-  --section-mt: calc(var(--navbar-height) * -1);
+  --navbar-height: 5rem;
 }
 
 body {
@@ -24,11 +23,6 @@ body {
 
 * {
   @apply font-lato;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
 }
 
 .p-section {

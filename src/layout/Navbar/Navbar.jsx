@@ -6,10 +6,10 @@ import "./Navbar.css";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
-  console.log(toggle);
+  // console.log(toggle);
 
   return (
-    <nav className="w-full relative  p-section text-center flex-center h-20  top-0 z-20 transition-all">
+    <nav className="w-full relative p-section text-center flex-center h-[--navbar-height]  top-0 z-20 transition-all">
       <div className="max-w-7xl w-full mx-auto flex justify-between items-center">
         <Link
           to="/"
@@ -19,14 +19,14 @@ const Navbar = () => {
         </Link>
 
         {/* list of links  */}
-        <ul className="hidden md:flex flex-row items-center justify-center lg:gap-x-7 gap-x-4 text-white mb-0 transition-all">
+        <ul className="hidden lg:flex flex-row items-center justify-center lg:gap-x-7 gap-x-4 text-white mb-0 transition-all">
           <NavList toggle={toggle} setToggle={setToggle} dropdown={false} />
         </ul>
 
         <div
           className={`${
-            toggle && "flex relative"
-          } md:hidden  flex-row items-center justify-end`}
+            toggle && "flex "
+          } lg:hidden relative flex-row items-center justify-end`}
         >
           <button
             onClick={() => setToggle(!toggle)}
