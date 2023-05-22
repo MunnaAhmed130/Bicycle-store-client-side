@@ -1,0 +1,76 @@
+.mySwiper {
+  width: 100%;
+}
+
+@media screen and (min-width: 640px) {
+  .mySwiper {
+    /* width: 470px; */
+    width: 600px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .mySwiper {
+    width: 700px;
+    /* width: 798px; */
+  }
+}
+@media screen and (min-width: 1080px) {
+  .mySwiper {
+    width: 1000px;
+    /* width: 768px; */
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .mySwiper {
+    width: 1080px;
+  }
+}
+
+.mySwiper .swiper-button-next:after,
+.mySwiper .swiper-button-prev:after {
+  color: white;
+  color: black;
+  font-weight: 900;
+  font-size: 1rem;
+}
+
+.mySwiper :is(.swiper-button-next, .swiper-button-prev) {
+  --box: 40px;
+  color: white;
+  /* background-color: rgba(0, 0, 0, 0.4); */
+  background-color: white;
+  width: var(--box);
+  height: var(--box);
+  border-radius: 50%;
+  box-shadow: 0px 0px 4px 0px rgba(24, 24, 24, 0.8);
+  transition: 500ms;
+}
+
+/* .mySwiper :is(.swiper-button-next:hover, .swiper-button-prev:hover) {
+   background-color: rgba(0, 0, 0, 0.603); 
+}
+.mySwiper :is(.swiper-button-prev, .swiper-rtl .swiper-button-next) {
+  /* left: 0; 
+}
+.mySwiper :is(.swiper-button-next, .swiper-rtl .swiper-button-prev) {
+  /* right: 0; 
+} */
+.mySwiper .swiper-pagination {
+  position: static;
+}
+
+.mySwiper .swiper-pagination-bullet {
+  --box: 10px;
+  background-color: white;
+  width: var(--box);
+  height: var(--box);
+  transition: 250ms;
+}
+
+.mySwiper .swiper-pagination-bullet-active {
+  --box: 11px;
+  width: var(--box);
+  height: var(--box);
+}

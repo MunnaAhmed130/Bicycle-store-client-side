@@ -32,7 +32,7 @@ const Carousel = ({
   }, [curr]);
 
   return (
-    <div className="overflow-hidden relative h-screen w-full">
+    <div className="overflow-hidden h-screen w-full">
       <div
         className={`${
           fade ? "relative" : "flex "
@@ -42,23 +42,25 @@ const Carousel = ({
         {banner}
       </div>
 
-      <div className="absolute inset-0 flex items-center justify-between p-4 ">
-        <button
-          onClick={prev}
-          className="p-3 rounded-full shadow bg-black/50 text-white-800 hover:text-white z-20"
-        >
-          <BsChevronLeft size={30} />
-        </button>
+      <div className="absolute inset-0 px-4 hidden ">
+        <div className="flex items-center justify-between h-screen">
+          <button
+            onClick={prev}
+            className="p-3 rounded-full shadow bg-black/50 text-white-800 hover:text-white z-20"
+          >
+            <BsChevronLeft size={30} />
+          </button>
 
-        <button
-          onClick={next}
-          className="p-3 rounded-full shadow bg-black/50 text-white-800 hover:text-white z-20"
-        >
-          <BsChevronRight size={30} />
-        </button>
+          <button
+            onClick={next}
+            className="p-3 rounded-full shadow bg-black/50 text-white-800 hover:text-white z-20"
+          >
+            <BsChevronRight size={30} />
+          </button>
+        </div>
       </div>
 
-      <div className="absolute bottom-4 right-0 left-0">
+      <div className="absolute bottom-4 right-0 left-0 hidden">
         <div className="flex items-center justify-center gap-2">
           {banner.map((_, i) => (
             <div
