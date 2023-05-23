@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, defer } from "react-router-dom";
 import Main from "../layout/Main/Main";
 import NotFound from "../Components/NotFound/NotFound";
 import Explore from "../Components/Explore/Explore/Explore";
@@ -9,6 +9,16 @@ import PrivateRoute from "../Components/PrivateRoute/PrivateRoute";
 import Pay from "../Components/Dashboard/User/Pay/Pay";
 import Dashboard from "../Components/Dashboard/Dashboard/Dashboard";
 import Home from "../pages/Home/Home";
+
+// export const getReviews = async () => {
+//   const response = await fetch(`http://localhost:4000/reviews`);
+//   return await response.json();
+// };
+
+// export const getProducts = async () => {
+//   const response = await fetch(`http://localhost:4000/products`);
+//   return await response.json();
+// };
 
 const routes = createBrowserRouter([
   {

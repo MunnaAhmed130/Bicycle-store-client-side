@@ -28,3 +28,7 @@ body {
 .p-section {
   @apply sm:px-20 px-5 py-4;
 }
+
+svg {
+  @apply inline-block;
+}
