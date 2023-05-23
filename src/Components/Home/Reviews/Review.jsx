@@ -1,19 +1,19 @@
-// import { Col, Row } from "react-bootstrap";
-import "./SingleReview.css";
-
-const SingleReview = ({ review }) => {
+const Review = ({ review }) => {
   const { name, url, profession, description, rating } = review;
   //   const [value, setValue] = React.useState(rating);
   // console.log(value)
-  const animate = true;
   return (
-    <div className={animate && `animate-fadeOut`}>
+    <div>
       <div>
         <div className="single-review">
           <div className="col">
             <div className="reviewer">
               <h3>{name}</h3>
-              {url && <img className="review-img" src={url} alt="" />}
+              <img
+                className="[--box:3.5rem] w-[var(--box)] h-[var(--box)] object-cover rounded-full"
+                src={url}
+                alt=""
+              />
               <br />
             </div>
             <h4>{profession}</h4>
@@ -28,4 +28,4 @@ const SingleReview = ({ review }) => {
   );
 };
 
-export default SingleReview;
+export default Review;

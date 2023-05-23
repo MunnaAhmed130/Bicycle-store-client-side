@@ -17,8 +17,8 @@ const Products = () => {
   const data = useLoaderData();
 
   return (
-    <section className="py-16 ">
-      <h3 className="text-center text-5xl uppercase font-bold text-white tracking-wide py-12">
+    <section className="py-20 ">
+      <h3 className="text-center text-5xl uppercase font-bold text-white tracking-wide pb-12">
         Featured Bicycles
       </h3>
 

@@ -9,8 +9,8 @@ export default {
       fontFamily: {
         Roboto: ["Roboto", "sans-serif"],
         poppins: ["Poppins", "sans-serif"],
-        lato: ["Lato", "sans-serif"],
-        code: [
+        Lato: ["Lato", "sans-serif"],
+        Code: [
           "source-code-pro",
           "Menlo",
           "Monaco",

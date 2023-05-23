@@ -1,31 +1,32 @@
 import { useEffect, useState } from "react";
-// import { Row } from "react-bootstrap";
+import Review from "./Review";
 import "./Reviews.css";
-import SingleReview from "../SingleReview/SingleReview";
 
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    fetch("fakeReview.json")
-      // fetch("http://localhost:4000/reviews")
+    // fetch("fakeReview.json")
+    fetch("https://bicycle-store-server-side.vercel.app/reviews")
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);
 
   return (
-    <div className="reviews-container">
-      <div className="review-info">
-        <h2>Some Valuable Opinions!</h2>
-        <h3>Reviews</h3>
+    <section className="max-w-7xl mx-auto py-20 ">
+      <div className="text-center">
+        <h2 className="uppercase text-5xl font-semibold">
+          Some Valuable Opinions!
+        </h2>
+        <h3 className="py-2 text-lg font-roboto">Reviews</h3>
       </div>
 
-      <div className="reviews">
+      <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 p-section">
         {reviews.map((review) => (
-          <SingleReview key={review._id} review={review}></SingleReview>
+          <Review key={review._id} review={review}></Review>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 
