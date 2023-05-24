@@ -22,7 +22,7 @@ const Product = ({ product }) => {
           <div className="w-full text-center">
             <Blurhash
               hash={blurHash}
-              width={400}
+              width={500}
               height={240}
               resolutionX={32}
               resolutionY={32}
@@ -30,6 +30,7 @@ const Product = ({ product }) => {
             />
           </div>
         )}
+
         <img
           src={product.url}
           alt={product.name}
@@ -40,11 +41,11 @@ const Product = ({ product }) => {
       </div>
 
       <div className="px-3 py-5 ">
-        <h5 className="lg:text-[18px] text-base pb-1  text-white">
+        <h4 className="lg:text-[18px] sm:text-[17px] text-[15px] pb-1  text-white">
           {product.name}
-        </h5>
+        </h4>
         <p className="text-[#d8d8d8] text-[15px]">
-          {product.description.slice(0, 100)}...
+          {product.description.slice(0, 120)}...
         </p>
       </div>
     </div>

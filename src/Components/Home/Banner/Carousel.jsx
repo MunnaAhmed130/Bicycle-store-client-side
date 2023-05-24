@@ -60,7 +60,7 @@ const Carousel = ({
         </div>
       </div>
 
-      <div className="absolute bottom-4 right-0 left-0 hidden">
+      <div className="absolute bottom-4 right-0 left-0 ">
         <div className="flex items-center justify-center gap-2">
           {banner.map((_, i) => (
             <div

@@ -1,3 +1,7 @@
+.banner-heading {
+  @apply xl:text-9xl lg:text-8xl md:text-[4.7rem] sm:text-[4rem] xs:text-5xl text-banner-sm leading-none uppercase sm:font-semibold font-extrabold text-white transition-all;
+}
+
 .animate-fade {
   animation: fade 500ms linear;
 }

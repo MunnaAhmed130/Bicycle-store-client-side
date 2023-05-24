@@ -6,7 +6,6 @@ import "./Navbar.css";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
-  // console.log(toggle);
 
   return (
     <nav className="w-full relative lg:px-20 md:px-10 px-5 py-4 text-center flex-center h-[--navbar-height]  top-0 z-20 transition-all">
@@ -30,7 +29,7 @@ const Navbar = () => {
         >
           <button
             onClick={() => setToggle(!toggle)}
-            className="text-3xl text-slate-400"
+            className="text-3xl text-slate-400 flex items-center"
           >
             {toggle ? <IoCloseOutline /> : <IoMenuOutline />}
           </button>

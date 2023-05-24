@@ -27,6 +27,11 @@
     width: 1200px;
   }
 }
+@media screen and (min-width: 1400px) {
+  .mySwiper {
+    width: 1280px;
+  }
+}
 
 .mySwiper .swiper-button-next:after,
 .mySwiper .swiper-button-prev:after {

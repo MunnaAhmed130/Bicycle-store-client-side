@@ -9,11 +9,12 @@ const Review = ({ review }) => {
         <div className="flex gap-5 items-center">
           <img
             className="[--box:3.5rem] w-[var(--box)] h-[var(--box)] object-cover rounded-full"
+            referrerPolicy="no-referrer"
             src={url}
             alt=""
           />
           <div className="flex flex-col gap-1">
-            <span className=" text-lg capitalize font-semibold leading-none">
+            <span className=" md:text-lg text-[17px] capitalize font-semibold leading-none text-[white]/95">
               {name}
             </span>
             <span className="text-sm leading-none">{profession}</span>
@@ -26,7 +27,7 @@ const Review = ({ review }) => {
           </div>
         </div>
         {/* <Rating name="read-only" value={value} readOnly /> */}
-        <p className="text-[white] text-[15px]">{description}</p>
+        <p className="text-[#dadada] text-[15px]">{description}</p>
       </div>
     </div>
   );

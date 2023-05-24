@@ -18,7 +18,7 @@ const Products = () => {
 
   return (
     <section className="py-20  ">
-      <h3 className="text-center text-5xl uppercase font-bold text-white tracking-wide pb-12">
+      <h3 className="text-center md:text-5xl text-xl  uppercase font-bold text-white tracking-wide pb-12">
         Featured Bicycles
       </h3>
 
@@ -39,6 +39,10 @@ const Products = () => {
           },
           1280: {
             width: 1200,
+            slidesPerView: 3,
+          },
+          1400: {
+            width: 1280,
             slidesPerView: 3,
           },
         }}

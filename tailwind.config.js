@@ -5,6 +5,7 @@ export default {
     extend: {
       screens: {
         xs: "450px",
+        xxs: "320px",
       },
       fontFamily: {
         Roboto: ["Roboto", "sans-serif"],
@@ -19,6 +20,10 @@ export default {
           "monospace",
         ],
       },
+      fontSize: {
+        "banner-sm": "clamp( 2.25rem , 8vw + 0.75rem ,  3rem )",
+      },
+      spacing: {},
     },
   },
   plugins: [],

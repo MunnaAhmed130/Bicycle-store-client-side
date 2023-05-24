@@ -20,7 +20,7 @@ const Banner = () => {
         setCurr={setCurr}
         setLast={setLast}
         fade={fade}
-        setSlideInterval={4000}
+        setSlideInterval={10000}
         autoSlide={true}
       >
         {bannerImg.map((banner, i) => (
