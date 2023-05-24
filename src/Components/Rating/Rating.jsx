@@ -27,24 +27,24 @@ const Rating = ({ count, emptyColor, className, outlineColor }) => {
   };
 
   return (
-    <div className="rating--star">
-      {[...Array(5)].map((star, index) => {
+    <div className="inline-block leading-none">
+      {[...Array(5)].map((_, index) => {
         let number = index + 0.1;
         return (
-          // star button here
           <span
-            // type="button"
             key={index}
-            className={className ? `${className} star ` : "star "}
+            className={`${
+              className && className
+            }  bg-transparent cursor-pointer leading-none`}
           >
             {rating >= index + 1 ? (
               <span>
                 {/* full star  */}
                 {outlineColor ? (
-                  <span className=" parent--star">
-                    <BsStarFill className="" />
+                  <span className="relative">
+                    <BsStarFill />
                     <BsStar
-                      className={"star-outline"}
+                      className="absolute bottom-0 left-0 z-10"
                       style={outlineColor && outline}
                     />
                   </span>
@@ -54,24 +54,28 @@ const Rating = ({ count, emptyColor, className, outlineColor }) => {
                 )}
               </span>
             ) : rating >= number ? (
-              <span className="parent--star">
-                {/* <BsStarFill className="star--empty" /> */}
-                {/* half star  */}
-                <span className="half" style={half}>
-                  <BsStarFill className="half--star" />
+              <span className="relative leading-none inline-block">
+                {/* half star = full star - empty */}
+                <span
+                  className=" absolute left-0  z-20 overflow-hidden leading-none inline-block"
+                  style={half}
+                >
+                  {/* full star  */}
+                  <BsStarFill className="" />
                 </span>
+                {/* <BsStarFill className="absolute bottom-0 leading-none" /> */}
+
                 {/* empty star  */}
                 {emptyColor ? (
-                  <BsStarFill className="star--empty" style={empty} />
+                  <BsStarFill className="" style={empty} />
                 ) : (
-                  <BsStarFill
-                    className="star--empty"
-                    style={{ color: "transparent" }}
-                  />
+                  <BsStarFill className="" style={{ color: "transparent" }} />
                 )}
                 {/* star outline  */}
                 <BsStar
-                  className={`${emptyColor ? emptyColor : ""} half-outline `}
+                  className={`${
+                    emptyColor ? emptyColor : ""
+                  } absolute bottom-0 left-0 `}
                   style={outlineColor && outline}
                 />
               </span>
@@ -79,15 +83,15 @@ const Rating = ({ count, emptyColor, className, outlineColor }) => {
               // empty star with or without background color
               <span>
                 {emptyColor ? (
-                  <span className="parent--star">
+                  <span className="relative">
                     <BsStarFill
-                      className="dummy--star"
+                      className=""
                       style={{
                         color: ` ${emptyColor}`,
                       }}
                     />
                     <BsStar
-                      className="star-outline"
+                      className=" absolute bottom-0 left-0"
                       style={outlineColor && outline}
                     />
                   </span>
