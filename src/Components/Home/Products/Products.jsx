@@ -15,16 +15,15 @@ import "swiper/css/a11y";
 
 const Products = () => {
   const data = useLoaderData();
-
+  // console.log(data);
   return (
-    <section className="py-20  ">
+    <section className="py-20 bg-[#2f3640]  ">
       <h3 className="text-center md:text-5xl text-xl  uppercase font-bold text-white tracking-wide pb-12">
         Featured Bicycles
       </h3>
 
       <Swiper
         breakpoints={{
-          // when window width is >= 640px
           640: {
             width: 600,
             slidesPerView: 2,
@@ -53,7 +52,7 @@ const Products = () => {
         }}
         navigation={true}
         modules={[Pagination, Navigation, Scrollbar, A11y]}
-        className={`mySwiper px-5 max-w-7xl`}
+        className={`mySwiper my-4 `}
       >
         {data.map((product) => (
           <SwiperSlide key={product.name}>

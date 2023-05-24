@@ -1,5 +1,5 @@
 .mySwiper {
-  @apply w-[90%];
+  @apply w-[90%] my-3;
 }
 
 @media screen and (min-width: 640px) {
