@@ -13,18 +13,20 @@ const Reviews = () => {
   }, []);
 
   return (
-    <section className="max-w-7xl mx-auto py-20 ">
-      <div className="text-center">
-        <h2 className="uppercase text-5xl font-semibold ">
-          Some Valuable Opinions!
-        </h2>
-        <h3 className="py-2 text-lg ">Reviews</h3>
-      </div>
+    <section className=" py-20 bg-[#1d1d1d]">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center">
+          <h2 className="uppercase text-5xl font-semibold text-white">
+            Some Valuable Opinions!
+          </h2>
+          <h3 className="py-2 text-2xl">Reviews</h3>
+        </div>
 
-      <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 p-section">
-        {reviews.map((review) => (
-          <Review key={review._id} review={review}></Review>
-        ))}
+        <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:px-10 px-5 py-4">
+          {reviews.map((review) => (
+            <Review key={review._id} review={review}></Review>
+          ))}
+        </div>
       </div>
     </section>
   );

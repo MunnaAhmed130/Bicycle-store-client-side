@@ -17,7 +17,7 @@ const Products = () => {
   const data = useLoaderData();
 
   return (
-    <section className="py-20 ">
+    <section className="py-20  ">
       <h3 className="text-center text-5xl uppercase font-bold text-white tracking-wide pb-12">
         Featured Bicycles
       </h3>
@@ -38,18 +38,18 @@ const Products = () => {
             slidesPerView: 2,
           },
           1280: {
-            width: 1080,
+            width: 1200,
             slidesPerView: 3,
           },
         }}
-        spaceBetween={10}
+        spaceBetween={15}
         loop={true}
         pagination={{
           clickable: true,
         }}
         navigation={true}
         modules={[Pagination, Navigation, Scrollbar, A11y]}
-        className={`mySwiper px-5`}
+        className={`mySwiper px-5 max-w-7xl`}
       >
         {data.map((product) => (
           <SwiperSlide key={product.name}>

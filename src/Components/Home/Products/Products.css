@@ -1,10 +1,10 @@
 .mySwiper {
-  width: 100%;
+  @apply w-[90%];
 }
 
 @media screen and (min-width: 640px) {
   .mySwiper {
-    /* width: 470px; */
+    /* width: 90%; */
     width: 600px;
   }
 }
@@ -24,7 +24,7 @@
 
 @media screen and (min-width: 1280px) {
   .mySwiper {
-    width: 1080px;
+    width: 1200px;
   }
 }
 

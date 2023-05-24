@@ -4,7 +4,7 @@ const Review = ({ review }) => {
   const { name, url, profession, description, rating } = review;
 
   return (
-    <div className="single-review p-5">
+    <div className=" rounded-sm p-5 bg-[#332f2f] transition-all">
       <div className="flex flex-col gap-3">
         <div className="flex gap-5 items-center">
           <img
@@ -20,15 +20,13 @@ const Review = ({ review }) => {
             {/* <span className=""> */}
             <StarRating
               count={rating}
-              className="mx-[2px] text-lg"
-              // emptyColor="white"
-              // outlineColor="red"
+              className="mx-[2px] text-base text-[#faab34]"
             />
             {/* </span> */}
           </div>
         </div>
         {/* <Rating name="read-only" value={value} readOnly /> */}
-        <p className="">{description}</p>
+        <p className="text-[white] text-[15px]">{description}</p>
       </div>
     </div>
   );

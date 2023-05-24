@@ -9,7 +9,7 @@ const Navbar = () => {
   // console.log(toggle);
 
   return (
-    <nav className="w-full relative p-section text-center flex-center h-[--navbar-height]  top-0 z-20 transition-all">
+    <nav className="w-full relative lg:px-20 md:px-10 px-5 py-4 text-center flex-center h-[--navbar-height]  top-0 z-20 transition-all">
       <div className="max-w-7xl w-full mx-auto flex justify-between items-center">
         <Link
           to="/"
