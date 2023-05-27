@@ -15,7 +15,7 @@ const Review = ({ review }) => {
           />
 
           <div className="flex flex-col ">
-            <span className=" md:text-lg text-[17px] capitalize font-semibold leading-none text-[white]/95">
+            <span className=" md:text-lg text-[17px] capitalize font-semibold leading-none text-[white]/95  ">
               {name}
             </span>
 
@@ -28,7 +28,7 @@ const Review = ({ review }) => {
 
         <div className="bg-[#333333] p-5 relative mt-3">
           <div className=" absolute top-[-10px]  triangle"></div>
-          <p className="text-[#f3f3f3] text-[15px]">{description}</p>
+          <p className="text-[#f3f3f3] xl:text-lg text-[15px]">{description}</p>
         </div>
       </div>
     </div>

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { IoMenuOutline, IoCloseOutline } from "react-icons/io5";
 import NavList from "./NavList";
 import "./Navbar.css";
@@ -7,8 +7,16 @@ import "./Navbar.css";
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
 
+  const location = useLocation();
+  const path = location.pathname;
+  console.log(path);
+
   return (
-    <nav className="w-full relative lg:px-20 md:px-10 px-5 py-4 text-center flex-center h-[--navbar-height]  top-0 z-20 transition-all">
+    <nav
+      className={` ${
+        path.includes("explore") && `bg-[#2e2e2e]`
+      } w-full relative lg:px-20 md:px-10 px-5 py-4 text-center flex-center h-[--navbar-height]   top-0 z-20 transition-all `}
+    >
       <div className="max-w-7xl w-full mx-auto flex justify-between items-center">
         <Link
           to="/"
@@ -42,7 +50,7 @@ const Navbar = () => {
             <div
               className={` ${
                 toggle ? "nav-in absolute" : "animate-fadeOut relative"
-              }  sm:w-[calc(100%_-_160px)] w-[calc(100%_-_50px)] right-0 rounded-lg transition-all`}
+              }  sm:w-[calc(100%_-_160px)] w-[calc(100%_-_50px)] right-0 rounded-lg transition-all bg-[#1f1f1f]`}
             >
               <ul
                 className={`${

@@ -1,7 +1,7 @@
 import { createBrowserRouter, defer } from "react-router-dom";
 import Main from "../layout/Main/Main";
 import NotFound from "../Components/NotFound/NotFound";
-import Explore from "../Components/Explore/Explore/Explore";
+import Explore from "../pages/Explore/Explore";
 import Login from "../Components/Authentication/Login/Login";
 import Register from "../Components/Authentication/Register/Register";
 import DashboardHome from "../Components/Dashboard/DashboardHome/DashboardHome";
@@ -36,6 +36,9 @@ const routes = createBrowserRouter([
       },
       {
         path: "/explore",
+        loader: async () => {
+          return fetch("http://localhost:4000/products");
+        },
         element: <Explore />,
       },
     ],
