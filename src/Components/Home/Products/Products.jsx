@@ -1,6 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
+import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import Product from "./Product";
@@ -12,13 +12,16 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/scrollbar";
 import "swiper/css/a11y";
+import { useEffect } from "react";
 
 const Products = () => {
   const data = useLoaderData();
-  // console.log(data);
+
+  console.log(data);
+  // bg-[#2f3640]
   return (
-    <section className="py-20 bg-[#2f3640]  ">
-      <h3 className="text-center md:text-5xl text-xl  uppercase font-bold text-white tracking-wide pb-12">
+    <section className="py-20 ">
+      <h3 className="text-center lg:text-6xl md:text-5xl text-4xl uppercase font-bold text-black tracking-wide lg:pb-12 pb-6">
         Featured Bicycles
       </h3>
 
@@ -30,6 +33,10 @@ const Products = () => {
           },
           768: {
             width: 700,
+            slidesPerView: 2,
+          },
+          900: {
+            width: 860,
             slidesPerView: 2,
           },
           1080: {
@@ -45,20 +52,31 @@ const Products = () => {
             slidesPerView: 3,
           },
         }}
+        autoplay={{
+          delay: 10000,
+          disableOnInteraction: false,
+        }}
         spaceBetween={15}
         loop={true}
         pagination={{
           clickable: true,
         }}
         navigation={true}
-        modules={[Pagination, Navigation, Scrollbar, A11y]}
-        className={`mySwiper my-4 `}
+        modules={[Pagination, Navigation, Scrollbar, A11y, Autoplay]}
+        className={`mySwiper my-4`}
       >
-        {data.map((product) => (
+        {data
+          .filter((product) => product.rating >= 4.6)
+          .map((product) => (
+            <SwiperSlide key={product.name}>
+              <Product key={product.name} product={product} />
+            </SwiperSlide>
+          ))}
+        {/* {data.map((product) => (
           <SwiperSlide key={product.name}>
             <Product key={product.name} product={product} />
           </SwiperSlide>
-        ))}
+        ))} */}
       </Swiper>
     </section>
   );

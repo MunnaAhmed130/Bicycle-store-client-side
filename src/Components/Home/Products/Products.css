@@ -15,6 +15,14 @@
     /* width: 798px; */
   }
 }
+
+@media screen and (min-width: 900px) {
+  .mySwiper {
+    width: 860px;
+    /* width: 798px; */
+  }
+}
+
 @media screen and (min-width: 1080px) {
   .mySwiper {
     width: 1000px;

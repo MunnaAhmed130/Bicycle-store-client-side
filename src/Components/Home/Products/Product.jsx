@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { Blurhash } from "react-blurhash";
+import Rating from "../../Rating/Rating";
 
 const Product = ({ product }) => {
-  const { url, name, price, description } = product;
-
+  const { url, name, price, description, rating } = product;
+  // console.log(product);
   const [imageLoading, setImageLoading] = useState(true);
 
   let src = url;
@@ -17,9 +18,9 @@ const Product = ({ product }) => {
     };
     img.src = src;
   }, [src]);
-  // bg-[#3a3a3a]
+
   return (
-    <div className="[--image-height:15rem] z-10 h-auto  w-full   rounded-sm overflow-hidden  ">
+    <div className="[--image-height:15rem] z-10 h-auto  w-full   rounded-sm overflow-hidden cursor-pointer border">
       <div className="bg-white overflow-hidden">
         {imageLoading && (
           <div className="overflow-hidden h-[var(--image-height)]">
@@ -42,15 +43,22 @@ const Product = ({ product }) => {
           } w-full h-[var(--image-height)] object-contain object-center `}
         />
       </div>
-      {/* bg-[#1d2129] */}
-      <div className="px-3  bg-white text-center">
+
+      <div className="p-3  bg-white text-center">
         <h4 className="lg:text-[18px] sm:text-[17px] text-[15px] pb-1  text-black">
           {name}
         </h4>
-        <span className="text-red-600 font-extrabold text-xl">
+
+        <p className="text-black pb-2">
+          <Rating count={rating} className="text-orange-400 mr-[2px] text-xl" />
+          &nbsp;
+          <span className="text-red-500">({rating})</span>
+        </p>
+
+        <p className="text-red-500 font-extrabold text-lg">
           <span className="text-sm align-text-top">$</span>
           {price}.00
-        </span>
+        </p>
         {/* <p className="text-[#d8d8d8] text-[15px]">
           {product.description.slice(0, 120)}...
         </p> */}
