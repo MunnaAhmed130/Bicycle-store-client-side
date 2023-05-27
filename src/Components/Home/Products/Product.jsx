@@ -20,7 +20,7 @@ const Product = ({ product }) => {
   }, [src]);
 
   return (
-    <div className="[--image-height:15rem] z-10 h-auto  w-full   rounded-sm overflow-hidden cursor-pointer border">
+    <div className="[--image-height:15rem] z-10 h-auto  w-full   rounded-sm overflow-hidden cursor-pointer ">
       <div className="bg-white overflow-hidden">
         {imageLoading && (
           <div className="overflow-hidden h-[var(--image-height)]">

@@ -1,10 +1,10 @@
 import StarRating from "../../Rating/StarRating";
 
 const Review = ({ review }) => {
-  const { name, url, profession, description, rating } = review;
+  const { name, url, description, rating } = review;
 
   return (
-    <div className=" rounded-sm p-5 bg-[#353b48] transition-all">
+    <div className=" rounded-sm   transition-all ">
       <div className="flex flex-col gap-3">
         <div className="flex gap-5 items-center">
           <img
@@ -13,21 +13,23 @@ const Review = ({ review }) => {
             src={url}
             alt=""
           />
-          <div className="flex flex-col gap-1">
+
+          <div className="flex flex-col ">
             <span className=" md:text-lg text-[17px] capitalize font-semibold leading-none text-[white]/95">
               {name}
             </span>
-            <span className="text-sm leading-none">{profession}</span>
-            {/* <span className=""> */}
+
             <StarRating
               count={rating}
-              className="mx-[2px] text-base text-[#faab34]"
+              className="mx-[2px] text-sm text-[#faab34]"
             />
-            {/* </span> */}
           </div>
         </div>
-        {/* <Rating name="read-only" value={value} readOnly /> */}
-        <p className="text-[#dadada] text-[15px]">{description}</p>
+
+        <div className="bg-[#333333] p-5 relative mt-3">
+          <div className=" absolute top-[-10px]  triangle"></div>
+          <p className="text-[#f3f3f3] text-[15px]">{description}</p>
+        </div>
       </div>
     </div>
   );

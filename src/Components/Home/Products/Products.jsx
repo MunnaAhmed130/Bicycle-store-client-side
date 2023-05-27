@@ -20,9 +20,12 @@ const Products = () => {
   console.log(data);
   // bg-[#2f3640]
   return (
-    <section className="py-20 ">
-      <h3 className="text-center lg:text-6xl md:text-5xl text-4xl uppercase font-bold text-black tracking-wide lg:pb-12 pb-6">
+    <section className="py-28 ">
+      <p className="text-black text-center  pb-2 font-bold uppercase">
         Featured Bicycles
+      </p>
+      <h3 className="text-center lg:text-6xl md:text-5xl text-4xl  font-bold text-black tracking-wide lg:pb-16 pb-6">
+        Find Your Bicycle
       </h3>
 
       <Swiper
