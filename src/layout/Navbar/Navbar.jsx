@@ -15,7 +15,7 @@ const Navbar = () => {
     <nav
       className={` ${
         path.includes("explore") && `bg-[#2e2e2e]`
-      } w-full relative lg:px-20 md:px-10 px-5 py-4 text-center flex-center h-[--navbar-height]   top-0 z-20 transition-all `}
+      } w-full relative lg:px-20 md:px-10 px-5 py-4 text-center flex-center h-[--navbar-height]   top-0 z-20  `}
     >
       <div className="max-w-7xl w-full mx-auto flex justify-between items-center">
         <Link
@@ -50,7 +50,7 @@ const Navbar = () => {
             <div
               className={` ${
                 toggle ? "nav-in absolute" : "animate-fadeOut relative"
-              }  sm:w-[calc(100%_-_160px)] w-[calc(100%_-_50px)] right-0 rounded-lg transition-all bg-[#1f1f1f]`}
+              }  sm:w-[calc(100%_-_90px)] w-[calc(100%_-_50px)] right-0 rounded-lg transition-all bg-[#1f1f1f]`}
             >
               <ul
                 className={`${

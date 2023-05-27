@@ -50,7 +50,7 @@ const Product = ({ product }) => {
         </h4>
 
         <p className="text-black pb-2">
-          <Rating count={rating} className="text-orange-400 mr-[2px] text-xl" />
+          <Rating count={rating} className="text-orange-400 mr-[2px] text-lg" />
           &nbsp;
           <span className="text-red-500">({rating})</span>
         </p>
@@ -59,6 +59,7 @@ const Product = ({ product }) => {
           <span className="text-sm align-text-top">$</span>
           {price}.00
         </p>
+
         {/* <p className="text-[#d8d8d8] text-[15px]">
           {product.description.slice(0, 120)}...
         </p> */}

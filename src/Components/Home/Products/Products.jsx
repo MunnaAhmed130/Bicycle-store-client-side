@@ -24,7 +24,7 @@ const Products = () => {
       <p className="text-black text-center  pb-2 font-bold uppercase">
         Featured Bicycles
       </p>
-      <h3 className="text-center lg:text-6xl md:text-5xl text-4xl  font-bold text-black tracking-wide lg:pb-16 pb-6">
+      <h3 className="text-center lg:text-6xl md:text-5xl text-4xl  font-bold text-black tracking-wide lg:mb-16 mb-6">
         Find Your Bicycle
       </h3>
 
@@ -66,7 +66,7 @@ const Products = () => {
         }}
         navigation={true}
         modules={[Pagination, Navigation, Scrollbar, A11y, Autoplay]}
-        className={`mySwiper my-4`}
+        className={`mySwiper my-14`}
       >
         {data
           .filter((product) => product.rating >= 4.6)

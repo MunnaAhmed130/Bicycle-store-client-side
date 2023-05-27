@@ -5,11 +5,10 @@ import ExploreProducts from "../../Components/Explore/ExploreProducts";
 
 const Explore = () => {
   const products = useLoaderData();
-  console.log(products);
 
   return (
-    <section className="explore bg-[#2e2e2e] pt-10">
-      <h2 className="text-center uppercase">
+    <section className="explore bg-[#2e2e2e] py-10">
+      <h2 className="text-center uppercase text-4xl">
         Explore Our of Bicycle Collection
       </h2>
 
@@ -27,7 +26,7 @@ const Explore = () => {
         </div>
       )}
 
-      {!products.length || <Footer />}
+      {/* {!products.length || <Footer />} */}
     </section>
   );
 };
