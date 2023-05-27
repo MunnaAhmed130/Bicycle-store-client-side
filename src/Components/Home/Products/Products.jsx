@@ -1,18 +1,15 @@
 import { useLoaderData } from "react-router-dom";
+import Product from "./Product";
+import "./Products.css";
 
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import Product from "./Product";
-import "./Products.css";
-
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/scrollbar";
 import "swiper/css/a11y";
-import { useEffect } from "react";
 
 const Products = () => {
   const data = useLoaderData();
@@ -21,10 +18,10 @@ const Products = () => {
   // bg-[#2f3640]
   return (
     <section className="py-28 ">
-      <p className="text-black text-center  pb-2 font-bold uppercase">
+      <p className="text-black text-center lg:text-[1.0625rem] text-sm pb-2 font-extrabold uppercase text">
         Featured Bicycles
       </p>
-      <h3 className="text-center lg:text-6xl md:text-5xl text-4xl  font-bold text-black tracking-wide lg:mb-16 mb-6">
+      <h3 className="text-center lg:text-6xl md:text-5xl text-4xl uppercase font-bold text-black tracking-wide lg:mb-16 mb-6">
         Find Your Bicycle
       </h3>
 
@@ -75,11 +72,6 @@ const Products = () => {
               <Product key={product.name} product={product} />
             </SwiperSlide>
           ))}
-        {/* {data.map((product) => (
-          <SwiperSlide key={product.name}>
-            <Product key={product.name} product={product} />
-          </SwiperSlide>
-        ))} */}
       </Swiper>
     </section>
   );

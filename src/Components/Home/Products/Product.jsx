@@ -3,7 +3,8 @@ import { Blurhash } from "react-blurhash";
 import Rating from "../../Rating/Rating";
 
 const Product = ({ product }) => {
-  const { url, name, price, description, rating } = product;
+  const { url, name, price, description, tags, rating } = product;
+
   // console.log(product);
   const [imageLoading, setImageLoading] = useState(true);
 
@@ -20,8 +21,8 @@ const Product = ({ product }) => {
   }, [src]);
 
   return (
-    <div className="[--image-height:15rem] z-10 h-auto  w-full   rounded-sm overflow-hidden cursor-pointer ">
-      <div className="bg-white overflow-hidden">
+    <div className="[--image-height:15rem] z-10 h-auto w-full rounded-sm overflow-hidden cursor-pointer">
+      <div className="bg-white overflow-hidden relative">
         {imageLoading && (
           <div className="overflow-hidden h-[var(--image-height)]">
             <Blurhash
@@ -42,6 +43,17 @@ const Product = ({ product }) => {
             imageLoading && "hidden"
           } w-full h-[var(--image-height)] object-contain object-center `}
         />
+
+        <div className="absolute top-0">
+          {tags.map((tag) => (
+            <span
+              key={crypto.randomUUID()}
+              className={`text-white text-xs font-bold py-1 px-2 bg-[#1683e9] m-1 rounded  uppercase`}
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
       </div>
 
       <div className="p-3  bg-white text-center">
@@ -49,17 +61,16 @@ const Product = ({ product }) => {
           {name}
         </h4>
 
-        <p className="text-black pb-2">
+        <div className="text-black pb-1">
           <Rating count={rating} className="text-orange-400 mr-[2px] text-lg" />
           &nbsp;
           <span className="text-red-500">({rating})</span>
-        </p>
+        </div>
 
         <p className="text-red-500 font-extrabold text-lg">
           <span className="text-sm align-text-top">$</span>
           {price}.00
         </p>
-
         {/* <p className="text-[#d8d8d8] text-[15px]">
           {product.description.slice(0, 120)}...
         </p> */}
