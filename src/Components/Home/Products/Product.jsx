@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Blurhash } from "react-blurhash";
 import Rating from "../../Rating/Rating";
+import Tag from "./Tag";
 
 const Product = ({ product }) => {
   const { url, name, price, description, tags, rating } = product;
@@ -20,8 +21,8 @@ const Product = ({ product }) => {
   }, [src]);
 
   return (
-    <div className="[--image-height:15rem] z-10 h-auto w-full rounded-sm overflow-hidden cursor-pointer">
-      <div className="bg-white overflow-hidden relative">
+    <div className="[--image-height:15rem] z-10 h-auto w-full rounded-sm overflow-hidden cursor-pointer ">
+      <div className=" overflow-hidden relative bg-[#E5E5E5]">
         {imageLoading && (
           <div className="overflow-hidden h-[var(--image-height)]">
             <Blurhash
@@ -40,28 +41,23 @@ const Product = ({ product }) => {
           alt={name}
           className={`${
             imageLoading && "hidden"
-          } w-full h-[var(--image-height)] object-contain object-center `}
+          } w-full h-[var(--image-height)] object-contain object-center brightness-90 `}
         />
 
         <div className="absolute top-0">
           {tags.map((tag) => (
-            <span
-              key={crypto.randomUUID()}
-              className={`text-white text-xs font-bold py-1 px-2 bg-[#1683e9] m-1 rounded  uppercase`}
-            >
-              {tag}
-            </span>
+            <Tag key={crypto.randomUUID()} tag={tag} />
           ))}
         </div>
       </div>
 
-      <div className="p-3   text-center">
-        <h4 className="lg:text-[18px] sm:text-[17px] text-[15px] pb-1  text-white">
+      <div className="p-3  text-center">
+        <h4 className="lg:text-[18px] sm:text-[17px] text-[15px] pb-1  text-black">
           {name}
         </h4>
 
         <div className="text-white pb-1">
-          <Rating count={rating} className="text-orange-400 mr-[2px] text-lg" />
+          <Rating count={rating} className="text-white mr-[2px] text-lg" />
           &nbsp;
           <span className="text-red-500">({rating})</span>
         </div>

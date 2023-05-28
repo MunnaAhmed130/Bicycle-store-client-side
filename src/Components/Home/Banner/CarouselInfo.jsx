@@ -16,7 +16,10 @@ const CarouselInfo = ({ banner, i, fade, curr, last, alt }) => {
   return (
     <>
       {fade && (
-        <>
+        <div
+          className={`${i == curr ? "animte-fade" : "opacity-0 z-0"}
+      }  ${i == last && "animate-fadeOut"} absolute inset-0 w-screen h-screen`}
+        >
           {imageLoading && (
             <div className="h-screen w-screen overflow-hidden">
               <Blurhash
@@ -33,12 +36,11 @@ const CarouselInfo = ({ banner, i, fade, curr, last, alt }) => {
           <img
             src={banner.src}
             alt={alt}
-            className={` ${i == curr ? "animate-fade" : "opacity-0 z-0"}
-            }  ${i == last ? " animate-fadeOut" : ""} ${
-              imageLoading ? "hidden" : "opacity-100"
+            className={` ${
+              imageLoading ? "hidden" : "animate-fade"
             }  absolute min-w-full h-screen object-cover brightness-75 object-center w-full  transition-all `}
           />
-          {/* <div className="banner-gradient z-20 h-screen w-full absolute" /> */}
+          <div className="banner-gradient z-20 h-screen w-full absolute" />
           {banner.text && (
             <div
               className={` ${i == curr ? "opacity-100" : "opacity-0"}
@@ -52,7 +54,7 @@ const CarouselInfo = ({ banner, i, fade, curr, last, alt }) => {
               </div>
             </div>
           )}
-        </>
+        </div>
       )}
       {!fade && (
         <>

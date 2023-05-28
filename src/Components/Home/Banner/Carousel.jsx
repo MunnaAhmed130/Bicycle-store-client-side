@@ -26,7 +26,7 @@ const Carousel = ({
     setCurr(i);
   };
 
-  console.log(curr, last);
+  // console.log(curr, last);
   useEffect(() => {
     if (!autoSlide) return;
     const slideInterval = setInterval(next, setSlideInterval);
@@ -38,13 +38,14 @@ const Carousel = ({
       <div
         className={`${
           fade ? "relative " : "flex "
-        }  transition-all ease-out duration-[3s] h-screen w-full`}
+        }  transition-transform ease-out duration-1000 h-screen w-full`}
         style={{ transform: `${!fade && `translateX(-${curr * 100}%)`}` }}
       >
         {banner}
       </div>
 
-      <div className="absolute inset-0 px-4 hidden ">
+      {/* indicator button */}
+      <div className="absolute inset-0 px-4  hidden">
         <div className="flex items-center justify-between h-screen">
           <button
             onClick={prev}
@@ -62,7 +63,8 @@ const Carousel = ({
         </div>
       </div>
 
-      <div className="absolute bottom-4 right-0 left-0 z-50">
+      {/* pagination button */}
+      <div className="absolute bottom-4 right-0 left-0 z-50 hidden">
         <div className="flex items-center justify-center gap-2">
           {banner.map((_, i) => (
             <div
