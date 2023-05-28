@@ -1,4 +1,5 @@
 import StarRating from "../../Rating/StarRating";
+import styles from "./Reviews.module.css";
 
 const Review = ({ review }) => {
   const { name, url, description, rating } = review;
@@ -27,7 +28,7 @@ const Review = ({ review }) => {
         </div>
 
         <div className="bg-[#333333] p-5 relative mt-3">
-          <div className=" absolute top-[-10px]  triangle"></div>
+          <div className={`absolute top-[-10px] ${styles.triangle}`}></div>
           <p className="text-[#f3f3f3] xl:text-lg text-[15px]">{description}</p>
         </div>
       </div>

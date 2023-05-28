@@ -44,7 +44,7 @@ const Product = ({ product }) => {
           } w-full h-[var(--image-height)] object-contain object-center brightness-90 `}
         />
 
-        <div className="absolute top-0">
+        <div className="absolute top-0 p-2">
           {tags.map((tag) => (
             <Tag key={crypto.randomUUID()} tag={tag} />
           ))}
@@ -52,14 +52,14 @@ const Product = ({ product }) => {
       </div>
 
       <div className="p-3  text-center">
-        <h4 className="lg:text-[18px] sm:text-[17px] text-[15px] pb-1  text-black">
+        <h4 className="lg:text-[18px] sm:text-[17px] text-[15px] pb-1  text-white">
           {name}
         </h4>
 
-        <div className="text-white pb-1">
-          <Rating count={rating} className="text-white mr-[2px] text-lg" />
+        <div className="text-red-500 pb-1">
+          <Rating count={rating} className="text-red-500 mr-[2px] text-lg" />
           &nbsp;
-          <span className="text-red-500">({rating})</span>
+          <span className="">({rating})</span>
         </div>
 
         <p className="text-white font-extrabold text-lg">
