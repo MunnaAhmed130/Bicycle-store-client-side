@@ -5,7 +5,6 @@ import Rating from "../../Rating/Rating";
 const Product = ({ product }) => {
   const { url, name, price, description, tags, rating } = product;
 
-  // console.log(product);
   const [imageLoading, setImageLoading] = useState(true);
 
   let src = url;
@@ -56,12 +55,12 @@ const Product = ({ product }) => {
         </div>
       </div>
 
-      <div className="p-3  bg-white text-center">
-        <h4 className="lg:text-[18px] sm:text-[17px] text-[15px] pb-1  text-black">
+      <div className="p-3   text-center">
+        <h4 className="lg:text-[18px] sm:text-[17px] text-[15px] pb-1  text-white">
           {name}
         </h4>
 
-        <div className="text-black pb-1">
+        <div className="text-white pb-1">
           <Rating count={rating} className="text-orange-400 mr-[2px] text-lg" />
           &nbsp;
           <span className="text-red-500">({rating})</span>

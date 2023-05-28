@@ -7,6 +7,7 @@ const Carousel = ({
   setSlideInterval,
   curr,
   setCurr,
+  last,
   fade,
   setLast,
 }) => {
@@ -25,6 +26,7 @@ const Carousel = ({
     setCurr(i);
   };
 
+  console.log(curr, last);
   useEffect(() => {
     if (!autoSlide) return;
     const slideInterval = setInterval(next, setSlideInterval);
@@ -35,8 +37,8 @@ const Carousel = ({
     <div className="overflow-hidden h-screen w-full">
       <div
         className={`${
-          fade ? "relative" : "flex "
-        }  transition-transform ease-out duration-1000 h-screen w-full`}
+          fade ? "relative " : "flex "
+        }  transition-all ease-out duration-[3s] h-screen w-full`}
         style={{ transform: `${!fade && `translateX(-${curr * 100}%)`}` }}
       >
         {banner}
@@ -60,7 +62,7 @@ const Carousel = ({
         </div>
       </div>
 
-      <div className="absolute bottom-4 right-0 left-0 ">
+      <div className="absolute bottom-4 right-0 left-0 z-50">
         <div className="flex items-center justify-center gap-2">
           {banner.map((_, i) => (
             <div

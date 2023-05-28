@@ -13,13 +13,14 @@ const Banner = () => {
     <section
       className={`${
         fade && `relative`
-      } h-screen min-w-full w-full bg-[black] -mt-[--navbar-height] `}
+      } h-screen min-w-full w-full bg-black -mt-[--navbar-height] `}
     >
       <Carousel
         curr={curr}
         setCurr={setCurr}
         setLast={setLast}
         fade={fade}
+        last={last}
         setSlideInterval={10000}
         autoSlide={true}
       >

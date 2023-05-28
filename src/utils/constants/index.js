@@ -36,6 +36,16 @@ const bannerImg = [
         "We create the best Cycling Experiences of a lifetime. We can fit you with the perfect bike because we carry all sizes and types of bikes",
     },
   },
+  {
+    src: "https://i.ibb.co/PgvhsyP/h1-bannernew.jpg",
+    blurHash:
+      "Y15OZ@~q004nogRPRkWV004n-;-;WBxuoLay?as.t8t8oLNGozofIUbIV@RjV@kCWBf6",
+    text: {
+      title: "Bicycles for Adventures",
+      description:
+        "We create the best Cycling Experiences of a lifetime. We can fit you with the perfect bike because we carry all sizes and types of bikes",
+    },
+  },
 ];
 
 export { navLinks, bannerImg };

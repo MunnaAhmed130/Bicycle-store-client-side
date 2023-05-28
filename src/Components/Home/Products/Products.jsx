@@ -16,12 +16,14 @@ const Products = () => {
 
   console.log(data);
   // bg-[#2f3640]
+  // lg:text-[1.0625rem]
   return (
-    <section className="py-28 ">
-      <p className="text-black text-center lg:text-[1.0625rem] text-sm pb-2 font-extrabold uppercase text">
+    <section className="py-28 bg-black">
+      <p className="text-white text-center  text-sm pb-2 font-extrabold uppercase text">
         Featured Bicycles
       </p>
-      <h3 className="text-center lg:text-6xl md:text-5xl text-4xl uppercase font-bold text-black tracking-wide lg:mb-16 mb-6">
+
+      <h3 className="text-center lg:text-6xl md:text-5xl text-4xl uppercase font-bold text-white tracking-wide lg:mb-16 mb-6">
         Find Your Bicycle
       </h3>
 
@@ -63,7 +65,7 @@ const Products = () => {
         }}
         navigation={true}
         modules={[Pagination, Navigation, Scrollbar, A11y, Autoplay]}
-        className={`mySwiper my-14`}
+        className={`mySwiper mb-14 mt-20`}
       >
         {data
           .filter((product) => product.rating >= 4.6)

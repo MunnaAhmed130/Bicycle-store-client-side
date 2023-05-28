@@ -33,17 +33,16 @@ const CarouselInfo = ({ banner, i, fade, curr, last, alt }) => {
           <img
             src={banner.src}
             alt={alt}
-            className={` ${i == curr ? "animate-fade" : "opacity-0"}
-            }  ${i == last && "animate-fadeOut"} ${
-              imageLoading ? "hidden" : "animate-fade"
-            }  absolute min-w-full h-screen object-cover brightness-75 object-center w-full  `}
+            className={` ${i == curr ? "animate-fade" : "opacity-0 z-0"}
+            }  ${i == last ? " animate-fadeOut" : ""} ${
+              imageLoading ? "hidden" : "opacity-100"
+            }  absolute min-w-full h-screen object-cover brightness-75 object-center w-full  transition-all `}
           />
-
+          {/* <div className="banner-gradient z-20 h-screen w-full absolute" /> */}
           {banner.text && (
             <div
-              className={` ${
-                fade && `${i == curr ? "animate-fade" : "opacity-0"}`
-              } animate-fade flex w-full  h-screen text-center  items-center justify-center  absolute z-10`}
+              className={` ${i == curr ? "opacity-100" : "opacity-0"}
+              } flex w-full  h-screen text-center  items-center justify-center  absolute z-20`}
             >
               <div className=" flex flex-col sm:gap-3 gap-2 xl:max-w-5xl lg:max-w-3xl md:max-w-xl sm:max-w-lg max-w-sm px-5 transition-all mt-16">
                 <h3 className="banner-heading">{banner.text.title}</h3>
