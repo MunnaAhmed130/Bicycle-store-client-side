@@ -14,12 +14,9 @@ import "swiper/css/a11y";
 const Products = () => {
   const data = useLoaderData();
 
-  console.log(data);
-  // bg-[#2f3640]
-  // lg:text-[1.0625rem]
   return (
     <section className="py-52 bg-[#0D1314]">
-      <p className="text-white text-center  text-sm pb-2 font-extrabold uppercase text">
+      <p className="text-gray-100 text-center font-bold pb-2 uppercase ">
         Featured Bicycles
       </p>
 

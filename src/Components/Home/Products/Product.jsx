@@ -62,7 +62,7 @@ const Product = ({ product }) => {
           <span className="text-red-500">({rating})</span>
         </div>
 
-        <p className="text-red-500 font-extrabold text-lg">
+        <p className="text-white font-extrabold text-lg">
           <span className="text-sm align-text-top">$</span>
           {price}.00
         </p>

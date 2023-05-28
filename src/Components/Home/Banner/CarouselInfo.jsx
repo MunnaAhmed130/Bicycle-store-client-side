@@ -21,7 +21,7 @@ const CarouselInfo = ({ banner, i, fade, curr, last, alt }) => {
       }  ${i == last && "animate-fadeOut"} absolute inset-0 w-screen h-screen`}
         >
           {imageLoading && (
-            <div className="h-screen w-screen overflow-hidden">
+            <div className="h-screen w-screen overflow-hidden absolute ">
               <Blurhash
                 hash={banner.blurHash}
                 width={3000}
@@ -40,11 +40,11 @@ const CarouselInfo = ({ banner, i, fade, curr, last, alt }) => {
               imageLoading ? "hidden" : "animate-fade"
             }  absolute min-w-full h-screen object-cover brightness-75 object-center w-full  transition-all `}
           />
-          <div className="banner-gradient z-20 h-screen w-full absolute" />
+          <div className="banner-gradient z-10 h-screen w-full absolute" />
           {banner.text && (
             <div
-              className={` ${i == curr ? "opacity-100" : "opacity-0"}
-              } flex w-full  h-screen text-center  items-center justify-center  absolute z-20`}
+              className={`${i == curr ? "opacity-100" : "opacity-0"}
+               flex w-full  h-screen text-center  items-center justify-center  absolute z-10`}
             >
               <div className=" flex flex-col sm:gap-3 gap-2 xl:max-w-5xl lg:max-w-3xl md:max-w-xl sm:max-w-lg max-w-sm px-5 transition-all mt-16">
                 <h3 className="banner-heading">{banner.text.title}</h3>
