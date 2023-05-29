@@ -3,3 +3,12 @@
   border-width: 0 10px 10px 10px;
   border-color: transparent transparent #333333 transparent;
 }
+
+.reviews {
+  background-image: linear-gradient(
+    180deg,
+    rgba(34, 34, 34, 1) 0%,
+    rgba(34, 34, 34, 1) 80%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}

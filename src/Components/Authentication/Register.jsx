@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import Footer from "../Shared/Footer/Footer";
 // import FooterBottom from "../../Shared/FooterBottom/Footer";
-import Header from "../../Shared/Header/Header";
+// import Header from "../../Shared/Header/Header";
 import "./Register.css";
 
 const Register = () => {
@@ -21,8 +21,8 @@ const Register = () => {
   };
 
   return (
-    <div>
-      <Header />
+    <section>
+      {/* <Header /> */}
       <h2 className="register-heading text-center">Please Register</h2>
       {!loading && (
         <form
@@ -76,7 +76,7 @@ const Register = () => {
       {/* {!loading && } */}
       <Footer />
       {/* {loading && <FooterBottom />} */}
-    </div>
+    </section>
   );
 };
 

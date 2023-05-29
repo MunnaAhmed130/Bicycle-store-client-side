@@ -5,7 +5,7 @@ const Review = ({ review }) => {
   const { name, url, description, rating } = review;
 
   return (
-    <div className=" rounded-sm   transition-all ">
+    <div className="rounded-sm transition-all">
       <div className="flex flex-col gap-3">
         <div className="flex gap-5 items-center">
           <img
