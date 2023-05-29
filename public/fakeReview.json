@@ -1,17 +1,16 @@
 [
-    {
-        "name": "David Woods",
-        "profession": "Professional Cyclist",
-        "rating": "5",
-        "url": "https://i.ibb.co/s3NXZ1V/man-g1de523124-640.jpg",
-        "description": "Masterful performance on all terrain types thanks to impeccable suspension and great geometry.Expensive but worth the money."
-    },
-    {
-        "name": "Sofia Rocks",
-        "profession": "Cycle Racer",
-        "url": "https://i.ibb.co/q1KKJ5L/woman-g5e3f7c984-640.jpg",
-        "rating": "5",
-        "description": "Masterful performance on all terrain types thanks to impeccable suspension and great geometry.Expensive but worth the money."
-    }
-
+  {
+    "name": "David Woods",
+    "profession": "Professional Cyclist",
+    "rating": "5",
+    "url": "https://i.ibb.co/09svrJ4/man-g1de523124-640.jpg",
+    "description": "Masterful performance on all terrain types thanks to impeccable suspension and great geometry.Expensive but worth the money."
+  },
+  {
+    "name": "Sofia Rocks",
+    "profession": "Cycle Racer",
+    "url": "https://i.ibb.co/bW17KxR/woman-g5e3f7c984-640.jpg",
+    "rating": "5",
+    "description": "Masterful performance on all terrain types thanks to impeccable suspension and great geometry.Expensive but worth the money."
+  }
 ]

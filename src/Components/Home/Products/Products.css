@@ -4,7 +4,6 @@
 
 @media screen and (min-width: 640px) {
   .mySwiper {
-    /* width: 90%; */
     width: 600px;
   }
 }
@@ -12,21 +11,18 @@
 @media screen and (min-width: 768px) {
   .mySwiper {
     width: 700px;
-    /* width: 798px; */
   }
 }
 
 @media screen and (min-width: 900px) {
   .mySwiper {
     width: 860px;
-    /* width: 798px; */
   }
 }
 
 @media screen and (min-width: 1080px) {
   .mySwiper {
     width: 1000px;
-    /* width: 768px; */
   }
 }
 
@@ -95,8 +91,7 @@
 .bg-product {
   background-image: linear-gradient(
     180deg,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(0, 0, 0, 1) 70%,
-    rgba(34, 34, 34, 1) 100%
+    black 0%,
+    /* rgba(0, 0, 0, 0.8) 90%, */ var(--reviews-bg) 100%
   );
 }

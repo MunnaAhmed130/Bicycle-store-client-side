@@ -15,12 +15,12 @@ const Products = () => {
   const data = useLoaderData();
 
   return (
-    <section className="py-52 bg-product ">
-      <p className="text-gray-100 text-center font-bold pb-2 uppercase ">
+    <section className="xl:py-52 lg:py-36 py-14 bg-product ">
+      <p className="text-gray-100 text-center lg:text-base text-sm font-bold pb-2 uppercase ">
         Featured Bicycles
       </p>
 
-      <h3 className="text-center lg:text-6xl md:text-5xl text-4xl uppercase font-bold text-white tracking-wide lg:mb-16 mb-6">
+      <h3 className="text-center lg:text-6xl md:text-5xl sm:text-4xl text-3xl uppercase font-bold text-white tracking-wide lg:mb-16 mb-6 px-3">
         Find Your Bicycle
       </h3>
 
@@ -62,7 +62,7 @@ const Products = () => {
         }}
         navigation={true}
         modules={[Pagination, Navigation, Scrollbar, A11y, Autoplay]}
-        className={`mySwiper mb-14 mt-20`}
+        className={`mySwiper mb-14 gl:mt-20 mt-10`}
       >
         {data
           .filter((product) => product.rating >= 4.6)

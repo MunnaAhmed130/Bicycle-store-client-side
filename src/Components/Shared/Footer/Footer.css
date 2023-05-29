@@ -1,3 +1,7 @@
 footer a {
-  @apply block;
+  @apply block  leading-6 hover:bg-red-400;
+}
+
+.footer-heading {
+  @apply text-lg font-bold uppercase;
 }

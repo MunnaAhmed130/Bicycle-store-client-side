@@ -14,7 +14,7 @@ const Reviews = () => {
 
   return (
     <section
-      className={`${styles.reviews} lg:px-20 lg:py-28 md:px-10 px-5 py-20`}
+      className={`${styles.reviews} lg:px-20 md:px-10 px-5 lg:py-28  py-10`}
     >
       <div className="max-w-7xl mx-auto ">
         <div className="text-center">
@@ -22,12 +22,12 @@ const Reviews = () => {
             Testimonials
           </p>
 
-          <h2 className="text-center lg:text-6xl md:text-5xl text-4xl uppercase font-bold text-white tracking-wide ">
+          <h2 className="text-center lg:text-6xl md:text-5xl sm:text-4xl text-3xl uppercase font-bold text-white tracking-wide ">
             Customers Opinions
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-10 pt-8 my-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-10 my-16">
           {reviews.map((review) => (
             <Review key={review._id} review={review}></Review>
           ))}
