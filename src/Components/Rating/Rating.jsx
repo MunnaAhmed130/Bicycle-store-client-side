@@ -67,7 +67,7 @@ const Rating = ({ count, emptyColor, className, outlineColor }) => {
 
                 {/* empty star  */}
                 {emptyColor ? (
-                  <BsStarFill className="" style={empty} />
+                  <BsStarFill className={emptyColor} style={empty} />
                 ) : (
                   <BsStarFill className="" style={{ color: "transparent" }} />
                 )}

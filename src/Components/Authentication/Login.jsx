@@ -1,8 +1,7 @@
-import React from "react";
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import useAuth from "../../../Hooks/useAuth";
-import Footer from "../../Shared/Footer/Footer";
+import useAuth from "../../Hooks/useAuth";
+import Footer from "../Shared/Footer/Footer";
 import Header from "../../Shared/Header/Header";
 import "./Login.css";
 
@@ -40,7 +39,7 @@ const Login = () => {
           />{" "}
           <br />
           <Link to="/register">New User? Please Register</Link> <br />
-          <button className="login-btn m-3" variant="contained" type="submit">
+          <button className="login-btn m-3" type="submit">
             Login
           </button>
         </form>
@@ -51,9 +50,7 @@ const Login = () => {
         )}
         {user?.email && <p>This is a success alert — check it out!</p>}
         {error && <p>{error}</p>}
-        <button onClick={handleGoogleSignIn} variant="contained">
-          Google sign In
-        </button>
+        <button onClick={handleGoogleSignIn}>Google sign In</button>
       </div>
       <Footer />
     </div>

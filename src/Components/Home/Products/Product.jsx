@@ -4,7 +4,7 @@ import Rating from "../../Rating/Rating";
 import Tag from "./Tag";
 
 const Product = ({ product }) => {
-  const { url, name, price, description, tags, rating } = product;
+  const { url, name, price, tags, rating } = product;
 
   const [imageLoading, setImageLoading] = useState(true);
 
@@ -52,18 +52,22 @@ const Product = ({ product }) => {
       </div>
 
       <div className="p-3  text-center">
-        <h4 className="lg:text-[18px] sm:text-[17px] text-[15px] pb-1  text-white">
+        <h4 className="lg:text-[18px] sm:text-[17px] text-[15px] pb-1 font-semibold  text-white">
           {name}
         </h4>
 
         <div className="text-red-500 pb-1">
-          <Rating count={rating} className="text-red-500 mr-[2px] text-lg" />
+          <Rating
+            count={rating}
+            // emptyColor="text-red-200"
+            className="text-red-500 mr-[2px] text-lg"
+          />
           &nbsp;
-          <span className="">({rating})</span>
+          <span className="font-extrabold">({rating})</span>
         </div>
 
-        <p className="text-white font-extrabold text-lg">
-          <span className="text-sm align-text-top">$</span>
+        <p className="text-white font-extrabold text-xl">
+          <span className="text-xs align-text-top">$</span>
           {price}.00
         </p>
         {/* <p className="text-[#d8d8d8] text-[15px]">

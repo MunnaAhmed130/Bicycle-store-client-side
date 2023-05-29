@@ -1,8 +1,8 @@
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
-import useAuth from "../../../Hooks/useAuth";
-import Footer from "../../Shared/Footer/Footer";
-import FooterBottom from "../../Shared/FooterBottom/Footer";
+import useAuth from "../../Hooks/useAuth";
+import Footer from "../Shared/Footer/Footer";
+// import FooterBottom from "../../Shared/FooterBottom/Footer";
 import Header from "../../Shared/Header/Header";
 import "./Register.css";
 
@@ -19,6 +19,7 @@ const Register = () => {
     registerWithEmail(data.email, data.password, data.name, history);
     console.log(user);
   };
+
   return (
     <div>
       <Header />
@@ -55,10 +56,10 @@ const Register = () => {
           />{" "}
           <br />
           <Link to="/login">Already Registered? Login</Link> <br />
-          <button className="mb-3" variant="contained" type="submit">
+          <button className="mb-3" type="submit">
             Register
           </button>
-          {error && <p severity="error">{error}</p>}
+          {error && <p>{error}</p>}
         </form>
       )}
       {loading && (
@@ -68,12 +69,13 @@ const Register = () => {
       )}
       {user?.email && (
         <div className="circle">
-          <p severity="success">This is a success alert — check it out!</p>
+          <p>This is a success alert — check it out!</p>
         </div>
       )}
 
-      {!loading && <Footer />}
-      {loading && <FooterBottom />}
+      {/* {!loading && } */}
+      <Footer />
+      {/* {loading && <FooterBottom />} */}
     </div>
   );
 };
