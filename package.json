@@ -13,6 +13,7 @@
     "axios": "^0.24.0",
     "blurhash": "^2.0.5",
     "firebase": "^9.6.1",
+    "framer-motion": "^10.12.16",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-blurhash": "^0.3.0",

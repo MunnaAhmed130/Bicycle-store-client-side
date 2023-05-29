@@ -1,8 +1,22 @@
+import { motion } from "framer-motion";
 import StarRating from "../../Rating/StarRating";
 import styles from "./Reviews.module.css";
 
-const Review = ({ review }) => {
+const Review = ({ review, i }) => {
   const { name, url, description, rating } = review;
+
+  const reviewVariant = {
+    hidden: { opacity: 0, y: 100 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        // delay: 1,
+        duration: 0.5,
+      },
+    },
+  };
 
   return (
     <div className="rounded-sm transition-all">
@@ -27,10 +41,18 @@ const Review = ({ review }) => {
           </div>
         </div>
 
-        <div className="bg-[var(--review-card-bg)] p-5 relative mt-3">
-          <div className={`absolute top-[-10px] ${styles.triangle}`}></div>
-          <p className="text-[#f3f3f3] xl:text-lg text-[15px]">{description}</p>
-        </div>
+        <motion.div
+          variants={reviewVariant}
+          initial="hidden"
+          whileInView="visible"
+        >
+          <div className="bg-[var(--review-card-bg)] px-5 py-4 relative mt-3 rounded ">
+            <div className={`absolute top-[-10px] ${styles.triangle}`}></div>
+            <p className="text-[#f3f3f3] xl:text-lg text-[15px]  ">
+              {description}
+            </p>
+          </div>
+        </motion.div>
       </div>
     </div>
   );

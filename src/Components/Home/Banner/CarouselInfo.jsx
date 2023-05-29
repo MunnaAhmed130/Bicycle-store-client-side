@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Blurhash } from "react-blurhash";
 
@@ -12,6 +13,19 @@ const CarouselInfo = ({ banner, i, fade, curr, last, alt }) => {
     };
     img.src = src;
   }, [src]);
+
+  const bannerVariant = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+      transition: {
+        delay: 1,
+        duration: 1,
+      },
+    },
+  };
 
   return (
     <>
@@ -42,17 +56,23 @@ const CarouselInfo = ({ banner, i, fade, curr, last, alt }) => {
           />
           <div className="banner-gradient z-10 h-screen w-full absolute" />
           {banner.text && (
-            <div
-              className={`${i == curr ? "opacity-100" : "opacity-0"}
-               flex w-full  h-screen text-center  items-center justify-center  absolute z-10`}
+            <motion.div
+              variants={bannerVariant}
+              initial="hidden"
+              animate="visible"
             >
-              <div className=" flex flex-col sm:gap-3 gap-2 xl:max-w-5xl lg:max-w-3xl md:max-w-xl sm:max-w-lg max-w-sm px-5 transition-all mt-16">
-                <h3 className="banner-heading">{banner.text.title}</h3>
-                <p className="lg:text-[22px] lg:leading-[30px] md:text-xl   text-white/95 transition-all  mx-auto">
-                  {banner.text.description}
-                </p>
+              <div
+                className={`${i == curr ? "opacity-100" : "opacity-0"}
+              flex w-full  h-screen text-center  items-center justify-center  absolute z-10`}
+              >
+                <div className=" flex flex-col sm:gap-3 gap-2 xl:max-w-5xl lg:max-w-3xl md:max-w-xl sm:max-w-lg max-w-sm px-5 transition-all mt-16">
+                  <h3 className="banner-heading">{banner.text.title}</h3>
+                  <p className="lg:text-[22px] lg:leading-[30px] md:text-xl   text-white/95 transition-all  mx-auto">
+                    {banner.text.description}
+                  </p>
+                </div>
               </div>
-            </div>
+            </motion.div>
           )}
         </div>
       )}

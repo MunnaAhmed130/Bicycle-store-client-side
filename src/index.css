@@ -12,7 +12,7 @@
   -moz-osx-font-smoothing: grayscale;
   --navbar-height: 5rem;
   --reviews-bg: #303030;
-  --review-card-bg: rgb(36, 36, 36);
+  --review-card-bg: rgb(24, 24, 24);
 }
 
 body {
