@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { navLinks } from "../../utils/constants";
+import { navLinks } from "../../utils";
 import useAuth from "../../Hooks/useAuth";
 
 const NavList = ({ toggle, setToggle, dropdown }) => {

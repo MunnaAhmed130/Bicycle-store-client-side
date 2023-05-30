@@ -24,7 +24,7 @@ const CarouselInfo = ({ banner, i, fade, curr, last, alt }) => {
       x: 0,
       transition: {
         delay: 0.25,
-        duration: 0.5,
+        duration: 0.25,
       },
     },
   };
@@ -62,17 +62,14 @@ const CarouselInfo = ({ banner, i, fade, curr, last, alt }) => {
               variants={bannerVariant}
               initial="hidden"
               animate="visible"
+              className={`
+              flex w-full  h-screen text-center  items-center justify-center  absolute z-20`}
             >
-              <div
-                className={`
-              flex w-full  h-screen text-center  items-center justify-center  absolute z-10`}
-              >
-                <div className=" flex flex-col sm:gap-3 gap-2 xl:max-w-5xl lg:max-w-3xl md:max-w-xl sm:max-w-lg max-w-sm px-5 transition-all mt-16">
-                  <h3 className="banner-heading">{banner.text.title}</h3>
-                  <p className="lg:text-[22px] lg:leading-[30px] md:text-xl   text-white/95 transition-all  mx-auto">
-                    {banner.text.description}
-                  </p>
-                </div>
+              <div className=" flex flex-col sm:gap-3 gap-2 xl:max-w-5xl lg:max-w-3xl md:max-w-xl sm:max-w-lg max-w-sm px-5 transition-all mt-16">
+                <h3 className="banner-heading">{banner.text.title}</h3>
+                <p className="lg:text-[22px] lg:leading-[30px] md:text-xl   text-white/95 transition-all  mx-auto">
+                  {banner.text.description}
+                </p>
               </div>
             </motion.div>
           )}
