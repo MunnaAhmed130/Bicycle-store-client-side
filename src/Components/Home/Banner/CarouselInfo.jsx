@@ -17,12 +17,14 @@ const CarouselInfo = ({ banner, i, fade, curr, last, alt }) => {
   const bannerVariant = {
     hidden: {
       opacity: 0,
+      x: 400,
     },
     visible: {
       opacity: 1,
+      x: 0,
       transition: {
-        delay: 1,
-        duration: 1,
+        delay: 0.25,
+        duration: 0.5,
       },
     },
   };
@@ -62,7 +64,7 @@ const CarouselInfo = ({ banner, i, fade, curr, last, alt }) => {
               animate="visible"
             >
               <div
-                className={`${i == curr ? "opacity-100" : "opacity-0"}
+                className={`
               flex w-full  h-screen text-center  items-center justify-center  absolute z-10`}
               >
                 <div className=" flex flex-col sm:gap-3 gap-2 xl:max-w-5xl lg:max-w-3xl md:max-w-xl sm:max-w-lg max-w-sm px-5 transition-all mt-16">
