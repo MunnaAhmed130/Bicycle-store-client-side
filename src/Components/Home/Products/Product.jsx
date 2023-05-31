@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { Blurhash } from "react-blurhash";
+import { motion } from "framer-motion";
 import Rating from "../../Rating/Rating";
 import Tag from "./Tag";
+import { fadeIn } from "../../../utils/motion";
 
-const Product = ({ product }) => {
+const Product = ({ product, index }) => {
   const { url, name, price, tags, rating } = product;
 
   const [imageLoading, setImageLoading] = useState(true);
@@ -22,34 +24,40 @@ const Product = ({ product }) => {
 
   return (
     <div className="[--image-height:15rem] z-10 h-auto w-full rounded-sm overflow-hidden cursor-pointer ">
-      <div className=" overflow-hidden relative bg-[#E5E5E5]">
-        {imageLoading && (
-          <div className="overflow-hidden h-[var(--image-height)]">
-            <Blurhash
-              hash={blurHash}
-              width={500}
-              height={240}
-              resolutionX={32}
-              resolutionY={32}
-              punch={1}
-            />
+      <motion.div
+        variants={fadeIn("right", "spring", 0.5 * index, 0.75)}
+        initial="hidden"
+        whileInView="show"
+      >
+        <div className=" overflow-hidden relative bg-[#E5E5E5]">
+          {imageLoading && (
+            <div className="overflow-hidden h-[var(--image-height)]">
+              <Blurhash
+                hash={blurHash}
+                width={500}
+                height={240}
+                resolutionX={32}
+                resolutionY={32}
+                punch={1}
+              />
+            </div>
+          )}
+
+          <img
+            src={url}
+            alt={name}
+            className={`${
+              imageLoading && "hidden"
+            } w-full h-[var(--image-height)] object-contain object-center brightness-90 `}
+          />
+
+          <div className="absolute top-0 p-2">
+            {tags.map((tag) => (
+              <Tag key={crypto.randomUUID()} tag={tag} />
+            ))}
           </div>
-        )}
-
-        <img
-          src={url}
-          alt={name}
-          className={`${
-            imageLoading && "hidden"
-          } w-full h-[var(--image-height)] object-contain object-center brightness-90 `}
-        />
-
-        <div className="absolute top-0 p-2">
-          {tags.map((tag) => (
-            <Tag key={crypto.randomUUID()} tag={tag} />
-          ))}
         </div>
-      </div>
+      </motion.div>
 
       <div className="p-3  text-center">
         <h4 className="lg:text-[18px] sm:text-[17px] text-[15px] pb-1 font-semibold  text-white">

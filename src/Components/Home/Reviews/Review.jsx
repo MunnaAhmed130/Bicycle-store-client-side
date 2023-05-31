@@ -12,7 +12,7 @@ const Review = ({ review, i }) => {
       y: 0,
       transition: {
         type: "spring",
-        // delay: 1,
+        delay: 0.6,
         duration: (i + 1) * 0.5,
       },
     },

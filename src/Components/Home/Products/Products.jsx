@@ -1,4 +1,5 @@
 import { useLoaderData } from "react-router-dom";
+import { motion } from "framer-motion";
 import Product from "./Product";
 import "./Products.css";
 
@@ -10,19 +11,30 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/scrollbar";
 import "swiper/css/a11y";
+import { textVariant } from "../../../utils/motion";
 
 const Products = () => {
   const data = useLoaderData();
 
   return (
     <section className="xl:py-52 lg:py-36 py-14 bg-product ">
-      <p className="text-gray-100 text-center lg:text-base text-sm font-bold pb-2 uppercase ">
+      <motion.p
+        variants={textVariant(20, 0)}
+        initial="hidden"
+        whileInView="show"
+        className="text-gray-100 text-center lg:text-base text-sm font-bold pb-2 uppercase "
+      >
         Featured Bicycles
-      </p>
+      </motion.p>
 
-      <h3 className="text-center lg:text-6xl md:text-5xl sm:text-4xl text-3xl uppercase font-bold text-white tracking-wide lg:mb-16 mb-6 px-3">
+      <motion.h3
+        variants={textVariant(20, 0.25)}
+        initial="hidden"
+        whileInView="show"
+        className="text-center lg:text-6xl md:text-5xl sm:text-4xl text-3xl uppercase font-bold text-white tracking-wide lg:mb-16 mb-6 px-3"
+      >
         Find Your Bicycle
-      </h3>
+      </motion.h3>
 
       <Swiper
         breakpoints={{
@@ -66,9 +78,9 @@ const Products = () => {
       >
         {data
           .filter((product) => product.rating >= 4.6)
-          .map((product) => (
+          .map((product, i) => (
             <SwiperSlide key={product.name}>
-              <Product key={product.name} product={product} />
+              <Product key={product.name} product={product} index={i} />
             </SwiperSlide>
           ))}
       </Swiper>

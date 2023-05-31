@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Review from "./Review";
 import styles from "./Reviews.module.css";
 import { motion } from "framer-motion";
+import { textVariant } from "../../../utils/motion";
 
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
@@ -23,16 +24,16 @@ const Reviews = () => {
   //   },
   // };
 
-  const textVariant = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      // repeat: false,
-      transition: {
-        duration: 1,
-      },
-    },
-  };
+  // const textVariant = {
+  //   hidden: { opacity: 0 },
+  //   visible: {
+  //     opacity: 1,
+  //     // repeat: false,
+  //     transition: {
+  //       duration: 1,
+  //     },
+  //   },
+  // };
 
   return (
     <section
@@ -44,18 +45,21 @@ const Reviews = () => {
     >
       <div className="max-w-7xl mx-auto">
         <motion.p
-          variants={textVariant}
+          variants={textVariant(10, 0.25)}
           initial="hidden"
-          whileInView="visible"
+          whileInView="show"
+          // initial={{ y: 100 }}
+          // animate={{ y: 0 }}
+          // transition={{ delay: 2, duration: 0.5 }}
           className="text-white text-center  pb-2 font-bold uppercase"
         >
           Testimonials
         </motion.p>
 
         <motion.h2
-          variants={textVariant}
+          variants={textVariant(20, 0.5)}
           initial="hidden"
-          whileInView="visible"
+          whileInView="show"
           className="text-center lg:text-6xl md:text-5xl sm:text-4xl text-3xl uppercase font-bold text-white tracking-wide "
         >
           Customers Opinions
