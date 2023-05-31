@@ -45,7 +45,7 @@ const Reviews = () => {
     >
       <div className="max-w-7xl mx-auto">
         <motion.p
-          variants={textVariant(10, 0.25)}
+          variants={textVariant(40, 0.1, 0.5)}
           initial="hidden"
           whileInView="show"
           // initial={{ y: 100 }}
@@ -57,7 +57,7 @@ const Reviews = () => {
         </motion.p>
 
         <motion.h2
-          variants={textVariant(20, 0.5)}
+          variants={textVariant(20, 0.25, 0.5)}
           initial="hidden"
           whileInView="show"
           className="text-center lg:text-6xl md:text-5xl sm:text-4xl text-3xl uppercase font-bold text-white tracking-wide "

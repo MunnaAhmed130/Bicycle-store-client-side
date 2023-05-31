@@ -19,7 +19,7 @@ const Products = () => {
   return (
     <section className="xl:py-52 lg:py-36 py-14 bg-product ">
       <motion.p
-        variants={textVariant(20, 0)}
+        variants={textVariant(20, 0, 0.5)}
         initial="hidden"
         whileInView="show"
         className="text-gray-100 text-center lg:text-base text-sm font-bold pb-2 uppercase "
@@ -28,7 +28,7 @@ const Products = () => {
       </motion.p>
 
       <motion.h3
-        variants={textVariant(20, 0.25)}
+        variants={textVariant(20, 0.25, 0.65)}
         initial="hidden"
         whileInView="show"
         className="text-center lg:text-6xl md:text-5xl sm:text-4xl text-3xl uppercase font-bold text-white tracking-wide lg:mb-16 mb-6 px-3"

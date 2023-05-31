@@ -23,9 +23,14 @@ const Product = ({ product, index }) => {
   }, [src]);
 
   return (
-    <div className="[--image-height:15rem] z-10 h-auto w-full rounded-sm overflow-hidden cursor-pointer ">
+    <motion.div
+      variants={fadeIn("left", "spring", 0.3, 0.75)}
+      initial="hidden"
+      whileInView="show"
+      className="[--image-height:15rem] z-10 h-auto w-full rounded-sm overflow-hidden cursor-pointer "
+    >
       <motion.div
-        variants={fadeIn("right", "spring", 0.5 * index, 0.75)}
+        variants={fadeIn("left", "spring", 0.1, 0.75)}
         initial="hidden"
         whileInView="show"
       >
@@ -82,7 +87,7 @@ const Product = ({ product, index }) => {
           {product.description.slice(0, 120)}...
         </p> */}
       </div>
-    </div>
+    </motion.div>
   );
 };
 
