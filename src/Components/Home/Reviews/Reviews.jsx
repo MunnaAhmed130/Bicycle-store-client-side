@@ -14,43 +14,13 @@ const Reviews = () => {
       .then((data) => setReviews(data));
   }, []);
 
-  // const sectionVariant = {
-  //   hidden: {},
-  //   visible: {
-  //     transition: {
-  //       staggerChildren: 5,
-  //       delayChildren: 5,
-  //     },
-  //   },
-  // };
-
-  // const textVariant = {
-  //   hidden: { opacity: 0 },
-  //   visible: {
-  //     opacity: 1,
-  //     // repeat: false,
-  //     transition: {
-  //       duration: 1,
-  //     },
-  //   },
-  // };
-
   return (
-    <section
-      // variants={sectionVariant}
-      // initial="hidden"
-      // whileInView="visible"
-      // viewport={{ once: true, amount: 0.25 }}
-      className={`${styles.bgReviews} lg:px-20 md:px-10 px-5 py-10`}
-    >
+    <section className={`${styles.bgReviews} lg:px-20 md:px-10 px-5 py-10`}>
       <div className="max-w-7xl mx-auto">
         <motion.p
           variants={textVariant(40, 0.1, 0.5)}
           initial="hidden"
           whileInView="show"
-          // initial={{ y: 100 }}
-          // animate={{ y: 0 }}
-          // transition={{ delay: 2, duration: 0.5 }}
           className="text-white text-center  pb-2 font-bold uppercase"
         >
           Testimonials

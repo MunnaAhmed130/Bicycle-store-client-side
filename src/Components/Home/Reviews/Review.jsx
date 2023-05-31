@@ -6,26 +6,15 @@ import { fadeIn } from "../../../utils/motion";
 const Review = ({ review, i }) => {
   const { name, url, description, rating } = review;
 
-  // const reviewVariant = {
-  //   hidden: { opacity: 0, y: 100 },
-  //   show: {
-  //     opacity: 1,
-  //     y: 0,
-  //     transition: {
-  //       type: "spring",
-  //       ease: "easeOut",
-  //       stiffness: 120,
-  //       delay: 0.6,
-  //       duration: (i + 1) * 0.5,
-  //     },
-  //   },
-  // };
-
   return (
     <div className="rounded-sm transition-all">
       <div className="flex flex-col gap-3">
         <div className="flex gap-5 items-center">
-          <img
+          {/* <motion></motion> */}
+          <motion.img
+            variants={fadeIn("right", "spring", 0.3, (i + 1) * 0.3)}
+            initial="hidden"
+            whileInView="show"
             className="[--box:3.5rem] w-[var(--box)] h-[var(--box)] object-cover rounded-full"
             referrerPolicy="no-referrer"
             src={url}
@@ -45,8 +34,7 @@ const Review = ({ review, i }) => {
         </div>
 
         <motion.div
-          variants={fadeIn("up", "spring", 0.4, i * 0.5)}
-          // variants={reviewVariant}
+          variants={fadeIn("up", "spring", 0.4, (i + 1) * 0.5)}
           initial="hidden"
           whileInView="show"
         >

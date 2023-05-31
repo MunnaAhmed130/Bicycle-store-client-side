@@ -30,6 +30,7 @@ export const fadeIn = (direction, type, delay, duration) => {
       transition: {
         repeat: 0,
         type: type,
+        bounce: 0.4,
         // stiffness: stiffness,
         delay: delay,
         duration: duration,
