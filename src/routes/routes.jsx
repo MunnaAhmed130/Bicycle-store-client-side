@@ -2,13 +2,12 @@ import { createBrowserRouter } from "react-router-dom";
 import Main from "../layout/Main/Main";
 import NotFound from "../pages/NotFound/NotFound";
 import Explore from "../pages/Explore/Explore";
-import Login from "../pages/Authentication/Login";
-import Register from "../pages/Authentication/Register";
 import DashboardHome from "../Components/Dashboard/DashboardHome/DashboardHome";
 import PrivateRoute from "../Components/PrivateRoute/PrivateRoute";
 import Pay from "../Components/Dashboard/User/Pay/Pay";
 import Dashboard from "../Components/Dashboard/Dashboard/Dashboard";
 import Home from "../pages/Home/Home";
+import Auth from "../pages/Authentication/Auth";
 
 // export const getReviews = async () => {
 //   const response = await fetch(`http://localhost:4000/reviews`);
@@ -62,13 +61,21 @@ const routes = createBrowserRouter([
       },
     ],
   },
+  // {
+  //   path: "/login",
+  //   element: <Login />,
+  // },
+  // {
+  //   path: "/register",
+  //   element: <Register />,
+  // },
   {
     path: "/login",
-    element: <Login />,
+    element: <Auth />,
   },
   {
     path: "/register",
-    element: <Register />,
+    element: <Auth />,
   },
 ]);
 
