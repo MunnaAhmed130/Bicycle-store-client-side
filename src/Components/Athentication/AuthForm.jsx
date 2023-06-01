@@ -11,19 +11,43 @@ const AuthForm = ({ onSubmit }) => {
   const { register, handleSubmit } = useForm();
 
   return (
-    <form className="login-form" onSubmit={handleSubmit(onSubmit)}>
+    <form
+      className="login-form register-form text-center"
+      onSubmit={handleSubmit(onSubmit)}
+    >
+      {path.includes("register") && (
+        <>
+          <input
+            {...register("name", { required: true })}
+            placeholder="Your name"
+            // required="required"
+          />
+          <br />
+        </>
+      )}
+      {path.includes("register") && (
+        <>
+          <input
+            type="password"
+            {...register("confirmPassword", { required: true })}
+            placeholder="Confirm your password"
+            // required="required"
+          />
+          <br />
+        </>
+      )}
       <input
-        {...register("email")}
+        {...register("email", { required: true })}
         placeholder="Your Email"
-        required="required"
-      />{" "}
+        // required="required"
+      />
       <br />
       <input
-        {...register("password")}
+        {...register("password", { required: true })}
         type="password"
         placeholder="Your Password"
-        required="required"
-      />{" "}
+        // required="required"
+      />
       <br />
       {path.includes("login") && (
         <>
