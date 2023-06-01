@@ -22,6 +22,8 @@ const Product = ({ product, index }) => {
     img.src = src;
   }, [src]);
 
+  // console.log(crypto.randomUUID());
+
   return (
     <motion.div
       variants={fadeIn("left", "spring", 0.3, 0.75)}

@@ -23,7 +23,7 @@ export default {
       fontSize: {
         "banner-sm": "clamp( 2.25rem , 8vw + 0.75rem ,  3rem )",
       },
-      spacing: {},
+      backgroundImage: {},
     },
   },
   plugins: [],

@@ -87,7 +87,3 @@
   width: var(--box);
   height: var(--box);
 }
-
-.bg-product {
-  background-image: var(--dark-to-gray);
-}

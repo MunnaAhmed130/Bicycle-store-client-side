@@ -17,7 +17,7 @@ const Products = () => {
   const data = useLoaderData();
 
   return (
-    <section className="xl:py-52 lg:py-36 py-14 bg-product ">
+    <section className="bg-gradient-to-b from-[var(--bg-dark)] from-80% to-[var(--bg-gray)]     xl:py-52 lg:py-36 py-14  ">
       <motion.p
         variants={textVariant(20, 0, 0.5)}
         initial="hidden"

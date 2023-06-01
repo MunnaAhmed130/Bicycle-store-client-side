@@ -3,7 +3,3 @@
   border-width: 0 10px 10px 10px;
   border-color: transparent transparent var(--review-card-bg) transparent;
 }
-
-.bgReviews {
-  background-image: var(--gray-to-dark);
-}

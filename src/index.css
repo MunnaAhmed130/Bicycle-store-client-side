@@ -15,8 +15,19 @@
   --bg-dark: #161616;
   --review-card-bg: rgb(24, 24, 24);
   --dark-to-gray: linear-gradient(180deg, black 0%, var(--bg-gray) 100%);
-  --gray-to-dark: 180deg, var(--bg-gray) 0%, var(--bg-gray) 80%,
-    var(--bg-dark) 100%;
+  --gray-to-dark: linear-gradient(
+    180deg,
+    var(--bg-gray) 0%,
+    var(--bg-gray) 80%,
+    var(--bg-dark) 100%
+  );
+}
+
+.dark-to-gray {
+}
+
+.gray-to-dark {
+  @apply bg-gradient-to-b from-[var(--bg-gray)] from-80% to-[var(--bg-dark)];
 }
 
 body {

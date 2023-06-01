@@ -1,6 +1,6 @@
-import { createBrowserRouter, defer } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import Main from "../layout/Main/Main";
-import NotFound from "../Components/NotFound/NotFound";
+import NotFound from "../pages/NotFound/NotFound";
 import Explore from "../pages/Explore/Explore";
 import Login from "../Components/Authentication/Login";
 import Register from "../Components/Authentication/Register";
@@ -24,7 +24,7 @@ const routes = createBrowserRouter([
   {
     path: "/",
     element: <Main />,
-    // errorElement: <NotFound />,
+    errorElement: <NotFound />,
     children: [
       {
         path: "/",
@@ -38,6 +38,7 @@ const routes = createBrowserRouter([
         path: "/explore",
         loader: async () => {
           return fetch("http://localhost:4000/products");
+          // return fetch("fakeData.json");
         },
         element: <Explore />,
       },

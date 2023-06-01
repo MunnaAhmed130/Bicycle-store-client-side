@@ -12,7 +12,7 @@ const Review = ({ review, i }) => {
         <div className="flex gap-5 items-center">
           {/* <motion></motion> */}
           <motion.img
-            variants={fadeIn("right", "spring", 0.3, (i + 1) * 0.3)}
+            variants={fadeIn("top", "spring", 0.3, (i + 1) * 0.3)}
             initial="hidden"
             whileInView="show"
             className="[--box:3.5rem] w-[var(--box)] h-[var(--box)] object-cover rounded-full"

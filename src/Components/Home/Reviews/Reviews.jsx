@@ -9,13 +9,16 @@ const Reviews = () => {
 
   useEffect(() => {
     fetch("http://localhost:4000/reviews/limit?number=3")
+      // fetch("fakeReview.json")
       // fetch("https://bicycle-store-server-side.vercel.app/reviews")
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);
 
   return (
-    <section className={`${styles.bgReviews} lg:px-20 md:px-10 px-5 py-10`}>
+    <section
+      className={`${styles.bgReviews}  gray-to-dark lg:px-20 md:px-10 px-5 py-10`}
+    >
       <div className="max-w-7xl mx-auto">
         <motion.p
           variants={textVariant(40, 0.1, 0.5)}

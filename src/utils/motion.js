@@ -31,7 +31,6 @@ export const fadeIn = (direction, type, delay, duration) => {
         repeat: 0,
         type: type,
         bounce: 0.4,
-        // stiffness: stiffness,
         delay: delay,
         duration: duration,
         ease: "easeOut",
