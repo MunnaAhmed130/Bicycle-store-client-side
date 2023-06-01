@@ -41,6 +41,14 @@ const routes = createBrowserRouter([
         },
         element: <Explore />,
       },
+      {
+        path: "/login",
+        element: <Auth />,
+      },
+      {
+        path: "/register",
+        element: <Auth />,
+      },
     ],
   },
   {
@@ -60,22 +68,6 @@ const routes = createBrowserRouter([
         element: <Pay />,
       },
     ],
-  },
-  // {
-  //   path: "/login",
-  //   element: <Login />,
-  // },
-  // {
-  //   path: "/register",
-  //   element: <Register />,
-  // },
-  {
-    path: "/login",
-    element: <Auth />,
-  },
-  {
-    path: "/register",
-    element: <Auth />,
   },
 ]);
 

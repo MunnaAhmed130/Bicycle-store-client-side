@@ -18,7 +18,7 @@ const Register = () => {
   };
 
   return (
-    <section className="bg-gradient-to-b from-[var(--bg-gray)] from-80% to-[var(--bg-dark)] py-40">
+    <section className="bg-gradient-to-b from-[var(--bg-gray)] from-80% to-[var(--bg-dark)] -mt-[--navbar-height]  py-40">
       <h2 className="register-heading text-center">Please Register</h2>
 
       {!loading && <AuthForm onSubmit={onSubmit} />}

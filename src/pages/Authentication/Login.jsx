@@ -13,7 +13,7 @@ const Login = () => {
   };
 
   return (
-    <section className="bg-gradient-to-b from-[var(--bg-gray)] from-80% to-[var(--bg-dark)] py-40">
+    <section className="bg-gradient-to-b from-[var(--bg-gray)] from-80% to-[var(--bg-dark)] -mt-[--navbar-height]  py-40">
       <div className=" text-center">
         <h2 className="text-5xl font-bold uppercase">Please Login</h2>
 
