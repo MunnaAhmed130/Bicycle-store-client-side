@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
-import Footer from "../Shared/Footer/Footer";
+import Footer from "../../Components/Shared/Footer/Footer";
 // import FooterBottom from "../../Shared/FooterBottom/Footer";
 // import Header from "../../Shared/Header/Header";
 import "./Register.css";

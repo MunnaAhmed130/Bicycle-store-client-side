@@ -1,8 +1,7 @@
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
-import Footer from "../Shared/Footer/Footer";
-// import Header from "../../Shared/Header/Header";
+import Footer from "../../Components/Shared/Footer/Footer";
 import "./Login.css";
 
 const Login = () => {
@@ -19,11 +18,12 @@ const Login = () => {
   const handleGoogleSignIn = () => {
     signInWithGoogle(location, history);
   };
+
   return (
-    <section>
+    <section className="bg-gradient-to-b from-[var(--bg-gray)] from-80% to-[var(--bg-dark)] py-20">
       {/* <Header /> */}
-      <div className="login text-center">
-        <h2 className="login-heading">Please Login</h2>
+      <div className=" text-center">
+        <h2 className="text-5xl font-bold uppercase">Please Login</h2>
         <form className="login-form" onSubmit={handleSubmit(onSubmit)}>
           <input
             {...register("email")}
@@ -52,7 +52,7 @@ const Login = () => {
         {error && <p>{error}</p>}
         <button onClick={handleGoogleSignIn}>Google sign In</button>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </section>
   );
 };

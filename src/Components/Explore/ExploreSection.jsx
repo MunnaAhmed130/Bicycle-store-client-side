@@ -5,7 +5,7 @@ const ExploreSection = () => {
   const products = useLoaderData();
 
   return (
-    <section className="explore bg-[var(--gray-to-dark)] py-10">
+    <section className="explore py-10 bg-gradient-to-b from-[var(--bg-gray)] from-80% to-[var(--bg-dark)]">
       <h2 className="text-center uppercase text-5xl font-semibold text-white mb-10">
         Explore Our of Bicycle Collection
       </h2>
@@ -23,8 +23,6 @@ const ExploreSection = () => {
           ))}
         </div>
       )}
-
-      {/* {!products.length || <Footer />} */}
     </section>
   );
 };
