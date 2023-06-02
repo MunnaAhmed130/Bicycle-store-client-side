@@ -14,7 +14,7 @@ const Navbar = () => {
   return (
     <nav
       className={` ${
-        path.includes("explore") && `bg-[#2e2e2e]`
+        path.includes("explore") && `bg-[var(--bg-dark)]`
       } w-full relative lg:px-20 md:px-10 px-5 py-4 text-center flex-center h-[--navbar-height]   top-0 z-50  `}
     >
       <div className="max-w-7xl w-full mx-auto flex justify-between items-center">

@@ -12,7 +12,7 @@ const AuthForm = ({ onSubmit }) => {
 
   return (
     <form
-      className="login-form register-form text-center"
+      className="login-form register-form auth-form text-center"
       onSubmit={handleSubmit(onSubmit)}
     >
       {path.includes("register") && (

@@ -1,7 +1,7 @@
 import { useLocation } from "react-router-dom";
+import Login from "../../Components/Athentication/Login";
+import Register from "../../Components/Athentication/Register";
 import Footer from "../../Components/Shared/Footer/Footer";
-import Login from "./Login";
-import Register from "./Register";
 import "./Auth.css";
 
 const Auth = () => {

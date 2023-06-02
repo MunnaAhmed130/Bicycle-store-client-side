@@ -2,7 +2,7 @@ import "./Footer.css";
 
 const Footer = () => {
   return (
-    <footer className="bg-black lg:px-20 md:px-10 px-5 pt-28 ">
+    <footer className="bg-black lg:px-20 md:px-10 px-5  ">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-4">
           <div className="flex flex-col gap-1">

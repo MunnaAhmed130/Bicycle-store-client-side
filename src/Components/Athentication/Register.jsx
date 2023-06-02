@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
-import AuthForm from "../../Components/Athentication/AuthForm";
+import AuthForm from "./AuthForm";
 
 const Register = () => {
   const { user, loading, registerWithEmail } = useAuth();
@@ -18,19 +18,19 @@ const Register = () => {
   };
 
   return (
-    <section className="bg-gradient-to-b from-[var(--bg-gray)] from-80% to-[var(--bg-dark)] -mt-[--navbar-height]  py-40">
-      <h2 className="register-heading text-center">Please Register</h2>
+    <section className="bg-gradient-to-b from-[var(--bg-gray)] from-80% to-[var(--bg-dark)] -mt-[--navbar-height]  py-40 text-center">
+      <h2 className="register-heading ">Please Register</h2>
 
       {!loading && <AuthForm onSubmit={onSubmit} />}
 
       {loading && (
-        <div className="text-center">
+        <div className="">
           <p>Loading ...</p>
         </div>
       )}
 
       {user?.email && (
-        <div className="text-center">
+        <div className="">
           <p>This is a success alert — check it out!</p>
         </div>
       )}
