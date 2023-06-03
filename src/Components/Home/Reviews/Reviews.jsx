@@ -17,7 +17,7 @@ const Reviews = () => {
 
   return (
     <section
-      className={`${styles.bgReviews}  gray-to-dark lg:px-20 md:px-10 px-5 py-10`}
+      className={`${styles.bgReviews} bg-gradient-to-b from-[#1a1919] from-80% to-[black] lg:px-20 md:px-10 px-5 py-10`}
     >
       <div className="max-w-7xl mx-auto">
         <motion.p
