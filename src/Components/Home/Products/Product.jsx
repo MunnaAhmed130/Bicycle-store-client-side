@@ -1,11 +1,9 @@
 import { useEffect, useState } from "react";
 import { Blurhash } from "react-blurhash";
-import { motion } from "framer-motion";
 import Rating from "../../Rating/Rating";
 import Tag from "./Tag";
-import { fadeIn } from "../../../utils/motion";
 
-const Product = ({ product, index }) => {
+const Product = ({ product }) => {
   const { url, name, price, tags, rating } = product;
 
   const [imageLoading, setImageLoading] = useState(true);
@@ -25,23 +23,14 @@ const Product = ({ product, index }) => {
   // console.log(crypto.randomUUID());
 
   return (
-    <motion.div
-      variants={fadeIn("left", "spring", 0.3, 0.75)}
-      initial="hidden"
-      whileInView="show"
-      className="[--image-height:15rem] z-10 h-auto w-full rounded-sm overflow-hidden cursor-pointer "
-    >
-      <motion.div
-        variants={fadeIn("left", "spring", 0.1, 0.75)}
-        initial="hidden"
-        whileInView="show"
-      >
+    <div className="[--image-height:15rem] z-10 h-auto w-full rounded-sm overflow-hidden cursor-pointer ">
+      <div>
         <div className=" overflow-hidden relative bg-[#E5E5E5]">
           {imageLoading && (
-            <div className="overflow-hidden h-[var(--image-height)]">
+            <div className="overflow-hidden h-[var(--image-height)] flex items-center justify-center">
               <Blurhash
                 hash={blurHash}
-                width={500}
+                width={600}
                 height={240}
                 resolutionX={32}
                 resolutionY={32}
@@ -64,7 +53,7 @@ const Product = ({ product, index }) => {
             ))}
           </div>
         </div>
-      </motion.div>
+      </div>
 
       <div className="p-3  text-center">
         <h4 className="lg:text-[18px] sm:text-[17px] text-[15px] pb-1 font-semibold  text-white">
@@ -89,7 +78,7 @@ const Product = ({ product, index }) => {
           {product.description.slice(0, 120)}...
         </p> */}
       </div>
-    </motion.div>
+    </div>
   );
 };
 
