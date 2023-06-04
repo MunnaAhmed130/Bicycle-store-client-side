@@ -35,10 +35,10 @@ const Rating = ({ count, emptyColor, className, outlineColor }) => {
             key={index}
             className={`${
               className && className
-            }  bg-transparent cursor-pointer leading-none`}
+            }  bg-transparent inline-block cursor-pointer leading-none`}
           >
             {rating >= index + 1 ? (
-              <span>
+              <span className={`inline-block`}>
                 {/* full star  */}
                 {outlineColor ? (
                   <span className="relative">

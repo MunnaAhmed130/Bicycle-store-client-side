@@ -25,7 +25,7 @@ const Review = ({ review, i }) => {
             {name}
           </span>
 
-          <p>{profession}</p>
+          <p className="text-[rgba(255,255,255,0.75)]">{profession}</p>
           <StarRating
             count={rating}
             className="mx-[2px] text-sm text-red-600"
@@ -47,8 +47,8 @@ const Review = ({ review, i }) => {
       </motion.div> */}
 
       <div className="relative">
-        <BsQuote className=" absolute   text-5xl text-[#ffffff50] -left-2 top-0 leading-3" />
-        <p className="text-[#f3f3f3] xl:text-lg text-[15px] mt-11 ">
+        <BsQuote className=" absolute   text-7xl text-[#ffffff50] -left-3 top-0 leading-3" />
+        <p className="text-[rgba(255,255,255,0.75)] xl:text-base text-[15px] mt-16 ">
           {description}
         </p>
       </div>

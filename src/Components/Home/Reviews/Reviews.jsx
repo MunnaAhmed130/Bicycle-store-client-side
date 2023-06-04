@@ -38,7 +38,7 @@ const Reviews = () => {
           Customers Opinions
         </motion.h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-10 xl:my-24 my-16">
+        <div className="grid  sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-10 xl:my-24 my-16">
           {reviews.map((review, i) => (
             <Review key={review._id} review={review} i={i}></Review>
           ))}

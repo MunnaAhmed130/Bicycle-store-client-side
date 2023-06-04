@@ -22,7 +22,7 @@ const Products = () => {
         variants={textVariant(50, 0.25, 0.5)}
         initial="hidden"
         whileInView="show"
-        className="text-gray-100 text-center lg:text-base text-sm font-bold pb-2 uppercase "
+        className="text-[white] text-center lg:text-base text-sm font-bold pb-2 uppercase "
       >
         Featured Bicycles
       </motion.p>
@@ -68,8 +68,9 @@ const Products = () => {
             },
           }}
           // autoplay={{
-          //   delay: 1000,
-          //   disableOnInteraction: true,
+          //   delay: 5000,
+          //   disableOnInteraction: false,
+          //   pauseOnMouseEnter: true,
           // }}
           spaceBetween={15}
           loop={true}
