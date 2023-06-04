@@ -1,8 +1,7 @@
-import { motion } from "framer-motion";
 import StarRating from "../../Rating/StarRating";
-import styles from "./Reviews.module.css";
-import { fadeIn } from "../../../utils/motion";
 import { BsQuote } from "react-icons/bs";
+import { motion } from "framer-motion";
+import { fadeIn } from "../../../utils/motion";
 
 const Review = ({ review, i }) => {
   const { name, url, description, rating, profession } = review;
@@ -10,12 +9,9 @@ const Review = ({ review, i }) => {
   return (
     <div className="flex flex-col gap-3 last:xl:flex last:sm:hidden ">
       <div className="flex gap-5 items-center">
-        <motion.img
-          variants={fadeIn("top", "spring", 0.3, (i + 1) * 0.3)}
-          initial="hidden"
-          whileInView="show"
+        <img
           className="[--box:3.5rem] w-[var(--box)] h-[var(--box)] object-cover rounded-full"
-          referrerPolicy="no-referrer"
+          // referrerPolicy="no-referrer"
           src={url}
           alt=""
         />
@@ -46,12 +42,17 @@ const Review = ({ review, i }) => {
         </div>
       </motion.div> */}
 
-      <div className="relative">
+      <motion.div
+        variants={fadeIn("up", "spring", 0.4, (i + 1) * 0.5)}
+        initial="hidden"
+        whileInView="show"
+        className="relative"
+      >
         <BsQuote className=" absolute   text-7xl text-[#ffffff50] -left-3 top-0 leading-3" />
         <p className="text-[rgba(255,255,255,0.75)] xl:text-base text-[15px] mt-16 ">
           {description}
         </p>
-      </div>
+      </motion.div>
     </div>
   );
 };

@@ -47,7 +47,7 @@ const Product = ({ product }) => {
             } w-full h-[var(--image-height)] object-contain object-center brightness-90 `}
           />
 
-          <div className="absolute top-0 p-2 e border flex ">
+          <div className="absolute top-0 p-2  flex ">
             {tags.map((tag) => (
               <Tag key={crypto.randomUUID()} tag={tag} />
             ))}

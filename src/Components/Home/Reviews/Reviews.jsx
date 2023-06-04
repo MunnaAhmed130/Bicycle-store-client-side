@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Review from "./Review";
 import styles from "./Reviews.module.css";
 import { motion } from "framer-motion";
-import { textVariant } from "../../../utils/motion";
+import { fadeIn, textVariant } from "../../../utils/motion";
 
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
@@ -38,11 +38,16 @@ const Reviews = () => {
           Customers Opinions
         </motion.h2>
 
-        <div className="grid  sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-10 xl:my-24 my-16">
+        <motion.div
+          variants={fadeIn("down", "spring", 0.2, 0.75)}
+          initial="hidden"
+          whileInView="show"
+          className="grid  sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-10 xl:my-24 my-16"
+        >
           {reviews.map((review, i) => (
             <Review key={review._id} review={review} i={i}></Review>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
