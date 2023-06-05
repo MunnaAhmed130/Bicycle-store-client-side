@@ -33,6 +33,14 @@ const routes = createBrowserRouter([
         },
         element: <Home />,
       },
+      // {
+      //   path: "/home",
+      //   loader: async () => {
+      //     return fetch("http://localhost:4000/products");
+      //     // return fetch("fakeData.json");
+      //   },
+      //   element: <Home />,
+      // },
       {
         path: "/explore",
         loader: async () => {

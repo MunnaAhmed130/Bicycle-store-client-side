@@ -22,6 +22,7 @@ const Review = ({ review, i }) => {
           </span>
 
           <p className="text-[rgba(255,255,255,0.75)]">{profession}</p>
+
           <StarRating
             count={rating}
             className="mx-[2px] text-sm text-red-600"

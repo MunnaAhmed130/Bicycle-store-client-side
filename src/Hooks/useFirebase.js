@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import {
   getAuth,
   onAuthStateChanged,
@@ -11,6 +11,7 @@ import {
 } from "firebase/auth";
 import initializeFirebase from "../Firebase/Firebase.init";
 import axios from "axios";
+// import { useNavigate } from "react-router-dom";
 
 // initialize firebase
 initializeFirebase();
@@ -24,11 +25,13 @@ const useFirebase = () => {
   const auth = getAuth();
   const googleProvider = new GoogleAuthProvider();
 
+  // const navigate = useNavigate();
+
   //user registration
-  const registerWithEmail = (email, password, name, history) => {
+  const registerWithEmail = (email, password, name, navigate) => {
     setLoading(true);
     createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
+      .then(() => {
         setError("");
         const newUser = { email, displayName: name };
         setUser(newUser);
@@ -40,9 +43,9 @@ const useFirebase = () => {
           displayName: name,
         })
           .then(() => {})
-          .catch((error) => {});
+          .catch((error) => setError(error.message));
 
-        history("/");
+        navigate("/");
       })
       .catch((error) => {
         setError(error.message);
@@ -53,7 +56,7 @@ const useFirebase = () => {
   const loginWithEmail = (email, password, location, history) => {
     setLoading(true);
     signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
+      .then(() => {
         const destination = location?.state?.from || "/";
         history(destination);
         setError("");
@@ -65,14 +68,14 @@ const useFirebase = () => {
       .finally(() => setLoading(false));
   };
 
-  const signInWithGoogle = (location, history) => {
+  const signInWithGoogle = (location, navigate) => {
     setLoading(true);
     signInWithPopup(auth, googleProvider)
       .then((result) => {
         const user = result.user;
         saveGoogleUser(user.email, user.displayName);
         const destination = location?.state?.from || "/";
-        history(destination);
+        navigate(destination);
         setError("");
       })
       .catch((error) => {

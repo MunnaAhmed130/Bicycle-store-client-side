@@ -1,11 +1,8 @@
-import { useNavigate } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import AuthForm from "./AuthForm";
 
-const Register = () => {
+const Register = ({ navigate }) => {
   const { user, loading, registerWithEmail } = useAuth();
-
-  const history = useNavigate();
 
   const onSubmit = (data) => {
     console.log(data);
@@ -13,7 +10,7 @@ const Register = () => {
       alert("your password did not match");
       return;
     }
-    registerWithEmail(data.email, data.password, data.name, history);
+    registerWithEmail(data.email, data.password, data.name, navigate);
     console.log(user);
   };
 

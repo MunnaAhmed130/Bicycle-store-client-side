@@ -1,15 +1,17 @@
 import useAuth from "../../Hooks/useAuth";
 import AuthForm from "./AuthForm";
 
-const Login = () => {
+const Login = ({ location, navigate }) => {
   const { user, error, signInWithGoogle, loginWithEmail, loading } = useAuth();
+  // const location = useLocation();
+  // const navigate = useNavigate();
 
   const onSubmit = (data) => {
-    loginWithEmail(data.email, data.password, location, history);
+    loginWithEmail(data.email, data.password, location, navigate);
   };
 
   const handleGoogleSignIn = () => {
-    signInWithGoogle(location, history);
+    signInWithGoogle(location, navigate);
   };
 
   return (
