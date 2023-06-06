@@ -18,8 +18,8 @@ const Footer = () => {
             </p>
           </div>
           <div className="flex flex-col basis-full">
-            <p className="p-3">Lorem ipsum dolor sit amet</p>
-            <div className="flex flex-row basis-full justify-between">
+            <p className="">Lorem ipsum dolor sit amet</p>
+            <div className="flex sm:flex-row flex-col basis-full justify-between">
               <div className="basis-1/3">
                 <h5 className="footer-heading">pages</h5>
 

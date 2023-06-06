@@ -45,6 +45,7 @@ const Review = ({ review, i }) => {
 
       <motion.div
         variants={fadeIn("up", "spring", 0.4, (i + 1) * 0.5)}
+        viewport={{ once: true }}
         initial="hidden"
         whileInView="show"
         className="relative"

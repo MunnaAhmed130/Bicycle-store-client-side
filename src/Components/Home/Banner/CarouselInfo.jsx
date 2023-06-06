@@ -60,6 +60,7 @@ const CarouselInfo = ({ banner, i, fade, curr, last, alt }) => {
           {banner.text && (
             <motion.div
               variants={bannerVariant}
+              viewport={{ once: true }}
               initial="hidden"
               animate="visible"
               className={`

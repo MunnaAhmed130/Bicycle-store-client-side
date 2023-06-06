@@ -22,6 +22,7 @@ const Reviews = () => {
       <div className="max-w-7xl mx-auto">
         <motion.p
           variants={textVariant(40, 0.25, 0.5)}
+          viewport={{ once: true }}
           initial="hidden"
           whileInView="show"
           className="text-white text-center  pb-2 font-bold uppercase"
@@ -31,6 +32,7 @@ const Reviews = () => {
 
         <motion.h2
           variants={textVariant(20, 0.25, 0.5)}
+          viewport={{ once: true }}
           initial="hidden"
           whileInView="show"
           className="text-center lg:text-6xl md:text-5xl sm:text-4xl text-3xl uppercase font-bold text-white tracking-wide "
@@ -40,6 +42,7 @@ const Reviews = () => {
 
         <motion.div
           variants={fadeIn("down", "spring", 0.2, 0.75)}
+          viewport={{ once: true }}
           initial="hidden"
           whileInView="show"
           className="grid  sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-10 xl:my-24 my-16"

@@ -20,6 +20,7 @@ const Products = () => {
     <section className="bg-gradient-to-b from-[black] from-70% to-[#1a1919] xl:pt-40 xl:pb-40 py-36  ">
       <motion.p
         variants={textVariant(50, 0.25, 0.5)}
+        viewport={{ once: true }}
         initial="hidden"
         whileInView="show"
         className="text-[white] text-center lg:text-base text-sm font-bold pb-2 uppercase "
@@ -29,14 +30,16 @@ const Products = () => {
 
       <motion.h3
         variants={textVariant(20, 0.25, 0.65)}
+        viewport={{ once: true }}
         initial="hidden"
         whileInView="show"
-        className="text-center lg:text-6xl md:text-5xl sm:text-4xl text-3xl uppercase font-bold text-white tracking-wide lg:mb-16 mb-6 px-3"
+        className="text-center lg:text-6xl md:text-5xl sm:text-4xl text-3xl uppercase font-bold text-white tracking-wide lg:mb-16 mb-6 "
       >
         Find Your Bicycle
       </motion.h3>
       <motion.div
         variants={fadeIn("down", "spring", 0.2, 0.75)}
+        viewport={{ once: true }}
         initial="hidden"
         whileInView="show"
       >
