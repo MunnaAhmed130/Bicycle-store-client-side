@@ -11,7 +11,6 @@ import {
 } from "firebase/auth";
 import initializeFirebase from "../Firebase/Firebase.init";
 import axios from "axios";
-// import { useNavigate } from "react-router-dom";
 
 // initialize firebase
 initializeFirebase();
@@ -53,12 +52,12 @@ const useFirebase = () => {
       .finally(() => setLoading(false));
   };
   // use Login
-  const loginWithEmail = (email, password, location, history) => {
+  const loginWithEmail = (email, password, location, navigate) => {
     setLoading(true);
     signInWithEmailAndPassword(auth, email, password)
       .then(() => {
         const destination = location?.state?.from || "/";
-        history(destination);
+        navigate(destination);
         setError("");
         console.log(user);
       })
@@ -97,10 +96,26 @@ const useFirebase = () => {
     return () => unsubscribed;
   }, [auth]);
 
+  // useEffect(() => {
+  //   fetch(`http://localhost:4000/users/${user.email}`)
+  //     .then((res) => res.json())
+  //     .then((data) => setAdmin(data.admin));
+  // }, [user.email]);
+
   useEffect(() => {
-    fetch(`http://localhost:4000/users/${user.email}`)
-      .then((res) => res.json())
-      .then((data) => setAdmin(data.admin));
+    async function fetchData() {
+      try {
+        const response = await fetch(
+          `http://localhost:4000/users/${user.email}`
+        );
+        const data = response.json();
+        setAdmin(data.admin);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
+    fetchData();
   }, [user.email]);
 
   // user log out

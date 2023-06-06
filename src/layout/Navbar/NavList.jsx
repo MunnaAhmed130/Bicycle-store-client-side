@@ -8,7 +8,7 @@ const NavList = ({ toggle, setToggle, dropdown }) => {
   return (
     <>
       {navLinks.map((link) => (
-        <li key={link.id} className={`${dropdown && ` w-full `}`}>
+        <li key={link.id} className={`${dropdown && `w-full`}`}>
           <NavLink
             to={`${link.id}`}
             className={({ isActive }) =>
@@ -32,16 +32,28 @@ const NavList = ({ toggle, setToggle, dropdown }) => {
           </NavLink>
         </li>
       ))}
-      <li>
-        {user.email ? (
-          <img
-            src={user.photoURL}
-            referrerPolicy="no-referrer"
-            className={`${
-              dropdown && ` block w-full  my-2`
-            } w-10 h-10 rounded-full`}
-          />
-        ) : (
+      {user.email ? (
+        <>
+          <li>
+            <img
+              src={user.photoURL}
+              referrerPolicy="no-referrer"
+              className={`${
+                dropdown && `block w-full my-2`
+              } w-10 h-10 rounded-full mr-3`}
+            />
+          </li>
+          <li>
+            <button
+              onClick={logOut}
+              className="tracking-widest font-semibold  uppercase text-red-600 text-sm transition-all duration-100  py-1 px-2 rounded-sm border border-red-600/50 hover:shadow-red-400 hover:shadow-[0_0_1.5rem_0]"
+            >
+              LogOut
+            </button>
+          </li>
+        </>
+      ) : (
+        <li>
           <NavLink
             to="/login"
             className={({ isActive }) =>
@@ -60,16 +72,6 @@ const NavList = ({ toggle, setToggle, dropdown }) => {
           >
             Login
           </NavLink>
-        )}
-      </li>
-      {user.email && (
-        <li>
-          <button
-            onClick={logOut}
-            className="tracking-widest font-semibold  uppercase text-red-600 text-sm transition-all duration-100  py-1 px-2 rounded-sm border border-red-600/50 hover:shadow-red-400 hover:shadow-[0_0_1.5rem_0]"
-          >
-            LogOut
-          </button>
         </li>
       )}
     </>
