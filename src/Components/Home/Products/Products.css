@@ -1,8 +1,15 @@
-.mySwiper {
-  @apply w-[90%];
+/* .mySwiper {
+  @apply w-60;
+} */
+
+@media screen and (max-width: 779px) {
+  .mySwiper {
+    width: 95%;
+    max-width: 500px;
+  }
 }
 
-@media screen and (min-width: 640px) {
+/* @media screen and (min-width: 640px) {
   .mySwiper {
     width: 600px;
   }
@@ -35,7 +42,7 @@
   .mySwiper {
     width: 1280px;
   }
-}
+} */
 
 .mySwiper .swiper-button-next:after,
 .mySwiper .swiper-button-prev:after {

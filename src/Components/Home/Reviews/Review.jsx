@@ -51,7 +51,7 @@ const Review = ({ review, i }) => {
         className="relative"
       >
         <BsQuote className=" absolute   text-7xl text-[#ffffff50] -left-3 top-0 leading-3" />
-        <p className="text-[rgba(255,255,255,0.75)] xl:text-base text-[15px] mt-16 ">
+        <p className="text-[rgba(255,255,255,0.75)] xl:text-base text-[15px] mt-16 max-w-md">
           {description}
         </p>
       </motion.div>
