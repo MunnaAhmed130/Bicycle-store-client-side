@@ -15,9 +15,10 @@ import { fadeIn, textVariant } from "../../../utils/motion";
 
 const Products = () => {
   const data = useLoaderData();
-
+  const value = Array.isArray(data);
+  // console.log(data, value);
   return (
-    <section className="bg-gradient-to-b from-[black] from-70% to-[#1a1919] xl:pt-40 xl:pb-40 py-36  ">
+    <section className="bg-gradient-to-b from-[black] from-70% to-[#1a1919] xl:pt-40 xl:pb-40 pt-36 pb-20 ">
       <motion.p
         variants={textVariant(50, 0.25, 0.5)}
         viewport={{ once: true }}
@@ -70,11 +71,11 @@ const Products = () => {
               slidesPerView: 3,
             },
           }}
-          // autoplay={{
-          //   delay: 5000,
-          //   disableOnInteraction: false,
-          //   pauseOnMouseEnter: true,
-          // }}
+          autoplay={{
+            delay: 5000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          }}
           spaceBetween={15}
           loop={true}
           pagination={{
@@ -83,15 +84,19 @@ const Products = () => {
           navigation={true}
           // navigation={{ nextEl: "#swiper-forward", prevEl: "#swiper-back" }}
           modules={[Pagination, Navigation, Scrollbar, A11y, Autoplay]}
-          className={`mySwiper mb-14 gl:mt-20 mt-10 `}
+          className={`mySwiper lg:pt-20 pt-10 `}
         >
-          {data
-            .filter((product) => product.rating >= 4.6)
-            .map((product) => (
-              <SwiperSlide key={product.name}>
-                <Product key={product.name} product={product} />
-              </SwiperSlide>
-            ))}
+          {value ? (
+            data
+              .filter((product) => product.rating >= 4.6)
+              .map((product) => (
+                <SwiperSlide key={product.name}>
+                  <Product key={product.name} product={product} />
+                </SwiperSlide>
+              ))
+          ) : (
+            <p>loading</p>
+          )}
 
           {/* <div className="absolute top-0 h-full w-full text-white flex items-center justify-between z-10">
           <button

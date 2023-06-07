@@ -70,8 +70,8 @@
 } */
 
 .mySwiper .swiper-pagination {
-  position: static;
-  margin-top: 1rem;
+  /* @apply static mt-12; */
+  @apply relative mt-20 hidden;
 }
 
 .mySwiper .swiper-pagination-bullet {

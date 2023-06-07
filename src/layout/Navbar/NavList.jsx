@@ -53,7 +53,7 @@ const NavList = ({ toggle, setToggle, dropdown }) => {
           </li>
         </>
       ) : (
-        <li>
+        <li className={`${dropdown && `w-full`}`}>
           <NavLink
             to="/login"
             className={({ isActive }) =>

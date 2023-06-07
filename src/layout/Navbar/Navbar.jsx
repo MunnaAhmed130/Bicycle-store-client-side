@@ -9,13 +9,15 @@ const Navbar = () => {
 
   const location = useLocation();
   const path = location.pathname;
+
   // console.log(path);
+  // lg:px-20 md:px-10 px-5 py-4
 
   return (
     <nav
       className={` ${
         path.includes("explore") && `bg-[var(--bg-dark)]`
-      } w-full relative lg:px-20 md:px-10 px-5 py-4 text-center flex-center h-[--navbar-height]   top-0 z-50  `}
+      } w-full relative flex-center h-[--navbar-height] md:px-10 px-5 top-0 z-50  `}
     >
       <div className="max-w-7xl w-full mx-auto flex justify-between items-center">
         <Link
@@ -50,12 +52,11 @@ const Navbar = () => {
             <div
               className={` ${
                 toggle ? "nav-in absolute" : "animate-fadeOut relative"
-              }  sm:w-[calc(100%_-_90px)] w-[calc(100%_-_50px)] right-0 rounded-lg transition-all bg-[#1f1f1f]`}
+              }  md:w-[calc(100%_-_95px)] w-[calc(100%_-_55px)] text-center right-0 rounded-lg transition-all bg-[#1f1f1f]`}
             >
               <ul
-                className={`${
-                  toggle ? "flex" : ""
-                }  flex-col items-center justify-end  bg-white/0 py-2 px-2 rounded-sm text-white  `}
+                className={`${toggle && "flex"}
+                 flex-col items-center justify-end  bg-white/0 py-2 px-2 rounded-sm text-white`}
               >
                 <NavList
                   toggle={toggle}

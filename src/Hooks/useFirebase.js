@@ -112,6 +112,7 @@ const useFirebase = () => {
         setAdmin(data.admin);
       } catch (error) {
         console.log(error);
+        // setAdmin(false);
       }
     }
 
