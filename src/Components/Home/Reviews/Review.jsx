@@ -8,7 +8,7 @@ const Review = ({ review, i }) => {
 
   return (
     <div className="flex flex-col gap-3 last:xl:flex last:sm:hidden ">
-      <div className="flex gap-5 items-center">
+      <div className="flex gap-5 items-center justify-start">
         <img
           className="[--box:3.5rem] w-[var(--box)] h-[var(--box)] object-cover rounded-full"
           // referrerPolicy="no-referrer"
@@ -16,16 +16,18 @@ const Review = ({ review, i }) => {
           alt=""
         />
 
-        <div className="flex flex-col ">
-          <span className=" md:text-lg text-[17px] capitalize font-semibold leading-none text-[white]/95  ">
+        <div className="flex flex-col gap-1.5">
+          <p className=" md:text-lg md:leading-none text-[17px] capitalize font-semibold text-[white]/95 leading-[10px] ">
             {name}
-          </span>
+          </p>
 
-          <p className="text-[rgba(255,255,255,0.75)]">{profession}</p>
+          <p className="text-[rgba(255,255,255,0.75)] text-sm leading-none">
+            {profession}
+          </p>
 
           <StarRating
             count={rating}
-            className="mx-[2px] text-sm text-red-600"
+            className="mx-[2px] text-sm text-red-600 "
           />
         </div>
       </div>
@@ -51,7 +53,7 @@ const Review = ({ review, i }) => {
         className="relative"
       >
         <BsQuote className=" absolute   text-7xl text-[#ffffff50] -left-3 top-0 leading-3" />
-        <p className="text-[rgba(255,255,255,0.75)] xl:text-base text-[15px] mt-16 max-w-md">
+        <p className="text-[rgba(255,255,255,0.75)] xl:text-base text-[15px] mt-16 xl:max-w-md">
           {description}
         </p>
       </motion.div>

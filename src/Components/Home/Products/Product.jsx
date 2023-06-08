@@ -23,10 +23,10 @@ const Product = ({ product }) => {
   // console.log(crypto.randomUUID());
 
   return (
-    <div className="[--image-height:20rem] z-10 h-auto w-full rounded-sm overflow-hidden cursor-pointer ">
-      <div>
+    <div className="[--image-height:18rem] z-10 h-auto w-full rounded-sm overflow-hidden cursor-pointer ">
+      <div className="">
         {/* <div className=" overflow-hidden relative bg-[#E5E5E5]"> */}
-        <div className=" overflow-hidden relative ">
+        <div className=" overflow-hidden relative  bg-[#E5E5E5] ">
           {imageLoading && (
             <div className="overflow-hidden h-[var(--image-height)] flex items-center justify-center">
               <Blurhash

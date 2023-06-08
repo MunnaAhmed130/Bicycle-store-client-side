@@ -1,7 +1,7 @@
 footer a {
-  @apply block  leading-6 hover:bg-red-400;
+  @apply block  leading-6 hover:text-white text-slate-300 text-sm;
 }
 
 .footer-heading {
-  @apply text-lg font-bold uppercase;
+  @apply text-lg font-extrabold uppercase text-white;
 }

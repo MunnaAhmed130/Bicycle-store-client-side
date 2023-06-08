@@ -1,7 +1,10 @@
 import { useLoaderData } from "react-router-dom";
 import { motion } from "framer-motion";
+import { fadeIn, textVariant } from "../../../utils/motion";
 import Product from "./Product";
 import "./Products.css";
+
+// import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from "swiper";
@@ -11,7 +14,6 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/scrollbar";
 import "swiper/css/a11y";
-import { fadeIn, textVariant } from "../../../utils/motion";
 
 const Products = () => {
   const data = useLoaderData();
@@ -25,7 +27,7 @@ const Products = () => {
           viewport={{ once: true }}
           initial="hidden"
           whileInView="show"
-          className="text-[white] text-center lg:text-base text-sm font-bold pb-2 uppercase "
+          className="text-[white] text-center lg:text-base text-sm font-bold pb-2 uppercase"
         >
           Featured Bicycles
         </motion.p>
@@ -35,7 +37,7 @@ const Products = () => {
           viewport={{ once: true }}
           initial="hidden"
           whileInView="show"
-          className="text-center lg:text-6xl md:text-5xl sm:text-4xl text-3xl uppercase font-bold text-white tracking-wide lg:mb-16 mb-10 "
+          className="text-center lg:text-6xl md:text-5xl sm:text-4xl text-3xl uppercase font-bold text-white tracking-wide lg:pb-16 pb-10"
         >
           Find Your Bicycle
         </motion.h3>
@@ -48,29 +50,11 @@ const Products = () => {
           <Swiper
             breakpoints={{
               780: {
-                // width: 600,
                 slidesPerView: 2,
               },
-              // 768: {
-              //   // width: 700,
-              //   slidesPerView: 2,
-              // },
-              // 900: {
-              //   // width: 860,
-              //   slidesPerView: 2,
-              // },
               1180: {
-                // width: 1000,
                 slidesPerView: 3,
               },
-              // 1280: {
-              //   // width: 1200,
-              //   slidesPerView: 3,
-              // },
-              // 1400: {
-              //   // width: 1280,
-              //   slidesPerView: 3,
-              // },
             }}
             autoplay={{
               delay: 5000,
@@ -100,22 +84,20 @@ const Products = () => {
             )}
 
             {/* <div className="absolute top-0 h-full w-full text-white flex items-center justify-between z-10">
-          <button
-          id="swiper-back"
-          onClick={() => changeButton()}
-          className="text-white bg-black rounded-full h-10 w-10 m-1"
-          >
-          <BsChevronLeft />
-          </button>
-          
-          <button
-          id="swiper-forward"
-          onClick={() => setButton("right")}
-          className="text-white bg-black rounded-full h-10 w-10 m-1"
-          >
-          <BsChevronRight />
-          </button>
-        </div> */}
+              <button
+                id="swiper-back"
+                className="text-white bg-black rounded-full h-10 w-10 m-1 border"
+              >
+                <BsChevronLeft />
+              </button>
+
+              <button
+                id="swiper-forward"
+                className="text-white bg-black rounded-full h-10 w-10 m-1 border"
+              >
+                <BsChevronRight />
+              </button>
+            </div> */}
           </Swiper>
         </motion.div>
       </div>
