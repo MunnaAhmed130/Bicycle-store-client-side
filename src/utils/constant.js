@@ -1,3 +1,10 @@
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaWhatsapp,
+  FaTwitter,
+} from "react-icons/fa";
+
 const navLinks = [
   {
     id: "/",
@@ -48,4 +55,45 @@ const bannerImg = [
   },
 ];
 
-export { navLinks, bannerImg };
+const icons = [FaFacebookF, FaInstagram, FaWhatsapp, FaTwitter];
+
+const footerInfo = [
+  {
+    title: "Quick Links",
+    links: [
+      { id: "/", title: "Home" },
+      { id: "/", title: "About" },
+      { id: "/", title: "Blog" },
+      { id: "/", title: "Contact" },
+    ],
+  },
+  {
+    title: "Our Services",
+    links: [
+      { id: "/", title: "Bikes For Rent" },
+      { id: "/", title: "Bikes & Parts" },
+      { id: "/", title: "Bikes Repair" },
+      { id: "/explore", title: "Clothing" },
+    ],
+  },
+  {
+    title: "Information",
+    links: [
+      { id: "/", title: "Privacy Policy" },
+      { id: "/", title: "Terms & Conditions" },
+      { id: "/", title: "Support" },
+      { id: "/", title: "Disclaimer" },
+    ],
+  },
+  {
+    title: "Information",
+    links: [
+      { id: "/", title: "Privacy Policy" },
+      { id: "/", title: "Terms & Conditions" },
+      { id: "/", title: "Support" },
+      { id: "/", title: "Disclaimer" },
+    ],
+  },
+];
+
+export { navLinks, bannerImg, icons, footerInfo };
