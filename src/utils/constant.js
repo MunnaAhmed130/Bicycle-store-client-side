@@ -4,6 +4,11 @@ import {
   FaWhatsapp,
   FaTwitter,
 } from "react-icons/fa";
+import { BsTelephone } from "react-icons/bs";
+import { TfiEmail } from "react-icons/tfi";
+import { CiLocationOn } from "react-icons/ci";
+import { AiFillInstagram } from "react-icons/ai";
+import { IoLogoWhatsapp } from "react-icons/io";
 
 const navLinks = [
   {
@@ -55,12 +60,19 @@ const bannerImg = [
   },
 ];
 
-const icons = [FaFacebookF, FaInstagram, FaWhatsapp, FaTwitter];
+const icons = [FaFacebookF, AiFillInstagram, IoLogoWhatsapp, FaTwitter];
+
+const contact = [
+  {
+    title: "Contact",
+    list: [{ logo: BsTelephone, title: "Phone", info: "(018) 50950555" }],
+  },
+];
 
 const footerInfo = [
   {
     title: "Quick Links",
-    links: [
+    list: [
       { id: "/", title: "Home" },
       { id: "/", title: "About" },
       { id: "/", title: "Blog" },
@@ -69,7 +81,7 @@ const footerInfo = [
   },
   {
     title: "Our Services",
-    links: [
+    list: [
       { id: "/", title: "Bikes For Rent" },
       { id: "/", title: "Bikes & Parts" },
       { id: "/", title: "Bikes Repair" },
@@ -78,7 +90,7 @@ const footerInfo = [
   },
   {
     title: "Information",
-    links: [
+    list: [
       { id: "/", title: "Privacy Policy" },
       { id: "/", title: "Terms & Conditions" },
       { id: "/", title: "Support" },
@@ -86,14 +98,25 @@ const footerInfo = [
     ],
   },
   {
-    title: "Information",
-    links: [
-      { id: "/", title: "Privacy Policy" },
-      { id: "/", title: "Terms & Conditions" },
-      { id: "/", title: "Support" },
-      { id: "/", title: "Disclaimer" },
+    title: "Contact",
+    list: [
+      { logo: BsTelephone, title: "Our Helpline", info: "(018) 50950555" },
+      { logo: TfiEmail, title: "Email Address", info: "cyclezone@gmail.com" },
+      {
+        logo: CiLocationOn,
+        title: "Visit Office",
+        info: "4051 Pine Street, Portland",
+      },
     ],
   },
+  // {
+  //   title: "Contact",
+  //   links: [
+  //     { logo: "/", title: "Privacy Policy" },
+  //     { logo: "/", title: "Terms & Conditions" },
+  //     { logo: "/", title: "Support" },
+  //   ],
+  // },
 ];
 
-export { navLinks, bannerImg, icons, footerInfo };
+export { navLinks, bannerImg, icons, footerInfo, contact };

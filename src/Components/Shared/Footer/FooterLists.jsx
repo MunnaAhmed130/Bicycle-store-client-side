@@ -1,14 +1,15 @@
 import FooterList from "./FooterList";
 
 const FooterLists = ({ list }) => {
+  console.log(list.title);
   return (
-    <div className="flex flex-col gap-1 w-full " key={list.title}>
-      <h5 className="text-xl font-extrabold uppercase text-white">
+    <div className="flex flex-col gap-5 w-full " key={list.title}>
+      <h5 className="text-xl font-extrabold uppercase text-white ">
         {list.title}
       </h5>
-      <ul className="flex flex-col gap-0.5">
-        {list.links.map((page) => (
-          <FooterList list={page} key={page.id} />
+      <ul className="flex flex-col gap-3">
+        {list.list.map((list) => (
+          <FooterList list={list} key={list.title} />
         ))}
       </ul>
     </div>
