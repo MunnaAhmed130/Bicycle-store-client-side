@@ -4,23 +4,22 @@ import Social from "./Social";
 import { SiMinutemailer } from "react-icons/si";
 import "./Footer.css";
 import FooterLists from "./FooterLists";
+import { useState } from "react";
 
 const Footer = () => {
-  const location = useLocation();
-  const path = location.pathname;
-  console.log(path);
-  // lg:px-20 md:px-10 px-5 py-5
+  const [isAgreed, setIsAgreed] = useState(false);
+  // console.log(isAgreed);
 
   return (
     <footer className="bg-black flex flex-col md:px-10 px-5 py-3">
       <div className="max-w-7xl w-full mx-auto flex flex-col ">
-        <section className="grid grid-cols-2 gap-5">
-          <div className="flex flex-col gap-4 w-full ">
-            <div>
-              <h5 className="text-2xl font-extrabold uppercase text-white">
+        <section className="grid md:grid-cols-2 grid-cols-1 gap-5">
+          <div className="flex flex-col gap-4">
+            <div className="">
+              <h5 className="text-2xl font-extrabold uppercase text-white mb-2">
                 Bicycle Zone
               </h5>
-              <p className="">
+              <p className="max-w-lg">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam
                 saepe eius tempore autem.
               </p>
@@ -36,31 +35,41 @@ const Footer = () => {
               </ul>
             </div>
           </div>
-          <div className="flex flex-col gap-2 w-full">
-            <h6 className="text-xl font-extrabold uppercase text-white ">
+          <div className=" ">
+            <h6 className="text-xl mb-4 font-extrabold uppercase text-white ">
               Newsletter
             </h6>
-            <div className="border border-solid border-red-500 w-72 h-14 flex">
+            <div className="border border-solid border-red-500 w-72 h-14 flex mb-2">
               <input
-                type="mail"
+                type="email"
                 className="w-64 focus-visible:outline-none  px-1 bg-white/10"
+                required
               />
-              <button className="bg-slate-400 h-full w-16">
+              <button
+                type="submit"
+                disabled={!isAgreed}
+                onClick={() => console.log("clicked")}
+                className="bg-slate-400 h-full w-16"
+              >
                 <SiMinutemailer className="text-2xl " />
               </button>
             </div>
-            <span className="flex flex-row gap-2 items-center">
+            <span className="flex flex-row gap-2 items-center ">
               <input
                 type="checkbox"
                 name="checkbox"
-                className="bg-white/25 appearance-none border border-solid rounded-[1px] h-4 w-4 cursor-pointer border-red-500 before:content-[''] before:w-3 before:h-3 before:transition-all duration-150 "
+                onClick={() => setIsAgreed(!isAgreed)}
+                className=" border border-solid rounded-[1px] h-4 w-4 cursor-pointer border-red-500 before:w-2.5 before:h-2.5 mt-1 before:transition-all duration-150 "
               />
-              <span>I agree to the Privacy Policy</span>
+              <p className="inline-block text-gray-400 text-[15px]">
+                I agree to the &nbsp;
+                <span className="text-gray-200">Privacy Policy</span>
+              </p>
             </span>
           </div>
         </section>
 
-        <section className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 xl:gap-10  py-2">
+        <section className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 xl:gap-10 gap-y-7 py-2">
           {footerInfo.map((info) => (
             <FooterLists key={info.title} list={info} />
           ))}

@@ -109,14 +109,6 @@ const footerInfo = [
       },
     ],
   },
-  // {
-  //   title: "Contact",
-  //   links: [
-  //     { logo: "/", title: "Privacy Policy" },
-  //     { logo: "/", title: "Terms & Conditions" },
-  //     { logo: "/", title: "Support" },
-  //   ],
-  // },
 ];
 
 export { navLinks, bannerImg, icons, footerInfo, contact };

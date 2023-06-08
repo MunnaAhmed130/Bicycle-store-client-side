@@ -1,7 +1,7 @@
 import FooterList from "./FooterList";
 
 const FooterLists = ({ list }) => {
-  console.log(list.title);
+  //   console.log(list.title);
   return (
     <div className="flex flex-col gap-5 w-full " key={list.title}>
       <h5 className="text-xl font-extrabold uppercase text-white ">

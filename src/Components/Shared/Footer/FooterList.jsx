@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { BiChevronsRight } from "react-icons/bi";
 
 const FooterList = ({ list }) => {
-  console.log(list);
+  // console.log(list);
   return (
     <>
       {list.logo ? (
