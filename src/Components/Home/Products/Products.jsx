@@ -27,7 +27,7 @@ const Products = () => {
           viewport={{ once: true }}
           initial="hidden"
           whileInView="show"
-          className="text-[white] text-center lg:text-base text-sm font-bold pb-2 uppercase"
+          className="section-sub-heading"
         >
           Featured Bicycles
         </motion.p>

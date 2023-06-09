@@ -25,7 +25,7 @@ const Reviews = () => {
           viewport={{ once: true }}
           initial="hidden"
           whileInView="show"
-          className="text-white text-center  pb-2 font-bold uppercase"
+          className="section-sub-heading"
         >
           Testimonials
         </motion.p>

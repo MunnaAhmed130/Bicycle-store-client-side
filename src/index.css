@@ -65,3 +65,7 @@ svg {
 .section-heading {
   @apply text-center lg:text-6xl md:text-5xl sm:text-4xl text-3xl uppercase font-bold text-white tracking-wide lg:pb-16 pb-10;
 }
+
+.section-sub-heading {
+  @apply text-[white] text-center lg:text-base text-sm font-bold pb-2 uppercase;
+}
