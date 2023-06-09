@@ -32,28 +32,15 @@ const Review = ({ review, i }) => {
         </div>
       </div>
 
-      {/* <motion.div
-        variants={fadeIn("up", "spring", 0.4, (i + 1) * 0.5)}
-        initial="hidden"
-        whileInView="show"
-      >
-        <div className="bg-[var(--review-card-bg)] px-5 py-4 relative mt-3 rounded ">
-          <div className={`absolute top-[-10px] ${styles.triangle}`}></div>
-          <p className="text-[#f3f3f3] xl:text-lg text-[15px]  ">
-            {description}
-          </p>
-        </div>
-      </motion.div> */}
-
       <motion.div
         variants={fadeIn("up", "spring", 0.4, (i + 1) * 0.5)}
         viewport={{ once: true }}
         initial="hidden"
         whileInView="show"
-        className="relative"
+        className="relative "
       >
-        <BsQuote className=" absolute   text-7xl text-[#ffffff50] -left-3 top-0 leading-3" />
-        <p className="text-[rgba(255,255,255,0.75)] xl:text-base text-[15px] mt-16 xl:max-w-md">
+        <BsQuote className=" absolute md:text-7xl text-5xl text-[#ffffff50] -left-3 top-0 leading-3 transition-all " />
+        <p className="text-[#a1a1a1]  xl:text-base text-sm  md:mt-16 mt-12 xl:max-w-md leading-6 tracking-wide [word-spacing:2px]">
           {description}
         </p>
       </motion.div>

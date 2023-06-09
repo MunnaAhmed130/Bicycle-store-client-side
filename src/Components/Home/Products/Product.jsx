@@ -25,7 +25,6 @@ const Product = ({ product }) => {
   return (
     <div className="[--image-height:18rem] z-10 h-auto w-full rounded-sm overflow-hidden cursor-pointer ">
       <div className="">
-        {/* <div className=" overflow-hidden relative bg-[#E5E5E5]"> */}
         <div className=" overflow-hidden relative  bg-[#E5E5E5] ">
           {imageLoading && (
             <div className="overflow-hidden h-[var(--image-height)] flex items-center justify-center">
@@ -57,7 +56,7 @@ const Product = ({ product }) => {
       </div>
 
       <div className="p-3  text-center">
-        <h4 className="lg:text-[18px] sm:text-[17px]  font-semibold  text-white">
+        <h4 className="lg:text-[18px] text-lg  font-semibold  text-white">
           {name}
         </h4>
 
@@ -68,16 +67,13 @@ const Product = ({ product }) => {
             className="mr-0.5  inline-block pb-0.5"
           />
           &nbsp;
-          <span className="font-extrabold text-sm">({rating})</span>
+          <span className="font-extrabold ">({rating})</span>
         </div>
 
         <p className="text-white font-extrabold text-xl">
           <span className="text-xs align-text-top">$</span>
           {price}.00
         </p>
-        {/* <p className="text-[#d8d8d8] text-[15px]">
-          {product.description.slice(0, 120)}...
-        </p> */}
       </div>
     </div>
   );

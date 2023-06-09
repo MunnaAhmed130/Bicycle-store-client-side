@@ -11,7 +11,7 @@ const FooterList = ({ list }) => {
             <BiChevronsRight className="text-red-500 text-xl" />
           </span>
 
-          <span className="text-[#c5c5c5] hover:text-white text-[15px] tracking-wide ">
+          <span className="text-[#aaaaaa] hover:text-white text-[15px] tracking-wide ">
             {list.title}
           </span>
         </Link>

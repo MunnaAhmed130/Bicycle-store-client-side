@@ -18,7 +18,7 @@ const Footer = () => {
               <h5 className="text-2xl font-extrabold uppercase text-white/[.98]  mb-2">
                 Bicycle Zone
               </h5>
-              <p className="max-w-lg text-[#c5c5c5]">
+              <p className="max-w-lg text-[#aaaaaa]">
                 We are more than just a shop. We are a hub for cyclists of all
                 levels, from the casual rider to the seasoned pro.
               </p>

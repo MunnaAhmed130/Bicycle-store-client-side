@@ -35,9 +35,9 @@ const Reviews = () => {
           viewport={{ once: true }}
           initial="hidden"
           whileInView="show"
-          className="text-center lg:text-6xl md:text-5xl text-4xl  uppercase font-bold text-white tracking-wide "
+          className="section-heading"
         >
-          Customers Opinions
+          Trusted Opinions
         </motion.h2>
 
         <motion.div
@@ -45,7 +45,7 @@ const Reviews = () => {
           viewport={{ once: true }}
           initial="hidden"
           whileInView="show"
-          className="grid  grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 xl:py-24 py-16 md:max-w-full max-w-xl mx-auto "
+          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10  py-10 md:max-w-full max-w-xl mx-auto "
         >
           {reviews.map((review, i) => (
             <Review key={review._id} review={review} i={i}></Review>
