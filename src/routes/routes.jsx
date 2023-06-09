@@ -28,8 +28,8 @@ const routes = createBrowserRouter([
       {
         path: "/",
         loader: async () => {
-          return fetch("http://localhost:4000/products");
-          // return fetch("fakeData.json");
+          // return fetch("http://localhost:4000/products");
+          return fetch("fakeData.json");
         },
         element: <Home />,
       },
@@ -44,8 +44,8 @@ const routes = createBrowserRouter([
       {
         path: "/explore",
         loader: async () => {
-          return fetch("http://localhost:4000/products");
-          // return fetch("fakeData.json");
+          // return fetch("http://localhost:4000/products");
+          return fetch("fakeData.json");
         },
         element: <Explore />,
       },

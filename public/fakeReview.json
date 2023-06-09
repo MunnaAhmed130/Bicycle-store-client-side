@@ -14,5 +14,13 @@
     "url": "https://i.ibb.co/bW17KxR/woman-g5e3f7c984-640.jpg",
     "rating": "5",
     "description": "Masterful performance on all terrain types thanks to impeccable suspension and great geometry.Expensive but worth the money."
+  },
+  {
+    "_id": 2,
+    "name": "Fred Miller",
+    "profession": "Cyclist",
+    "description": "Masterful performance on all terrain types thanks to impeccable suspension and great geometry. Expensive but worth the money.",
+    "rating": "4.5",
+    "url": "https://i.ibb.co/TqkDnCN/young-man-in-helmet-riding-bmx-bicycle-and-smiling-8-EUT9-VK-150x150.jpg"
   }
 ]

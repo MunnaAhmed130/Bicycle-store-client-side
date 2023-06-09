@@ -8,8 +8,8 @@ const Reviews = () => {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:4000/reviews/limit?number=3")
-      // fetch("fakeReview.json")
+    // fetch("http://localhost:4000/reviews/limit?number=3")
+    fetch("fakeReview.json")
       // fetch("https://bicycle-store-server-side.vercel.app/reviews")
       .then((res) => res.json())
       .then((data) => setReviews(data));

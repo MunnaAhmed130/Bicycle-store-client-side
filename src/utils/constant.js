@@ -55,7 +55,6 @@ const bannerImg = [
   },
 ];
 
-// const icons = [FaFacebookF, AiFillInstagram, IoLogoWhatsapp, FaTwitter];
 const icons = [
   { icon: FaFacebookF, link: "https://www.facebook.com/" },
   { icon: AiFillInstagram, link: "https://www.instagram.com/" },
