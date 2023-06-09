@@ -4,7 +4,7 @@ const FooterLists = ({ list }) => {
   //   console.log(list.title);
   return (
     <div className="flex flex-col gap-5 w-full " key={list.title}>
-      <h5 className="text-xl font-extrabold uppercase text-white ">
+      <h5 className="text-xl font-extrabold uppercase text-white/[.98] ">
         {list.title}
       </h5>
       <ul className="flex flex-col gap-3">

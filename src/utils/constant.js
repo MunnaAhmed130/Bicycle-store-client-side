@@ -6,7 +6,7 @@ import {
 } from "react-icons/fa";
 import { BsTelephone } from "react-icons/bs";
 import { TfiEmail } from "react-icons/tfi";
-import { CiLocationOn } from "react-icons/ci";
+import { IoLocationOutline } from "react-icons/io5";
 import { AiFillInstagram } from "react-icons/ai";
 import { IoLogoWhatsapp } from "react-icons/io";
 
@@ -103,7 +103,7 @@ const footerInfo = [
       { logo: BsTelephone, title: "Our Helpline", info: "(018) 50950555" },
       { logo: TfiEmail, title: "Email Address", info: "cyclezone@gmail.com" },
       {
-        logo: CiLocationOn,
+        logo: IoLocationOutline,
         title: "Visit Office",
         info: "4051 Pine Street, Portland",
       },

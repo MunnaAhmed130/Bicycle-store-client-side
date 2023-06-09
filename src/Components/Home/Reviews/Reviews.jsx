@@ -45,7 +45,7 @@ const Reviews = () => {
           viewport={{ once: true }}
           initial="hidden"
           whileInView="show"
-          className="grid  grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 xl:pt-24 pt-16 md:max-w-full max-w-xl mx-auto "
+          className="grid  grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 xl:py-24 py-16 md:max-w-full max-w-xl mx-auto "
         >
           {reviews.map((review, i) => (
             <Review key={review._id} review={review} i={i}></Review>

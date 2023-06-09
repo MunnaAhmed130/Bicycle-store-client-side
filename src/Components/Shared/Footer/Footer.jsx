@@ -1,4 +1,3 @@
-import { useLocation } from "react-router-dom";
 import { footerInfo, icons } from "../../../utils/constant";
 import Social from "./Social";
 import { SiMinutemailer } from "react-icons/si";
@@ -11,21 +10,21 @@ const Footer = () => {
   // console.log(isAgreed);
 
   return (
-    <footer className="bg-black flex flex-col md:px-10 px-5 py-3">
-      <div className="max-w-7xl w-full mx-auto flex flex-col ">
-        <section className="grid md:grid-cols-2 grid-cols-1 gap-5">
-          <div className="flex flex-col gap-4">
+    <footer className="bg-black flex flex-col md:px-10 px-5 py-3 border-t">
+      <div className="max-w-7xl w-full mx-auto flex flex-col py-10">
+        <section className="grid md:grid-cols-2 grid-cols-1 gap-10">
+          <div className="flex flex-col md:gap-5 gap-10">
             <div className="">
-              <h5 className="text-2xl font-extrabold uppercase text-white mb-2">
+              <h5 className="text-2xl font-extrabold uppercase text-white/[.98]  mb-2">
                 Bicycle Zone
               </h5>
-              <p className="max-w-lg">
+              <p className="max-w-lg text-[#c5c5c5]">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam
                 saepe eius tempore autem.
               </p>
             </div>
-            <div className="flex flex-col gap-1 w-full">
-              <h5 className="text-xl font-extrabold uppercase text-white">
+            <div className="mb-5">
+              <h5 className="text-xl font-extrabold uppercase text-white/[.98] mb-2">
                 Social Media
               </h5>
               <ul className="flex flex-row gap-3  ">
@@ -36,22 +35,25 @@ const Footer = () => {
             </div>
           </div>
           <div className=" ">
-            <h6 className="text-xl mb-4 font-extrabold uppercase text-white ">
+            <h6
+              className="text-xl mb-4 font-extrabold uppercase text-white/[.98]
+            "
+            >
               Newsletter
             </h6>
-            <div className="border border-solid border-red-500 w-72 h-14 flex mb-2">
+            <div className="border border-solid border-red-700 focus-within:border-red-500 w-72 h-14 transition-all duration-150 flex mb-2 rounded-sm">
               <input
                 type="email"
-                className="w-64 focus-visible:outline-none  px-1 bg-white/10"
+                className="w-64 focus-visible:outline-none  px-1 bg-white/10 "
                 required
               />
               <button
                 type="submit"
                 disabled={!isAgreed}
                 onClick={() => console.log("clicked")}
-                className="bg-slate-400 h-full w-16"
+                className="bg-slate-400/30 hover:bg-slate-400/40 h-full w-16  text-white/70 hover:text-white transition-all duration-100 "
               >
-                <SiMinutemailer className="text-2xl " />
+                <SiMinutemailer className="text-2xl transition-colors duration-150" />
               </button>
             </div>
             <span className="flex flex-row gap-2 items-center ">
@@ -61,7 +63,7 @@ const Footer = () => {
                 onClick={() => setIsAgreed(!isAgreed)}
                 className=" border border-solid rounded-[1px] h-4 w-4 cursor-pointer border-red-500 before:w-2.5 before:h-2.5 mt-1 before:transition-all duration-150 "
               />
-              <p className="inline-block text-gray-400 text-[15px]">
+              <p className="inline-block text-gray-400 text-sm">
                 I agree to the &nbsp;
                 <span className="text-gray-200">Privacy Policy</span>
               </p>
