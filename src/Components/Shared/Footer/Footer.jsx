@@ -1,9 +1,9 @@
-import { footerInfo, icons } from "../../../utils/constant";
-import Social from "./Social";
-import { SiMinutemailer } from "react-icons/si";
-import "./Footer.css";
-import FooterLists from "./FooterLists";
 import { useState } from "react";
+import { footerInfo, icons } from "../../../utils/constant";
+import { SiMinutemailer } from "react-icons/si";
+import FooterLists from "./FooterLists";
+import Social from "./Social";
+import "./Footer.css";
 
 const Footer = () => {
   const [isAgreed, setIsAgreed] = useState(false);
@@ -19,8 +19,8 @@ const Footer = () => {
                 Bicycle Zone
               </h5>
               <p className="max-w-lg text-[#c5c5c5]">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam
-                saepe eius tempore autem.
+                We are more than just a shop. We are a hub for cyclists of all
+                levels, from the casual rider to the seasoned pro.
               </p>
             </div>
             <div className="mb-5">

@@ -61,3 +61,7 @@ body {
 svg {
   @apply inline-block;
 }
+
+.section-heading {
+  @apply text-center lg:text-6xl md:text-5xl text-4xl uppercase font-black text-white tracking-wide lg:pb-16 pb-10;
+}

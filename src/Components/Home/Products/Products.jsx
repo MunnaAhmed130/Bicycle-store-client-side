@@ -32,15 +32,16 @@ const Products = () => {
           Featured Bicycles
         </motion.p>
 
-        <motion.h3
+        <motion.h2
           variants={textVariant(20, 0.25, 0.65)}
           viewport={{ once: true }}
           initial="hidden"
           whileInView="show"
-          className="text-center lg:text-6xl md:text-5xl sm:text-4xl text-3xl uppercase font-bold text-white tracking-wide lg:pb-16 pb-10"
+          className="section-heading"
         >
           Find Your Bicycle
-        </motion.h3>
+        </motion.h2>
+
         <motion.div
           variants={fadeIn("down", "spring", 0.2, 0.75)}
           viewport={{ once: true }}

@@ -20,7 +20,7 @@ const Product = ({ product }) => {
     img.src = src;
   }, [src]);
 
-  // console.log(crypto.randomUUID());
+  console.log(crypto.randomUUID);
 
   return (
     <div className="[--image-height:18rem] z-10 h-auto w-full rounded-sm overflow-hidden cursor-pointer ">
@@ -50,14 +50,14 @@ const Product = ({ product }) => {
 
           <div className="absolute top-0 p-2  flex ">
             {tags.map((tag) => (
-              <Tag key={crypto.randomUUID()} tag={tag} />
+              <Tag key={crypto.randomUUID} tag={tag} />
             ))}
           </div>
         </div>
       </div>
 
       <div className="p-3  text-center">
-        <h4 className="lg:text-[18px] sm:text-[17px] text-[15px]  font-semibold  text-white">
+        <h4 className="lg:text-[18px] sm:text-[17px]  font-semibold  text-white">
           {name}
         </h4>
 
@@ -68,10 +68,10 @@ const Product = ({ product }) => {
             className="mr-0.5  inline-block pb-0.5"
           />
           &nbsp;
-          <span className="font-extrabold text-sm  ">({rating})</span>
+          <span className="font-extrabold text-sm">({rating})</span>
         </div>
 
-        <p className="text-white font-extrabold text-lg">
+        <p className="text-white font-extrabold text-xl">
           <span className="text-xs align-text-top">$</span>
           {price}.00
         </p>
