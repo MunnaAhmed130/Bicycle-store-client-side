@@ -16,19 +16,21 @@ const Review = ({ review, i }) => {
           alt=""
         />
 
-        <div className="flex flex-col gap-1.5">
-          <p className=" md:text-lg md:leading-none text-[17px] capitalize font-semibold text-[white]/95 leading-[10px] ">
+        <div className="flex flex-col">
+          <p className="md:text-lg text-[17px] md:leading-none leading-none capitalize font-semibold text-[white]/95 mb-1">
             {name}
           </p>
 
-          <p className="text-[rgba(255,255,255,0.75)] text-sm leading-none">
+          <p className="text-[rgba(255,255,255,0.75)] text-sm leading-none ">
             {profession}
           </p>
 
-          <StarRating
-            count={rating}
-            className="mx-[2px] text-sm text-red-600 "
-          />
+          <div>
+            <StarRating
+              count={rating}
+              className="mx-[2px] text-sm text-red-600 "
+            />
+          </div>
         </div>
       </div>
 
@@ -40,7 +42,7 @@ const Review = ({ review, i }) => {
         className="relative "
       >
         <BsQuote className=" absolute md:text-7xl text-5xl text-[#ffffff50] -left-3 top-0 leading-3 transition-all " />
-        <p className="text-[#a1a1a1]  xl:text-base text-sm  md:mt-16 mt-12 xl:max-w-md leading-6 tracking-wide [word-spacing:2px]">
+        <p className="text-[#a1a1a1]   md:mt-16 mt-12 xl:max-w-md leading-6 tracking-wide [word-spacing:2px]">
           {description}
         </p>
       </motion.div>

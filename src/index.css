@@ -35,8 +35,8 @@
   );
 }
 
-.dark-to-gray {
-}
+/* .dark-to-gray {
+} */
 
 .gray-to-dark {
   @apply bg-gradient-to-b from-[var(--bg-gray)] from-80% to-[var(--bg-dark)];

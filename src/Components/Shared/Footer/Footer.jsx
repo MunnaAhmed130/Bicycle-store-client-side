@@ -13,11 +13,12 @@ const Footer = () => {
     <footer className="flex flex-col md:px-10 px-5 py-3 bg-black">
       <div className="flex flex-col py-5 max-w-7xl w-full mx-auto">
         <section className="grid md:grid-cols-2 grid-cols-1 gap-x-10 gap-y-5 lg:mb-5 mb-2">
-          <div className="flex flex-col gap-5  ">
+          <div className="flex flex-col gap-5">
             <div>
               <h5 className="text-2xl font-extrabold uppercase text-white/[.98]  mb-2">
                 Bicycle Zone
               </h5>
+
               <p className="max-w-lg text-[#aaaaaa]">
                 We are more than just a shop. We are a hub for cyclists of all
                 levels, from the casual rider to the seasoned pro.
@@ -27,6 +28,7 @@ const Footer = () => {
               <h5 className="text-xl font-extrabold uppercase text-white/[.98] mb-2">
                 Social Media
               </h5>
+
               <ul className="flex flex-row gap-3  ">
                 {icons.map((Icon) => (
                   <Social key={Icon} Icon={Icon} />
@@ -35,18 +37,17 @@ const Footer = () => {
             </div>
           </div>
           <div className=" ">
-            <h6
-              className="text-xl mb-4 font-extrabold uppercase text-white/[.98]
-            "
-            >
+            <h6 className="text-xl mb-4 font-extrabold uppercase text-white/[.98]">
               Newsletter
             </h6>
+
             <div className="border border-solid border-red-700 focus-within:border-red-500 max-w-[17rem] h-14 transition-all duration-150 flex mb-2 rounded-sm">
               <input
                 type="email"
                 className="w-full focus-visible:outline-none  px-1 bg-white/10 "
                 required
               />
+
               <button
                 type="submit"
                 disabled={!isAgreed}
@@ -63,6 +64,7 @@ const Footer = () => {
                 onClick={() => setIsAgreed(!isAgreed)}
                 className=" border border-solid rounded-[1px] h-4 w-4 cursor-pointer border-red-500 before:w-2.5 before:h-2.5 mt-1 before:transition-all duration-150 "
               />
+
               <p className="inline-block text-gray-400 text-sm">
                 I agree to the &nbsp;
                 <span className="text-gray-200">Privacy Policy</span>
