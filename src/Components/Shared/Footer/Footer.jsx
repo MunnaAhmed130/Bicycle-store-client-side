@@ -10,7 +10,7 @@ const Footer = () => {
   // console.log(isAgreed);
 
   return (
-    <footer className="bg-black flex flex-col md:px-10 px-5 py-3 border-t">
+    <footer className="bg-black flex flex-col md:px-10 px-5 py-3 ">
       <div className="max-w-7xl w-full mx-auto flex flex-col py-10">
         <section className="grid md:grid-cols-2 grid-cols-1 gap-10">
           <div className="flex flex-col md:gap-5 gap-10">

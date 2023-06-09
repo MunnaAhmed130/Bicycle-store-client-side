@@ -1,9 +1,4 @@
-import {
-  FaFacebookF,
-  FaInstagram,
-  FaWhatsapp,
-  FaTwitter,
-} from "react-icons/fa";
+import { FaFacebookF, FaTwitter } from "react-icons/fa";
 import { BsTelephone } from "react-icons/bs";
 import { TfiEmail } from "react-icons/tfi";
 import { IoLocationOutline } from "react-icons/io5";
@@ -60,7 +55,13 @@ const bannerImg = [
   },
 ];
 
-const icons = [FaFacebookF, AiFillInstagram, IoLogoWhatsapp, FaTwitter];
+// const icons = [FaFacebookF, AiFillInstagram, IoLogoWhatsapp, FaTwitter];
+const icons = [
+  { icon: FaFacebookF, link: "https://www.facebook.com/" },
+  { icon: AiFillInstagram, link: "https://www.instagram.com/" },
+  { icon: IoLogoWhatsapp, link: "https://www.whatsapp.com/" },
+  { icon: FaTwitter, link: "https://twitter.com/" },
+];
 
 const contact = [
   {
