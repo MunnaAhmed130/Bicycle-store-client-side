@@ -20,6 +20,8 @@ const navLinks = [
   },
 ];
 
+const tags = ["Kids", "Mens", "Womens", "Trail", "Mountain", "Hybrid"];
+
 const bannerImg = [
   {
     src: "https://i.ibb.co/MNtH00X/luca-david-ia8u-TRs-ZZYY-unsplash.jpg",
@@ -111,4 +113,4 @@ const footerInfo = [
   },
 ];
 
-export { navLinks, bannerImg, icons, footerInfo, contact };
+export { navLinks, bannerImg, icons, footerInfo, contact, tags };

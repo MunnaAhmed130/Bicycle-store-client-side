@@ -20,7 +20,7 @@ const Product = ({ product }) => {
     img.src = src;
   }, [src]);
 
-  console.log(crypto.randomUUID);
+  // console.log(crypto.randomUUID);
 
   return (
     <div className="[--image-height:18rem] z-10 h-auto w-full rounded-sm overflow-hidden cursor-pointer ">
@@ -49,7 +49,7 @@ const Product = ({ product }) => {
 
           <div className="absolute top-0 p-2  flex ">
             {tags.map((tag) => (
-              <Tag key={crypto.randomUUID} tag={tag} />
+              <Tag key={crypto.randomUUID()} tag={tag} />
             ))}
           </div>
         </div>

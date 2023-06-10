@@ -31,7 +31,7 @@ const Footer = () => {
 
               <ul className="flex flex-row gap-3  ">
                 {icons.map((Icon) => (
-                  <Social key={Icon} Icon={Icon} />
+                  <Social key={Icon.icon} Icon={Icon} />
                 ))}
               </ul>
             </div>
