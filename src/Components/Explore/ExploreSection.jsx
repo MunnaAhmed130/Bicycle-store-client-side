@@ -18,8 +18,8 @@ const ExploreSection = () => {
 
       <h2 className="section-heading"> Our Bicycle Collection</h2>
 
-      <div className="flex flex-row max-w-7xl mx-auto">
-        <div className="w-3/12">
+      <div className="flex lg:flex-row flex-col max-w-7xl mx-auto ">
+        <div className="lg:w-3/12 mb-20">
           <div>catagory</div>
           <div>
             <p className="mb-1">Tags</p>
@@ -27,7 +27,7 @@ const ExploreSection = () => {
           </div>
         </div>
 
-        <div className="w-3/4">
+        <div className="lg:w-3/4 mb-20">
           {products.length ? (
             <ExploreProducts cycleTag={cycleTag} products={products} />
           ) : (
