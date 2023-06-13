@@ -5,8 +5,12 @@ const ExploreProduct = ({ product }) => {
 
   return (
     <div className=" text-center rounded-sm overflow-hidden">
-      <div className="relative w-full h-56 overflow-hidden flex items-center bg-[#E5E5E5]">
-        <img src={url} className="max-h-60 object-cover brightness-90" alt="" />
+      <div className="relative w-full h-60 overflow-hidden flex items-center  bg-[#E5E5E5]">
+        <img
+          src={url}
+          className=" w-full max-h-56 min-h-56 object-contain brightness-90 "
+          alt=""
+        />
         <div className="absolute top-0 p-2  flex ">
           {tags.map((tag) => (
             <Tag key={crypto.randomUUID()} tag={tag} />

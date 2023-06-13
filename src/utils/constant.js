@@ -22,6 +22,25 @@ const navLinks = [
 
 const allTags = ["Kids", "Mens", "Womens", "Trail", "Mountain", "Hybrid"];
 
+const catagories = [
+  {
+    title: "Bikes",
+    count: 57,
+  },
+  {
+    title: "Components",
+    count: 25,
+  },
+  {
+    title: "Apparel",
+    count: 30,
+  },
+  {
+    title: "Accessories",
+    count: 45,
+  },
+];
+
 const bannerImg = [
   {
     src: "https://i.ibb.co/MNtH00X/luca-david-ia8u-TRs-ZZYY-unsplash.jpg",
@@ -113,4 +132,4 @@ const footerInfo = [
   },
 ];
 
-export { navLinks, bannerImg, icons, footerInfo, contact, allTags };
+export { navLinks, bannerImg, icons, footerInfo, contact, allTags, catagories };
