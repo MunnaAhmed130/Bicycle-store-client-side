@@ -3,10 +3,12 @@ import { Link, useLoaderData } from "react-router-dom";
 import { allTags, catagories } from "../../utils/constant";
 import ExploreProducts from "./ExploreProducts";
 import ExploreTags from "./ExploreTags";
+import "./ExploreSection.css";
 
 const ExploreSection = () => {
   const products = useLoaderData();
   const [tags, setTags] = useState([]);
+  const [price, setPrice] = useState(3500);
 
   return (
     <section className="explore py-10 bg-gradient-to-b from-[var(--bg-dark)] from-1% via-[#1a1919] via-50% to-[var(--bg-dark)] md:px-10 px-5 min-h-screen">
@@ -27,6 +29,22 @@ const ExploreSection = () => {
               </ul>
             ))}
           </div>
+
+          <div>
+            <h6 className="uppercase font-extrabold text-2xl">Price Filter</h6>
+            <p>{price}</p>
+            <input
+              type="range"
+              min="200"
+              max="3500"
+              defaultValue="3500"
+              onChange={(e) => setPrice(e.target.value)}
+              name=""
+              id=""
+              className="appearance-none w-4/5 bg-slate-600 rounded-xl h-2"
+            />
+          </div>
+
           <div>
             <h6 className="mb-1 uppercase font-bold text-xl">Tags</h6>
 

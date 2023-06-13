@@ -1,4 +1,4 @@
-import Product from "../Home/Products/Product";
+// import Product from "../Home/Products/Product";
 import ExploreProduct from "./ExploreProduct";
 
 const ExploreProducts = ({ tags, products }) => {
