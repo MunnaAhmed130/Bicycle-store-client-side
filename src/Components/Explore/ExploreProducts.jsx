@@ -1,27 +1,18 @@
 import ExploreProduct from "./ExploreProduct";
 
-const ExploreProducts = ({ cycleTag, products }) => {
+const ExploreProducts = ({ tags, products }) => {
+  const matchTags = (currentProd, tags) => {
+    return tags.every((tag) => currentProd.includes(tag));
+  };
+
   return (
-    <>
-      {cycleTag ? (
-        <div className="grid xl:grid-cols-3 sm:grid-cols-2 gap-5 ">
-          {products.map((product) =>
-            product.tags.map(
-              (tag) =>
-                tag === cycleTag && (
-                  <ExploreProduct key={product.name} product={product} />
-                )
-            )
-          )}
-        </div>
-      ) : (
-        <div className="grid xl:grid-cols-3 sm:grid-cols-2 gap-5 ">
-          {products.map((product) => (
-            <ExploreProduct key={product.name} product={product} />
-          ))}
-        </div>
-      )}
-    </>
+    <div className="grid xl:grid-cols-3 sm:grid-cols-2 gap-5 ">
+      {products
+        .filter((prod) => matchTags(prod.tags, tags))
+        .map((product) => (
+          <ExploreProduct key={product.name} product={product} />
+        ))}
+    </div>
   );
 };
 

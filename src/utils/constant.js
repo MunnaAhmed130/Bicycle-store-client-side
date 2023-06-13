@@ -20,7 +20,7 @@ const navLinks = [
   },
 ];
 
-const tags = ["Kids", "Mens", "Womens", "Trail", "Mountain", "Hybrid"];
+const allTags = ["Kids", "Mens", "Womens", "Trail", "Mountain", "Hybrid"];
 
 const bannerImg = [
   {
@@ -113,4 +113,4 @@ const footerInfo = [
   },
 ];
 
-export { navLinks, bannerImg, icons, footerInfo, contact, tags };
+export { navLinks, bannerImg, icons, footerInfo, contact, allTags };
