@@ -4,12 +4,15 @@ import { allTags, catagories } from "../../utils/constant";
 import ExploreProducts from "./ExploreProducts";
 import ExploreTags from "./ExploreTags";
 import "./ExploreSection.css";
+import PriceFilter from "./PriceFilter";
 
 const ExploreSection = () => {
   const products = useLoaderData();
   const [tags, setTags] = useState([]);
-  const [price, setPrice] = useState(3500);
+  const [minPrice, setMinPrice] = useState(200);
+  const [maxPrice, setMaxPrice] = useState(4000);
 
+  console.log(minPrice, maxPrice);
   return (
     <section className="explore py-10 bg-gradient-to-b from-[var(--bg-dark)] from-1% via-[#1a1919] via-50% to-[var(--bg-dark)] md:px-10 px-5 min-h-screen">
       <p className="section-sub-heading">Discover the world of Cycling</p>
@@ -32,16 +35,11 @@ const ExploreSection = () => {
 
           <div>
             <h6 className="uppercase font-extrabold text-2xl">Price Filter</h6>
-            <p>{price}</p>
-            <input
-              type="range"
-              min="200"
-              max="3500"
-              defaultValue="3500"
-              onChange={(e) => setPrice(e.target.value)}
-              name=""
-              id=""
-              className="appearance-none w-4/5 bg-slate-600 rounded-xl h-2"
+            <PriceFilter
+              min={200}
+              max={4000}
+              setMaxPrice={setMaxPrice}
+              setMinPrice={setMinPrice}
             />
           </div>
 
@@ -54,7 +52,12 @@ const ExploreSection = () => {
 
         <div className="lg:w-3/4 mb-20">
           {products.length ? (
-            <ExploreProducts products={products} tags={tags} />
+            <ExploreProducts
+              products={products}
+              tags={tags}
+              minPrice={minPrice}
+              maxPrice={maxPrice}
+            />
           ) : (
             <div className="text-center">
               <p>no producs</p>

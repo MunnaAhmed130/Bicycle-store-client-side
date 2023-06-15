@@ -2,7 +2,7 @@ import Tag from "../Home/Products/Tag";
 
 const ExploreProduct = ({ product }) => {
   const { name, url, price, tags } = product;
-
+  // console.log(typeof price, price);
   return (
     <div className=" text-center rounded-sm overflow-hidden">
       <div className="relative w-full h-60 overflow-hidden flex items-center  bg-[#E5E5E5]">
