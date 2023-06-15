@@ -4,8 +4,6 @@ import { fadeIn, textVariant } from "../../../utils/motion";
 import Product from "./Product";
 import "./Products.css";
 
-// import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from "swiper";
 
@@ -17,8 +15,7 @@ import "swiper/css/a11y";
 
 const Products = () => {
   const data = useLoaderData();
-  const value = Array.isArray(data);
-  // console.log(data, value);
+
   return (
     <section className="bg-gradient-to-b from-[black] from-70% to-[#1a1919] xl:pt-40 xl:pb-40 pt-36 pb-20 md:px-10 px-5">
       <div className="max-w-7xl mx-auto">
@@ -68,11 +65,10 @@ const Products = () => {
               clickable: true,
             }}
             navigation={true}
-            // navigation={{ nextEl: "#swiper-forward", prevEl: "#swiper-back" }}
             modules={[Pagination, Navigation, Scrollbar, A11y, Autoplay]}
             className={`mySwiper lg:pt-20 pt-10 `}
           >
-            {value ? (
+            {Array.isArray(data) ? (
               data
                 .filter((product) => product.rating >= 4.6)
                 .map((product) => (
@@ -83,22 +79,6 @@ const Products = () => {
             ) : (
               <p>loading</p>
             )}
-
-            {/* <div className="absolute top-0 h-full w-full text-white flex items-center justify-between z-10">
-              <button
-                id="swiper-back"
-                className="text-white bg-black rounded-full h-10 w-10 m-1 border"
-              >
-                <BsChevronLeft />
-              </button>
-
-              <button
-                id="swiper-forward"
-                className="text-white bg-black rounded-full h-10 w-10 m-1 border"
-              >
-                <BsChevronRight />
-              </button>
-            </div> */}
           </Swiper>
         </motion.div>
       </div>
