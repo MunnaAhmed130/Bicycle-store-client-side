@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { footerInfo, icons } from "../../../utils/constant";
 import { SiMinutemailer } from "react-icons/si";
 import FooterLists from "./FooterLists";
@@ -6,6 +6,8 @@ import Social from "./Social";
 import "./Footer.css";
 
 const Footer = () => {
+  // const [email, setEmail] = useState("");
+  const mailRef = useRef();
   const [isAgreed, setIsAgreed] = useState(false);
   // console.log(isAgreed);
 
@@ -41,9 +43,17 @@ const Footer = () => {
               Newsletter
             </h6>
 
-            <div className="border border-solid border-red-700 focus-within:border-red-500 max-w-[17rem] h-14 transition-all duration-150 flex mb-2 rounded-sm">
+            <form
+              className="border border-solid border-red-700 focus-within:border-red-500 max-w-[17rem] h-14 transition-all duration-150 flex mb-2 rounded-sm"
+              onSubmit={(e) => {
+                console.log(e);
+                e.preventDefault();
+                e.reset();
+              }}
+            >
               <input
                 type="email"
+                name="subscriberEmail"
                 className="w-full focus-visible:outline-none  px-1 bg-white/10 "
                 required
               />
@@ -51,12 +61,15 @@ const Footer = () => {
               <button
                 type="submit"
                 disabled={!isAgreed}
-                onClick={() => console.log("clicked")}
+                // onClick={(e) => {
+                //   console.log("clicked");
+                //   e.preventDefault();
+                // }}
                 className="bg-slate-400/30 hover:bg-slate-400/40 h-full w-16  text-white/70 hover:text-white transition-all duration-100 "
               >
                 <SiMinutemailer className="text-2xl transition-colors duration-150" />
               </button>
-            </div>
+            </form>
             <span className="flex flex-row gap-2 items-center ">
               <input
                 type="checkbox"

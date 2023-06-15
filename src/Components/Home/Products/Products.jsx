@@ -70,12 +70,15 @@ const Products = () => {
           >
             {Array.isArray(data) ? (
               data
-                .filter((product) => product.rating >= 4.6)
-                .map((product) => (
-                  <SwiperSlide key={product.name}>
-                    <Product key={product.name} product={product} />
-                  </SwiperSlide>
-                ))
+                // .filter((product) => product.rating >= 4.6)
+                .map(
+                  (product) =>
+                    product.rating >= 4.7 && (
+                      <SwiperSlide key={product.name}>
+                        <Product key={product.name} product={product} />
+                      </SwiperSlide>
+                    )
+                )
             ) : (
               <p>loading</p>
             )}

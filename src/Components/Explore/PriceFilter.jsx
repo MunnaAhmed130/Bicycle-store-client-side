@@ -17,7 +17,6 @@ const PriceFilter = ({ min, max, setMaxPrice, setMinPrice }) => {
   useEffect(() => {
     const minPercent = getPercent(minVal);
     const maxPercent = getPercent(maxValRef.current);
-    // console.log(minPercent, maxPercent);
 
     if (range.current) {
       range.current.style.left = `${minPercent}%`;
@@ -55,29 +54,29 @@ const PriceFilter = ({ min, max, setMaxPrice, setMinPrice }) => {
   };
 
   return (
-    <div className=" w-full h-10 flex items-center ">
+    <div className="relative w-full h-16 flex pt-5 pb-10">
       <input
         type="range"
+        name="min"
         min={min}
         max={max}
-        step="1"
         value={minVal}
         onChange={(e) => handleMinInput(e)}
-        className="thumb thumb--left pointer-events-none cursor-pointer absolute h-0 w-[200px] outline-none z-[3]"
+        className="thumb thumb--left pointer-events-none cursor-pointer absolute h-0 outline-none z-[3] "
         style={{ zIndex: minVal > max - 100 && "5" }}
       />
 
       <input
         type="range"
+        name="max"
         min={min}
         max={max}
-        step="1"
         value={maxVal}
         onChange={(e) => handleMaxInput(e)}
-        className="thumb thumb--right pointer-events-none cursor-pointer absolute h-0 w-[200px] outline-none z-[4]"
+        className="thumb thumb--right pointer-events-none cursor-pointer absolute h-0 outline-none z-[4]"
       />
 
-      <div className="slider relative w-[200px] ">
+      <div className="slider relative ">
         <div className="slider__track absolute rounded h-1 z-[1] w-full bg-slate-300" />
 
         <div
@@ -85,13 +84,9 @@ const PriceFilter = ({ min, max, setMaxPrice, setMinPrice }) => {
           className="slider__range absolute bg-red-500 rounded h-1 z-[2]"
         />
 
-        <div className="slider__left-value absolute left-0 text-white/75 font-bold text-xs mt-5">
-          {minVal}
-        </div>
+        <div className="slider-value left-0">{minVal}</div>
 
-        <div className="slider__right-value absolute right-0 text-white/75 font-bold text-xs mt-5">
-          {maxVal}
-        </div>
+        <div className="slider-value right-0 ">{maxVal}</div>
       </div>
     </div>
   );

@@ -12,7 +12,7 @@ const ExploreSection = () => {
   const [minPrice, setMinPrice] = useState(200);
   const [maxPrice, setMaxPrice] = useState(4000);
 
-  console.log(minPrice, maxPrice);
+  // console.log(minPrice, maxPrice);
   return (
     <section className="explore py-10 bg-gradient-to-b from-[var(--bg-dark)] from-1% via-[#1a1919] via-50% to-[var(--bg-dark)] md:px-10 px-5 min-h-screen">
       <p className="section-sub-heading">Discover the world of Cycling</p>
@@ -20,12 +20,13 @@ const ExploreSection = () => {
       <h2 className="section-heading"> Our Bicycle Collection</h2>
 
       <div className="flex lg:flex-row flex-col max-w-7xl mx-auto ">
+        {/* sidebar */}
         <div className="lg:w-3/12 mb-20 lg:mr-5 flex flex-col gap-5">
           <div className="">
-            <h6 className="uppercase font-extrabold text-2xl">catagories</h6>
+            <h6 className="sidebar-title mb-2">catagories</h6>
             {catagories.map((catag) => (
               <ul key={crypto.randomUUID()} className="">
-                <li className="py-2 flex justify-between uppercase">
+                <li className="py-2 flex justify-between uppercase text-sm text-slate-300 hover:text-slate-50 transition-color font-bold">
                   <Link to="/">{catag.title}</Link>
                   <span>({catag.count})</span>
                 </li>
@@ -34,7 +35,7 @@ const ExploreSection = () => {
           </div>
 
           <div>
-            <h6 className="uppercase font-extrabold text-2xl">Price Filter</h6>
+            <h6 className="sidebar-title mb-2">Price Filter</h6>
             <PriceFilter
               min={200}
               max={4000}
@@ -44,8 +45,7 @@ const ExploreSection = () => {
           </div>
 
           <div>
-            <h6 className="mb-1 uppercase font-bold text-xl">Tags</h6>
-
+            <h6 className="sidebar-title mb-2 ">Tags</h6>
             <ExploreTags allTags={allTags} tags={tags} setTags={setTags} />
           </div>
         </div>
@@ -60,7 +60,7 @@ const ExploreSection = () => {
             />
           ) : (
             <div className="text-center">
-              <p>no producs</p>
+              <p>no products</p>
             </div>
           )}
         </div>
