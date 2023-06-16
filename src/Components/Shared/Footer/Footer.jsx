@@ -7,13 +7,13 @@ import "./Footer.css";
 
 const Footer = () => {
   const [isAgreed, setIsAgreed] = useState(true);
-  console.log("Disagree", isAgreed);
+  // console.log("Disagree", isAgreed);
 
   return (
     <footer className="flex flex-col md:px-10 px-5 py-3 bg-black">
       <div className="flex flex-col py-5 max-w-7xl w-full mx-auto">
-        <section className="grid md:grid-cols-2 grid-cols-1 gap-x-10 gap-y-5 lg:mb-5 mb-2">
-          <div className="flex flex-col gap-5">
+        <div className="grid md:grid-cols-2 grid-cols-1 gap-x-10 gap-y-5 lg:mb-5 mb-2">
+          <section className="flex flex-col gap-5">
             <div>
               <h5 className="text-2xl font-extrabold uppercase text-white/[.98]  mb-2">
                 Bicycle Zone
@@ -35,8 +35,8 @@ const Footer = () => {
                 ))}
               </ul>
             </div>
-          </div>
-          <div>
+          </section>
+          <section>
             <h6 className="text-xl mb-4 font-extrabold uppercase text-white/[.98]">
               Newsletter
             </h6>
@@ -78,8 +78,8 @@ const Footer = () => {
                 </p>
               </span>
             </form>
-          </div>
-        </section>
+          </section>
+        </div>
 
         <section className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 xl:gap-10 gap-y-7 py-2">
           {footerInfo.map((info) => (
@@ -87,11 +87,11 @@ const Footer = () => {
           ))}
         </section>
       </div>
-      <div className="">
-        <p className="text-center py-2 text-[15px]">
-          Copyright &copy; 2021. All Rights Reserved
+      <section className="h-5">
+        <p className="text-center  text-sm">
+          Copyright&copy;2021. All Rights Reserved
         </p>
-      </div>
+      </section>
     </footer>
   );
 };

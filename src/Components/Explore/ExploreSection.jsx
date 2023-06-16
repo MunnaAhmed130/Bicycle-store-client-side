@@ -5,6 +5,7 @@ import ExploreProducts from "./ExploreProducts";
 import ExploreTags from "./ExploreTags";
 import "./ExploreSection.css";
 import PriceFilter from "./PriceFilter";
+import SideBar from "./SideBar";
 
 const ExploreSection = () => {
   const products = useLoaderData();
@@ -21,34 +22,12 @@ const ExploreSection = () => {
 
       <div className="flex lg:flex-row flex-col max-w-7xl mx-auto ">
         {/* sidebar */}
-        <div className="lg:w-3/12 mb-20 lg:mr-5 flex flex-col gap-5">
-          <div className="">
-            <h6 className="sidebar-title mb-2">catagories</h6>
-            {catagories.map((catag) => (
-              <ul key={crypto.randomUUID()} className="">
-                <li className="py-2 flex justify-between uppercase text-sm text-slate-300 hover:text-slate-50 transition-color font-bold">
-                  <Link to="/">{catag.title}</Link>
-                  <span>({catag.count})</span>
-                </li>
-              </ul>
-            ))}
-          </div>
-
-          <div>
-            <h6 className="sidebar-title mb-2">Price Filter</h6>
-            <PriceFilter
-              min={200}
-              max={4000}
-              setMaxPrice={setMaxPrice}
-              setMinPrice={setMinPrice}
-            />
-          </div>
-
-          <div>
-            <h6 className="sidebar-title mb-2 ">Tags</h6>
-            <ExploreTags allTags={allTags} tags={tags} setTags={setTags} />
-          </div>
-        </div>
+        <SideBar
+          tags={tags}
+          setTags={setTags}
+          setMinPrice={setMinPrice}
+          setMaxPrice={setMaxPrice}
+        />
 
         <div className="lg:w-3/4 mb-20">
           {products.length ? (

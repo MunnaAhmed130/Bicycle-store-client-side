@@ -6,7 +6,7 @@ const ExploreProducts = ({ tags, products, minPrice, maxPrice }) => {
   };
 
   return (
-    <div className="grid lg:grid-cols-3 sm:grid-cols-2  gap-5 ">
+    <section className="grid lg:grid-cols-3 sm:grid-cols-2  gap-5 ">
       {products
         .filter((prod) => matchTags(prod.tags, tags))
         .map(
@@ -16,7 +16,7 @@ const ExploreProducts = ({ tags, products, minPrice, maxPrice }) => {
               <ExploreProduct key={product.name} product={product} />
             )
         )}
-    </div>
+    </section>
   );
 };
 

@@ -24,16 +24,12 @@ const ExploreProduct = ({ product }) => {
         <h3 className="font-bold">{name}</h3>
 
         <div className="text-red-500 text-sm h-5  flex items-center justify-center leading-none">
-          <Rating
-            count={rating}
-            // emptyColor="text-red-200"
-            className="mr-0.5  inline-block pb-0.5"
-          />
+          <Rating count={rating} className="mr-0.5  inline-block pb-0.5" />
           &nbsp;
           <span className="font-bold ">({rating})</span>
         </div>
 
-        <p>Price: ${price}</p>
+        <p>Price: ${price.toLocaleString()}</p>
 
         {/* <Link to={`/placeOrder/${product._id}`} className="btn-link">
           <button className="buy-btn">BUY NOW</button>

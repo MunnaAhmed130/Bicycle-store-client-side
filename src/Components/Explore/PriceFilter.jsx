@@ -85,7 +85,6 @@ const PriceFilter = ({ min, max, setMaxPrice, setMinPrice }) => {
         />
 
         <div className="slider-value left-0">{minVal}</div>
-
         <div className="slider-value right-0 ">{maxVal}</div>
       </div>
     </div>
