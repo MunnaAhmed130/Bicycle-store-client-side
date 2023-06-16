@@ -31,8 +31,5 @@ footer
     input:-webkit-autofill:focus,
     input:-webkit-autofill:active
   ) {
-  transition: background-color 50000s ease-in-out 0s, color 5000s 0s;
-  /* -webkit-background-clip: text; */
-  /* caret-color: white; */
-  /* -webkit-text-fill-color: white; */
+  transition: background-color 50000s ease-in-out 0s, color 50000s 0s;
 }

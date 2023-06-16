@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { footerInfo, icons } from "../../../utils/constant";
 import { SiMinutemailer } from "react-icons/si";
 import FooterLists from "./FooterLists";
@@ -6,10 +6,8 @@ import Social from "./Social";
 import "./Footer.css";
 
 const Footer = () => {
-  // const [email, setEmail] = useState("");
-  const mailRef = useRef();
-  const [isAgreed, setIsAgreed] = useState(false);
-  // console.log(isAgreed);
+  const [isAgreed, setIsAgreed] = useState(true);
+  console.log("Disagree", isAgreed);
 
   return (
     <footer className="flex flex-col md:px-10 px-5 py-3 bg-black">
@@ -38,51 +36,48 @@ const Footer = () => {
               </ul>
             </div>
           </div>
-          <div className=" ">
+          <div>
             <h6 className="text-xl mb-4 font-extrabold uppercase text-white/[.98]">
               Newsletter
             </h6>
-
             <form
-              className="border border-solid border-red-700 focus-within:border-red-500 max-w-[17rem] h-14 transition-all duration-150 flex mb-2 rounded-sm"
               onSubmit={(e) => {
-                console.log(e);
                 e.preventDefault();
-                e.reset();
+                setIsAgreed((prev) => !prev);
+                e.target.reset();
               }}
             >
-              <input
-                type="email"
-                name="subscriberEmail"
-                className="w-full focus-visible:outline-none  px-1 bg-white/10 "
-                required
-              />
+              <div className="border border-solid border-red-700 focus-within:border-red-500 max-w-[17rem] h-14 transition-all duration-150 flex mb-2 rounded-sm">
+                <input
+                  type="email"
+                  name="subscriberEmail"
+                  className="w-full focus-visible:outline-none  px-1 bg-white/10 "
+                  required
+                />
 
-              <button
-                type="submit"
-                disabled={!isAgreed}
-                // onClick={(e) => {
-                //   console.log("clicked");
-                //   e.preventDefault();
-                // }}
-                className="bg-slate-400/30 hover:bg-slate-400/40 h-full w-16  text-white/70 hover:text-white transition-all duration-100 "
-              >
-                <SiMinutemailer className="text-2xl transition-colors duration-150" />
-              </button>
+                <button
+                  type="submit"
+                  disabled={isAgreed}
+                  // onClick={(e) => setIsAgreed((prev) => !prev)}
+                  className="bg-slate-400/30 hover:bg-slate-400/40 h-full w-16  text-white/70 hover:text-white transition-all duration-100 "
+                >
+                  <SiMinutemailer className="text-2xl transition-colors duration-150" />
+                </button>
+              </div>
+              <span className="flex flex-row gap-2 items-center ">
+                <input
+                  type="checkbox"
+                  name="checkbox"
+                  onClick={() => setIsAgreed(!isAgreed)}
+                  className=" border border-solid rounded-[1px] h-4 w-4 cursor-pointer border-red-500 before:w-2.5 before:h-2.5 mt-1 before:transition-all duration-150 "
+                />
+
+                <p className="inline-block text-gray-400 text-sm">
+                  I agree to the &nbsp;
+                  <span className="text-gray-200">Privacy Policy</span>
+                </p>
+              </span>
             </form>
-            <span className="flex flex-row gap-2 items-center ">
-              <input
-                type="checkbox"
-                name="checkbox"
-                onClick={() => setIsAgreed(!isAgreed)}
-                className=" border border-solid rounded-[1px] h-4 w-4 cursor-pointer border-red-500 before:w-2.5 before:h-2.5 mt-1 before:transition-all duration-150 "
-              />
-
-              <p className="inline-block text-gray-400 text-sm">
-                I agree to the &nbsp;
-                <span className="text-gray-200">Privacy Policy</span>
-              </p>
-            </span>
           </div>
         </section>
 
