@@ -6,12 +6,8 @@ import "./Navbar.css";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
-
   const location = useLocation();
   const path = location.pathname;
-
-  // console.log(path);
-  // lg:px-20 md:px-10 px-5 py-4
 
   return (
     <nav
