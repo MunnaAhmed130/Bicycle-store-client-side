@@ -1,11 +1,8 @@
 import { useState } from "react";
-import { Link, useLoaderData } from "react-router-dom";
-import { allTags, catagories } from "../../utils/constant";
+import { useLoaderData } from "react-router-dom";
 import ExploreProducts from "./ExploreProducts";
-import ExploreTags from "./ExploreTags";
-import "./ExploreSection.css";
-import PriceFilter from "./PriceFilter";
 import SideBar from "./SideBar";
+import "./ExploreSection.css";
 
 const ExploreSection = () => {
   const products = useLoaderData();
@@ -15,12 +12,12 @@ const ExploreSection = () => {
 
   // console.log(minPrice, maxPrice);
   return (
-    <section className="explore py-10 bg-gradient-to-b from-[var(--bg-dark)] from-1% via-[#1a1919] via-50% to-[var(--bg-dark)] md:px-10 px-5 min-h-screen">
+    <div className="explore py-10 bg-gradient-to-b from-[var(--bg-dark)] from-1% via-[#1a1919] via-50% to-[var(--bg-dark)] md:px-10 px-5 min-h-screen">
       <p className="section-sub-heading">Discover the world of Cycling</p>
 
       <h2 className="section-heading"> Our Bicycle Collection</h2>
 
-      <div className="flex lg:flex-row flex-col max-w-7xl mx-auto ">
+      <div className="flex lg:flex-row flex-col-reverse max-w-7xl mx-auto ">
         {/* sidebar */}
         <SideBar
           tags={tags}
@@ -29,7 +26,7 @@ const ExploreSection = () => {
           setMaxPrice={setMaxPrice}
         />
 
-        <div className="lg:w-3/4 mb-20">
+        <section className="lg:w-3/4 mb-20">
           {products.length ? (
             <ExploreProducts
               products={products}
@@ -42,9 +39,9 @@ const ExploreSection = () => {
               <p>no products</p>
             </div>
           )}
-        </div>
+        </section>
       </div>
-    </section>
+    </div>
   );
 };
 

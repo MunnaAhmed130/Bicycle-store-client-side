@@ -10,7 +10,7 @@ const Catagories = () => {
       {catagories.map((catag) => (
         <li
           key={crypto.randomUUID()}
-          className="py-2 flex justify-between uppercase text-sm text-slate-300 hover:text-slate-50 transition-color font-bold"
+          className="py-2 flex justify-between uppercase text-sm text-slate-300 hover:text-slate-50 transition-color font-bold border-b border-solid border-red-500/80"
         >
           <Link to="/explore">{catag.title}</Link>
           <span>({catag.count})</span>
@@ -22,27 +22,33 @@ const Catagories = () => {
 
 const SideBar = ({ tags, setTags, setMinPrice, setMaxPrice }) => {
   return (
-    <div className="lg:w-3/12 mb-20 lg:mr-5 flex flex-col gap-5">
-      <section>
-        <h6 className="sidebar-title mb-2">catagories</h6>
-        <Catagories />
-      </section>
+    <aside className="lg:w-3/12">
+      <div className="flex flex-col gap-5 mb-20 mr-5">
+        <section>
+          <h6 className="sidebar-title mb-2">catagories</h6>
+          <Catagories />
+        </section>
 
-      <section>
-        <h6 className="sidebar-title mb-2">Price Filter</h6>
-        <PriceFilter
-          min={200}
-          max={4000}
-          setMaxPrice={setMaxPrice}
-          setMinPrice={setMinPrice}
-        />
-      </section>
+        <section>
+          <h6 className="sidebar-title mb-2">Price Filter</h6>
+          <PriceFilter
+            min={200}
+            max={4000}
+            setMaxPrice={setMaxPrice}
+            setMinPrice={setMinPrice}
+          />
+        </section>
 
-      <section>
-        <h6 className="sidebar-title mb-2 ">Tags</h6>
-        <ExploreTags allTags={allTags} tags={tags} setTags={setTags} />
-      </section>
-    </div>
+        <section>
+          <h6 className="sidebar-title mb-2 ">Tags</h6>
+          <ExploreTags allTags={allTags} tags={tags} setTags={setTags} />
+        </section>
+
+        <section>
+          <h6 className="sidebar-title mb-2 ">Featured Items</h6>
+        </section>
+      </div>
+    </aside>
   );
 };
 
