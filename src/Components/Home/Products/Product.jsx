@@ -20,8 +20,6 @@ const Product = ({ product }) => {
     img.src = src;
   }, [src]);
 
-  // console.log(crypto.randomUUID);
-
   return (
     <div className="[--image-height:18rem] z-10 h-auto w-full rounded-sm overflow-hidden cursor-pointer ">
       <div className="">

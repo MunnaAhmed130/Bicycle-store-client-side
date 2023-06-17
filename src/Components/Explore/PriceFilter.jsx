@@ -39,23 +39,17 @@ const PriceFilter = ({ min, max, setMaxPrice, setMinPrice }) => {
     setMaxPrice(maxVal);
     setMinPrice(minVal);
   }, [minVal, maxVal]);
-  // const dataHandle = useCallback(() => {
-  //   setMaxPrice(maxVal);
-  //   setMinPrice(minVal);
-  // }, [minVal, maxVal]);
 
   // handle input change
   const handleMinInput = (e) => {
     const value = Math.min(Number(e.target.value), maxVal);
     setMinVal(value);
-    // setMinPrice(value);
     minValRef.current = value;
   };
 
   const handleMaxInput = (e) => {
     const value = Math.max(Number(e.target.value), minVal);
     setMaxVal(value);
-    // setMaxPrice(value);
     maxValRef.current = value;
   };
 

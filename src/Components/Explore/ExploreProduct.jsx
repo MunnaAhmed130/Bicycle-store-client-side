@@ -1,19 +1,28 @@
 import Tag from "../Home/Products/Tag";
 import Rating from "../Rating/Rating";
+import ImageLoader from "./ImageLoader";
 
 const ExploreProduct = ({ product }) => {
-  const { name, url, price, tags, rating } = product;
+  const { name, url, blurhash, price, tags, rating } = product;
 
   return (
     <div>
       <div className="max-w-sm mx-auto text-center rounded-sm overflow-hidden">
         <div className="relative w-full h-60 overflow-hidden flex items-center  bg-[#E5E5E5]">
-          <img
+          {/* <img
             src={url}
             className=" w-full max-h-56 min-h-56 object-contain brightness-90 "
             alt={name}
+          /> */}
+          <ImageLoader
+            blurhash={blurhash}
+            name={name}
+            url={url}
+            height={300}
+            width={400}
+            className=" w-full max-h-56 min-h-56 object-contain brightness-90 "
+            containerStyle="w-full overflow-hidden brightness-90"
           />
-
           <div className="absolute top-0 p-2  flex ">
             {tags.map((tag) => (
               <Tag key={crypto.randomUUID()} tag={tag} />
