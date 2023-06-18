@@ -3,11 +3,29 @@ import { Link, useLocation } from "react-router-dom";
 import { IoMenuOutline, IoCloseOutline } from "react-icons/io5";
 import NavList from "./NavList";
 import "./Navbar.css";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   const location = useLocation();
   const path = location.pathname;
+
+  const listVariant = {
+    hidden: {
+      opacity: 0,
+      y: 20,
+    },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, type: "spring", ease: "easeOut" },
+    },
+    exit: {
+      opacity: 0,
+      y: 100,
+      transition: { duration: 1, type: "spring" },
+    },
+  };
 
   return (
     <nav
@@ -27,7 +45,6 @@ const Navbar = () => {
         <ul className="hidden lg:flex flex-row items-center justify-center lg:gap-x-7 gap-x-4 text-white mb-0 transition-all">
           <NavList toggle={toggle} setToggle={setToggle} dropdown={false} />
         </ul>
-
         <div
           className={`${
             toggle && "flex "
@@ -39,28 +56,30 @@ const Navbar = () => {
           >
             {toggle ? <IoCloseOutline /> : <IoMenuOutline />}
           </button>
-
           <div
-            className={`${toggle ? "absolute" : "relative hidden"}  
-            top-10 right-0 w-screen `}
+            className={`${!toggle && "pointer-events-none -z-20"}
+              top-10 right-0 w-screen absolute`}
           >
-            {/* list of links  */}
-            <div
-              className={` ${
-                toggle ? "nav-in absolute" : "animate-fadeOut relative"
-              }  md:w-[calc(100%_-_95px)] w-[calc(100%_-_55px)] text-center right-0 rounded-lg transition-all bg-[#1f1f1f]`}
+            <motion.div
+              variants={listVariant}
+              initial="hidden"
+              whileInView={toggle ? "show" : "exit"}
             >
-              <ul
-                className={`${toggle && "flex"}
-                 flex-col items-center justify-end  bg-white/0 py-2 px-2 rounded-sm text-white`}
+              <div
+                className={`absolute md:w-[calc(100%_-_95px)] w-[calc(100%_-_55px)] text-center right-0 rounded-lg transition-all bg-[#1f1f1f]`}
               >
-                <NavList
-                  toggle={toggle}
-                  setToggle={setToggle}
-                  dropdown={true}
-                />
-              </ul>
-            </div>
+                <ul
+                  className={`${!toggle && "flex"}
+                    flex-col items-center justify-end  bg-white/0 py-2 px-2 rounded-sm text-white`}
+                >
+                  <NavList
+                    toggle={toggle}
+                    setToggle={setToggle}
+                    dropdown={true}
+                  />
+                </ul>
+              </div>
+            </motion.div>
           </div>
         </div>
       </div>

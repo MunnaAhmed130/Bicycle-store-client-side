@@ -1,10 +1,18 @@
+import { fadeIn } from "../../utils/motion";
 import Rating from "../Rating/Rating";
 import ImageLoader from "./ImageLoader";
+import { motion } from "framer-motion";
 
-const FeaturedItem = ({ product }) => {
+const FeaturedItem = ({ product, i }) => {
   const { name, blurhash, url, rating, price } = product;
   return (
-    <li className="flex gap-4">
+    <motion.li
+      variants={fadeIn("up", "spring", i * 0.1, 0.75)}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true }}
+      className="flex gap-4"
+    >
       <div className="flex items-center justify-center">
         <div className="bg-white overflow-hidden xxs:w-28 w-24 h-20 flex items-center justify-center">
           <ImageLoader
@@ -38,7 +46,8 @@ const FeaturedItem = ({ product }) => {
           <p className="font-bold text-sm ">${price.toLocaleString()}</p>
         </div>
       </div>
-    </li>
+    </motion.li>
   );
 };
+
 export default FeaturedItem;

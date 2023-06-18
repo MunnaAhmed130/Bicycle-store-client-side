@@ -3,6 +3,8 @@ import { useLoaderData } from "react-router-dom";
 import ExploreProducts from "./ExploreProducts";
 import SideBar from "./SideBar";
 import "./ExploreSection.css";
+import { motion } from "framer-motion";
+import { fadeIn } from "../../utils/motion";
 
 const ExploreSection = () => {
   const products = useLoaderData();
@@ -12,10 +14,22 @@ const ExploreSection = () => {
 
   return (
     <main className="bg-gradient-to-b from-[var(--bg-dark)] from-1% via-[#1a1919] via-50% to-[var(--bg-dark)]  min-h-screen py-10 md:px-10 px-5">
-      <div>
-        <p className="section-sub-heading">Discover the world of Cycling</p>
+      <motion.div initial="hidden" whileInView="show">
+        <motion.p
+          variants={fadeIn("up", "spring", 0, 0.5)}
+          viewport={{ once: true }}
+          className="section-sub-heading"
+        >
+          Discover the world of Cycling
+        </motion.p>
 
-        <h2 className="section-heading"> Our Bicycle Collection</h2>
+        <motion.h2
+          variants={fadeIn("up", "spring", 0.1, 0.5)}
+          viewport={{ once: true }}
+          className="section-heading"
+        >
+          Our Bicycle Collection
+        </motion.h2>
 
         <div className="flex lg:flex-row flex-col-reverse max-w-7xl mx-auto gap-5">
           {/* sidebar */}
@@ -42,7 +56,7 @@ const ExploreSection = () => {
             )}
           </section>
         </div>
-      </div>
+      </motion.div>
     </main>
   );
 };
