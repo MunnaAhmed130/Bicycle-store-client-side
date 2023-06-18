@@ -7,23 +7,18 @@ const ExploreProduct = ({ product }) => {
 
   return (
     <div>
-      <div className="max-w-sm mx-auto text-center rounded-sm overflow-hidden">
-        <div className="relative w-full h-60 overflow-hidden flex items-center  bg-[#E5E5E5]">
-          {/* <img
-            src={url}
-            className=" w-full max-h-56 min-h-56 object-contain brightness-90 "
-            alt={name}
-          /> */}
+      <div className="max-w-[300px] mx-auto text-center rounded-sm overflow-hidden">
+        <div className="relative w-full h-60 flex items-center  bg-[#E5E5E5]">
           <ImageLoader
             blurhash={blurhash}
-            name={name}
+            alt={name}
             url={url}
-            height={300}
-            width={400}
+            height={240}
+            width={300}
             className=" w-full max-h-56 min-h-56 object-contain brightness-90 "
-            containerStyle="w-full overflow-hidden brightness-90"
+            containerStyle="w-full overflow-hidden text-center brightness-90"
           />
-          <div className="absolute top-0 p-2  flex ">
+          <div className="absolute top-0 p-2 flex ">
             {tags.map((tag) => (
               <Tag key={crypto.randomUUID()} tag={tag} />
             ))}
@@ -33,8 +28,8 @@ const ExploreProduct = ({ product }) => {
         <div className="p-2">
           <h3 className="font-bold">{name}</h3>
 
-          <div className="text-red-500 text-sm h-5  flex items-center justify-center leading-none">
-            <Rating count={rating} className="mr-0.5  inline-block pb-0.5" />
+          <div className="text-red-500 text-sm h-5 flex items-center justify-center leading-none">
+            <Rating count={rating} className="mr-0.5 inline-block pb-0.5" />
             &nbsp;
             <span className="font-bold ">({rating})</span>
           </div>

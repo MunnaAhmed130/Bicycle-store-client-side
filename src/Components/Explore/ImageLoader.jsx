@@ -3,7 +3,7 @@ import { Blurhash } from "react-blurhash";
 
 const ImageLoader = ({
   url,
-  name,
+  alt,
   blurhash,
   height,
   width,
@@ -18,6 +18,9 @@ const ImageLoader = ({
     const img = new Image();
     img.onload = () => {
       setImageLoading(false);
+      // setTimeout(() => {
+      // setImageLoading(false);
+      // }, 200000);
     };
     img.src = src;
   }, [src]);
@@ -39,7 +42,7 @@ const ImageLoader = ({
       <img
         className={`${imageLoading ? "hidden" : `${className}`} `}
         src={src}
-        alt={name}
+        alt={alt}
       />
     </>
   );
