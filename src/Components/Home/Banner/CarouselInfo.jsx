@@ -91,23 +91,21 @@ const CarouselInfo = ({ banner, i, fade, curr, last }) => {
               imageLoading && "hidden"
             } min-w-full h-screen bg-cover bg-center w-full transition `}
           >
-            {banner.text && (
-              <div
-                className={`  absolute  flex flex-col gap-3 w-2/4 translate-x-[50%] text-center h-full items-center justify-center    
+            <div
+              className={`  absolute  flex flex-col gap-3 w-2/4 translate-x-[50%] text-center h-full items-center justify-center    
                 ${i == curr ? "animate-fade" : "opacity-0"}  ${
-                  i == last && "animate-fadeOut"
-                } }`}
-              >
-                <div className=" flex flex-col gap-3 max-w-2xl mx-auto">
-                  <h3 className="text-8xl uppercase font-semibold text-white transition">
-                    {banner.text.title}
-                  </h3>
-                  <p className="text-[22px] text-white/95">
-                    {banner.text.description}
-                  </p>
-                </div>
+                i == last && "animate-fadeOut"
+              } }`}
+            >
+              <div className=" flex flex-col gap-3 max-w-2xl mx-auto">
+                <h3 className="text-8xl uppercase font-semibold text-white transition">
+                  {banner.text.title}
+                </h3>
+                <p className="text-[22px] text-white/95">
+                  {banner.text.description}
+                </p>
               </div>
-            )}
+            </div>
           </div>
         </>
       )}

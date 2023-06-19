@@ -19,7 +19,7 @@ const ImageLoader = ({
     img.onload = () => {
       setImageLoading(false);
       // setTimeout(() => {
-      // setImageLoading(false);
+      //   setImageLoading(false);
       // }, 200000);
     };
     img.src = src;
