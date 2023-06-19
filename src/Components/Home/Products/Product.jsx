@@ -4,7 +4,7 @@ import ImageLoader from "../../Explore/ImageLoader";
 
 const Product = ({ product }) => {
   const { url, name, price, tags, rating, blurhash, alt } = product;
-  console.log(product);
+  // console.log(product);
 
   return (
     <div className="[--image-height:18rem] z-10 h-auto w-full rounded-sm overflow-hidden cursor-pointer ">

@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import Review from "./Review";
-import styles from "./Reviews.module.css";
 import { motion } from "framer-motion";
 import { fadeIn, textVariant } from "../../../utils/motion";
 
@@ -17,7 +16,7 @@ const Reviews = () => {
 
   return (
     <section
-      className={`${styles.bgReviews} bg-gradient-to-b from-[#1a1919] from-80% to-[black]  md:px-10 px-5 xl:py-40 py-36  `}
+      className={`bg-gradient-to-b from-[#1a1919] from-80% to-[black]  md:px-10 px-5 xl:py-40 py-36  `}
     >
       <div className="max-w-7xl mx-auto">
         <motion.p
