@@ -32,7 +32,6 @@ const Banner = () => {
             key={banner.src}
             curr={curr}
             last={last}
-            alt={banner.alt}
           />
         ))}
       </Carousel>

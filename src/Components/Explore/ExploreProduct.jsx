@@ -1,11 +1,11 @@
-import { fadeIn } from "../../utils/motion";
 import Tag from "../Home/Products/Tag";
 import Rating from "../Rating/Rating";
 import ImageLoader from "./ImageLoader";
 import { motion } from "framer-motion";
 
-const ExploreProduct = ({ product, i }) => {
+const ExploreProduct = ({ product }) => {
   const { name, url, blurhash, price, tags, rating } = product;
+
   const variants = {
     hidden: {
       opacity: 0,
@@ -31,7 +31,7 @@ const ExploreProduct = ({ product, i }) => {
       animate="visible"
       exit="exit"
     >
-      <div className="max-w-[300px] mx-auto text-center rounded-sm overflow-hidden">
+      <div className="max-w-[300px] sm:h-[23rem] mx-auto text-center rounded-sm overflow-hidden">
         <div className="relative w-full h-60 flex items-center  bg-[#E5E5E5]">
           <ImageLoader
             blurhash={blurhash}

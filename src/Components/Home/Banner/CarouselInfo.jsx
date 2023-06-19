@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Blurhash } from "react-blurhash";
 import ImageLoader from "../../Explore/ImageLoader";
 
-const CarouselInfo = ({ banner, i, fade, curr, last, alt }) => {
+const CarouselInfo = ({ banner, i, fade, curr, last }) => {
   const [imageLoading, setImageLoading] = useState(true);
   let src = banner.src;
 
