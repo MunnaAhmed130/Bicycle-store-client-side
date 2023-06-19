@@ -20,11 +20,11 @@ const Carousel = ({
   };
 
   const goToSlide = (i) => {
+    if (i == curr) return setCurr(i);
     setLast(curr);
     setCurr(i);
   };
 
-  // console.log(curr, last);
   useEffect(() => {
     if (!autoSlide) return;
     const slideInterval = setInterval(next, setSlideInterval);
@@ -57,7 +57,7 @@ const Carousel = ({
       </div>
 
       {/* pagination button */}
-      <div className="absolute bottom-4 right-0 left-0 z-50 hidden">
+      <div className="absolute bottom-4 right-0 left-0 z-50 hidde">
         <div className="flex-center gap-2">
           {banner.map((_, i) => (
             <div
