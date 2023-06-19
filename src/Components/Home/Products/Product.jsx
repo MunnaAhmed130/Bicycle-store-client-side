@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react";
-import { Blurhash } from "react-blurhash";
 import Rating from "../../Rating/Rating";
 import Tag from "./Tag";
 import ImageLoader from "../../Explore/ImageLoader";
@@ -7,19 +5,6 @@ import ImageLoader from "../../Explore/ImageLoader";
 const Product = ({ product }) => {
   const { url, name, price, tags, rating, blurhash, alt } = product;
   console.log(product);
-  // const [imageLoading, setImageLoading] = useState(true);
-
-  // let src = url;
-  // const blurHash =
-  //   "iRRMVks:.8Wq?boKRPxut8-;ofogRjIUofRjkCoz_NkCITWAM{ozWVWBWBE1WBjFozxvWBt7n%s:jZayofofV@WBozj[RP";
-
-  // useEffect(() => {
-  //   const img = new Image();
-  //   img.onload = () => {
-  //     setImageLoading(false);
-  //   };
-  //   img.src = src;
-  // }, [src]);
 
   return (
     <div className="[--image-height:18rem] z-10 h-auto w-full rounded-sm overflow-hidden cursor-pointer ">
