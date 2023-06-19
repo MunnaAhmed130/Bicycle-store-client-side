@@ -1,5 +1,5 @@
 .nav-link {
-  @apply tracking-widest font-semibold xs:text-base uppercase  text-sm  transition-all duration-100;
+  @apply tracking-widest font-semibold lg:text-base sm:text-[15px] xs:text-sm text-[13px] uppercase transition-all duration-100;
 }
 
 .dropdown-link {

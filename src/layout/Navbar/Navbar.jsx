@@ -13,17 +13,24 @@ const Navbar = () => {
   const listVariant = {
     hidden: {
       opacity: 0,
-      y: 20,
+      y: 80,
+      scale: 0.8,
     },
     show: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.5, type: "spring", ease: "easeOut" },
+      scale: 1,
+      transition: {
+        duration: 0.6,
+        type: "spring",
+        bounce: 0.35,
+      },
     },
     exit: {
       opacity: 0,
-      y: 100,
-      transition: { duration: 1, type: "spring" },
+      y: 80,
+      scale: 0.8,
+      transition: { duration: 0.75, type: "spring" },
     },
   };
 

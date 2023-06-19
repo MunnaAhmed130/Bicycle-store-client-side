@@ -1,4 +1,4 @@
-export const animateIn = (x = 0, y = 0, type, delay, duration) => {
+export const animateIn = (x = 0, y = 0, type, bounce, delay, duration) => {
   return {
     hidden: {
       x: x,
@@ -10,9 +10,8 @@ export const animateIn = (x = 0, y = 0, type, delay, duration) => {
       y: 0,
       opacity: 1,
       transition: {
-        repeat: 0,
         type: type,
-        bounce: 0.4,
+        bounce: bounce,
         delay: delay,
         duration: duration,
         ease: "easeOut",

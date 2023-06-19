@@ -57,7 +57,7 @@ const Carousel = ({
       </div>
 
       {/* pagination button */}
-      <div className="absolute bottom-4 right-0 left-0 z-50 hidde">
+      {/* <div className="absolute bottom-4 right-0 left-0 z-50 hidden">
         <div className="flex-center gap-2">
           {banner.map((_, i) => (
             <div
@@ -74,7 +74,7 @@ const Carousel = ({
             />
           ))}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

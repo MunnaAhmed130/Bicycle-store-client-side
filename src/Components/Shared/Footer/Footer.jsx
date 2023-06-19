@@ -9,7 +9,7 @@ const Footer = () => {
   const [isAgreed, setIsAgreed] = useState(true);
 
   return (
-    <footer className="flex flex-col md:px-10 px-5 py-3 bg-black">
+    <footer className="flex flex-col md:px-10 px-5 pb-3 pt-10 bg-black border-t border-white/20">
       <div className="flex flex-col py-5 max-w-7xl w-full mx-auto">
         <div className="grid md:grid-cols-2 grid-cols-1 gap-x-10 gap-y-5 lg:mb-5 mb-2">
           <section className="flex flex-col gap-5">

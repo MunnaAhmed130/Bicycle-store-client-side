@@ -1,6 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import { motion } from "framer-motion";
-import { fadeIn, textVariant } from "../../../utils/motion";
+import { animateIn, fadeIn, textVariant } from "../../../utils/motion";
 import Product from "./Product";
 import "./Products.css";
 
@@ -20,7 +20,8 @@ const Products = () => {
     <section className="bg-gradient-to-b from-[black] from-70% to-[#1a1919] xl:pt-40 xl:pb-40 pt-36 pb-20 md:px-10 px-5">
       <div className="max-w-7xl mx-auto">
         <motion.p
-          variants={textVariant(50, 0.25, 0.5)}
+          // variants={textVariant(50, 0.25, 0.5)}
+          variants={animateIn(0, 45, "spring", 0.3, 0.25, 0.5)}
           viewport={{ once: true }}
           initial="hidden"
           whileInView="show"
@@ -30,7 +31,8 @@ const Products = () => {
         </motion.p>
 
         <motion.h2
-          variants={textVariant(20, 0.25, 0.65)}
+          // variants={textVariant(20, 0.25, 0.65)}
+          variants={animateIn(0, -20, "spring", 0.25, 0.25, 0.5)}
           viewport={{ once: true }}
           initial="hidden"
           whileInView="show"

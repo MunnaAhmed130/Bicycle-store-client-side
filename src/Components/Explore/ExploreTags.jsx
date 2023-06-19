@@ -1,5 +1,6 @@
 import { ImCross } from "react-icons/im";
 import { motion } from "framer-motion";
+import { animateIn } from "../../utils/motion";
 
 const ExploreTags = ({ allTags, tags, setTags }) => {
   const handleTag = (tag) => {
@@ -17,6 +18,7 @@ const ExploreTags = ({ allTags, tags, setTags }) => {
     <div className="flex flex-wrap">
       {allTags.map((tag, i) => (
         <motion.button
+          variants={animateIn(50, 0, "spring", (i + 1) * 0.1, 0.75)}
           key={tag}
           onClick={() => handleTag(tag)}
           className={`py-1.5 px-3 border border-solid border-red-500/70 m-1 rounded-[1px] text-white flex items-center gap-1 text-[.9375rem] tracking-widest
