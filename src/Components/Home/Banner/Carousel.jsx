@@ -7,7 +7,6 @@ const Carousel = ({
   setSlideInterval,
   curr,
   setCurr,
-  fade,
   setLast,
 }) => {
   const prev = () => {
@@ -34,12 +33,7 @@ const Carousel = ({
 
   return (
     <div className="overflow-hidden h-screen w-full">
-      <div
-        className={`${
-          fade ? "relative " : "flex "
-        }  transition-transform ease-out duration-1000 h-screen w-full`}
-        style={{ transform: `${!fade && `translateX(-${curr * 100}%)`}` }}
-      >
+      <div className="relative  transition-transform ease-out duration-1000 h-screen w-full">
         {banner}
       </div>
 

@@ -1,3 +1,26 @@
+export const animateIn = (x = 0, y = 0, type, delay, duration) => {
+  return {
+    hidden: {
+      x: x,
+      y: y,
+      opacity: 0,
+    },
+    show: {
+      x: 0,
+      y: 0,
+      opacity: 1,
+      transition: {
+        repeat: 0,
+        type: type,
+        bounce: 0.4,
+        delay: delay,
+        duration: duration,
+        ease: "easeOut",
+      },
+    },
+  };
+};
+
 export const textVariant = (y, delay, duration) => {
   return {
     hidden: {
