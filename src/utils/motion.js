@@ -34,7 +34,6 @@ export const fadeIn = (direction, type, delay, duration) => {
         delay: delay,
         duration: duration,
         ease: "easeOut",
-        // when: "beforeChildren",
       },
     },
   };

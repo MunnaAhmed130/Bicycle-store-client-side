@@ -1,8 +1,8 @@
 import { useState } from "react";
 import Carousel from "./Carousel";
-import "./Banner.css";
 import CarouselInfo from "./CarouselInfo";
 import { bannerImg } from "../../../utils/constant";
+import "./Banner.css";
 
 const Banner = () => {
   const [curr, setCurr] = useState(0);

@@ -5,22 +5,3 @@
 .dropdown-link {
   @apply hover:bg-white/20 inline-block w-full py-1 mt-1;
 }
-
-.flex-center {
-  @apply flex flex-col justify-center items-center;
-}
-
-/* .nav-in {
-  animation: navIn 200ms ease-in-out;
-}
-
-@keyframes navIn {
-  from {
-    opacity: 0;
-    transform: translateY(25px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0px);
-  }
-} */

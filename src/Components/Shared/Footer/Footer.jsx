@@ -7,7 +7,6 @@ import "./Footer.css";
 
 const Footer = () => {
   const [isAgreed, setIsAgreed] = useState(true);
-  // console.log("Disagree", isAgreed);
 
   return (
     <footer className="flex flex-col md:px-10 px-5 py-3 bg-black">
@@ -58,13 +57,12 @@ const Footer = () => {
                 <button
                   type="submit"
                   disabled={isAgreed}
-                  // onClick={(e) => setIsAgreed((prev) => !prev)}
                   className="bg-slate-400/30 hover:bg-slate-400/40 h-full w-16  text-white/70 hover:text-white transition-all duration-100 "
                 >
                   <SiMinutemailer className="text-2xl transition-colors duration-150" />
                 </button>
               </div>
-              <span className="flex flex-row gap-2 items-center ">
+              <span className="flex flex-row items-center gap-2 ">
                 <input
                   type="checkbox"
                   name="checkbox"

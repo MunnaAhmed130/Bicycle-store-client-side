@@ -69,3 +69,7 @@ svg {
 .section-sub-heading {
   @apply text-[white] text-center lg:text-base text-sm font-bold pb-2 uppercase;
 }
+
+.flex-center {
+  @apply flex justify-center items-center;
+}

@@ -7,7 +7,6 @@ const Carousel = ({
   setSlideInterval,
   curr,
   setCurr,
-  last,
   fade,
   setLast,
 }) => {
@@ -65,7 +64,7 @@ const Carousel = ({
 
       {/* pagination button */}
       <div className="absolute bottom-4 right-0 left-0 z-50 hidden">
-        <div className="flex items-center justify-center gap-2">
+        <div className="flex-center gap-2">
           {banner.map((_, i) => (
             <div
               key={i}
@@ -85,4 +84,5 @@ const Carousel = ({
     </div>
   );
 };
+
 export default Carousel;

@@ -1,9 +1,9 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
 import { IoMenuOutline, IoCloseOutline } from "react-icons/io5";
 import NavList from "./NavList";
 import "./Navbar.css";
-import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
@@ -31,7 +31,7 @@ const Navbar = () => {
     <nav
       className={` ${
         path.includes("explore") && `bg-[var(--bg-dark)]`
-      } w-full relative flex-center h-[--navbar-height] md:px-10 px-5 top-0 z-50  `}
+      } h-[--navbar-height] flex flex-col justify-center items-center w-full relative md:px-10 px-5 top-0 z-50`}
     >
       <div className="max-w-7xl w-full mx-auto flex justify-between items-center">
         <Link
