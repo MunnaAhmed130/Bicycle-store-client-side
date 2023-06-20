@@ -63,7 +63,7 @@ svg {
 }
 
 .section-heading {
-  @apply text-center lg:text-6xl md:text-5xl sm:text-4xl text-3xl uppercase font-bold text-white tracking-wide lg:pb-16 pb-10;
+  @apply text-center lg:text-6xl md:text-5xl sm:text-[2.5rem] xs:text-4xl text-[1.75rem] uppercase font-bold text-white tracking-wide lg:pb-12 md:pb-10 pb-8;
 }
 
 .section-sub-heading {

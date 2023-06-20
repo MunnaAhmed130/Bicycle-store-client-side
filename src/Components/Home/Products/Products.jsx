@@ -17,7 +17,7 @@ const Products = () => {
   const data = useLoaderData();
 
   return (
-    <section className="bg-gradient-to-b from-[black] from-70% to-[#1a1919] xl:pt-40 xl:pb-40 pt-36 pb-20 md:px-10 px-5">
+    <section className="bg-gradient-to-b from-[black] from-70% to-[#1a1919] xl:pt-40 xl:pb-40 pt-36 pb-20 md:px-10 sm:px-5 px-2.5">
       <div className="max-w-7xl mx-auto">
         <motion.p
           variants={animateIn(0, 50, "spring", 0.4, 0.25, 0.75)}
@@ -66,7 +66,7 @@ const Products = () => {
             }}
             navigation={true}
             modules={[Pagination, Navigation, Scrollbar, A11y, Autoplay]}
-            className={`mySwiper lg:pt-20 pt-10 `}
+            className={`mySwiper `}
           >
             {Array.isArray(data) ? (
               data.map(

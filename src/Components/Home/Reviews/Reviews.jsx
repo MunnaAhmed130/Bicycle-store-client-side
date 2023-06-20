@@ -16,7 +16,7 @@ const Reviews = () => {
 
   return (
     <section
-      className={`bg-gradient-to-b from-[#1a1919] from-80% to-[black]  md:px-10 px-5 xl:py-40 py-36  `}
+      className={`bg-gradient-to-b from-[#1a1919] from-80% to-[black]  md:px-10 sm:px-5 px-2.5 xl:py-40 py-36  `}
     >
       <div className="max-w-7xl mx-auto">
         <motion.p
@@ -44,7 +44,7 @@ const Reviews = () => {
           viewport={{ once: true }}
           initial="hidden"
           whileInView="show"
-          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10  py-5 md:max-w-full max-w-xl mx-auto "
+          className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-10  py-5 sm:px-0 px-4 md:max-w-full max-w-xl mx-auto "
         >
           {reviews.map((review, i) => (
             <Review key={review._id} review={review} i={i}></Review>
