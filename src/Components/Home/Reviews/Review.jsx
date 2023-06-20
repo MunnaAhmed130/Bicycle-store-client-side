@@ -1,9 +1,7 @@
 import StarRating from "../../Rating/StarRating";
 import { BsQuote } from "react-icons/bs";
-import { motion } from "framer-motion";
-import { fadeIn } from "../../../utils/motion";
 
-const Review = ({ review, i }) => {
+const Review = ({ review }) => {
   const { name, url, description, rating, profession } = review;
 
   return (
@@ -13,7 +11,7 @@ const Review = ({ review, i }) => {
           className="[--box:3.5rem] w-[var(--box)] h-[var(--box)] object-cover rounded-full"
           // referrerPolicy="no-referrer"
           src={url}
-          alt=""
+          alt={`${name} image`}
         />
 
         <div className="flex flex-col">
@@ -34,18 +32,12 @@ const Review = ({ review, i }) => {
         </div>
       </div>
 
-      <motion.div
-        variants={fadeIn("up", "spring", 0.4, (i + 1) * 0.5)}
-        viewport={{ once: true }}
-        initial="hidden"
-        whileInView="show"
-        className="relative "
-      >
+      <div className="relative ">
         <BsQuote className=" absolute md:text-7xl text-5xl text-[#ffffff50] -left-3 top-0 leading-3 transition-all " />
         <p className="text-[#a1a1a1]   md:mt-16 mt-12 xl:max-w-md leading-6 tracking-wide [word-spacing:2px]">
           {description}
         </p>
-      </motion.div>
+      </div>
     </div>
   );
 };

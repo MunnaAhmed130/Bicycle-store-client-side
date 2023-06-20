@@ -20,8 +20,7 @@ const Reviews = () => {
     >
       <div className="max-w-7xl mx-auto">
         <motion.p
-          // variants={textVariant(40, 0.25, 0.5)}
-          variants={animateIn(0, 45, "spring", 0.2, 0.25, 0.5)}
+          variants={animateIn(0, 50, "spring", 0.4, 0.25, 0.75)}
           viewport={{ once: true }}
           initial="hidden"
           whileInView="show"
@@ -31,8 +30,7 @@ const Reviews = () => {
         </motion.p>
 
         <motion.h2
-          // variants={textVariant(20, 0.25, 0.5)}
-          variants={animateIn(0, -20, "spring", 0.25, 0.25, 0.5)}
+          variants={animateIn(0, -20, "spring", 0.4, 0.25, 0.75)}
           viewport={{ once: true }}
           initial="hidden"
           whileInView="show"
@@ -42,9 +40,8 @@ const Reviews = () => {
         </motion.h2>
 
         <motion.div
-          // variants={fadeIn("down", "spring", 0.2, 0.75)}
-          variants={animateIn(0, -20, "spring", 0.25, 0.25, 0.5)}
-          // viewport={{ once: true }}
+          variants={animateIn(0, -150, "spring", 0.4, 0.25, 0.75)}
+          viewport={{ once: true }}
           initial="hidden"
           whileInView="show"
           className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10  py-5 md:max-w-full max-w-xl mx-auto "

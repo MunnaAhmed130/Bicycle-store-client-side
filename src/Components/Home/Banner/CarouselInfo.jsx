@@ -26,10 +26,10 @@ const CarouselInfo = ({ banner, i, curr, last }) => {
         className="w-full h-screen text-center flex-center absolute z-20"
       >
         <div className="flex flex-col sm:gap-3 gap-2 xl:max-w-5xl lg:max-w-3xl md:max-w-xl sm:max-w-lg max-w-sm px-5 transition-all mt-16">
-          <motion.div variants={animateIn(0, 80, "spring", 0.35, 0.25, 0.75)}>
+          <motion.div variants={animateIn(0, 100, "spring", 0.4, 0.25, 0.75)}>
             <h3 className="banner-heading">{banner.text.title}</h3>
           </motion.div>
-          <motion.div variants={animateIn(0, -40, "spring", 0.4, 0.25, 0.75)}>
+          <motion.div variants={animateIn(0, -50, "spring", 0.4, 0.25, 0.75)}>
             <p className="lg:text-[22px] lg:leading-[30px] md:text-xl text-white/95 transition-all  mx-auto">
               {banner.text.description}
             </p>
