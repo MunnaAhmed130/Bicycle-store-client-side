@@ -18,12 +18,14 @@ const Products = () => {
 
   return (
     <section className="bg-gradient-to-b from-[black] from-70% to-[#1a1919] xl:pt-40 xl:pb-40 pt-36 pb-20 md:px-10 sm:px-5 px-2.5">
-      <div className="max-w-7xl mx-auto">
+      <motion.div
+        viewport={{ once: true }}
+        initial="hidden"
+        whileInView="show"
+        className="max-w-7xl mx-auto"
+      >
         <motion.p
           variants={animateIn(0, 50, "spring", 0.4, 0.25, 0.75)}
-          viewport={{ once: true }}
-          initial="hidden"
-          whileInView="show"
           className="section-sub-heading"
         >
           Featured Bicycles
@@ -31,20 +33,12 @@ const Products = () => {
 
         <motion.h2
           variants={animateIn(0, -20, "spring", 0.4, 0.25, 0.75)}
-          viewport={{ once: true }}
-          initial="hidden"
-          whileInView="show"
           className="section-heading"
         >
           Find Your Bicycle
         </motion.h2>
 
-        <motion.div
-          variants={animateIn(0, -150, "spring", 0.4, 0.25, 0.75)}
-          viewport={{ once: true }}
-          initial="hidden"
-          whileInView="show"
-        >
+        <motion.div variants={animateIn(0, -150, "spring", 0.4, 0.25, 0.75)}>
           <Swiper
             breakpoints={{
               780: {
@@ -82,7 +76,7 @@ const Products = () => {
             )}
           </Swiper>
         </motion.div>
-      </div>
+      </motion.div>
     </section>
   );
 };

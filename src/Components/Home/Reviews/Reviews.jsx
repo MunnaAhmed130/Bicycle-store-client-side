@@ -18,12 +18,14 @@ const Reviews = () => {
     <section
       className={`bg-gradient-to-b from-[#1a1919] from-80% to-[black]  md:px-10 sm:px-5 px-2.5 xl:py-40 py-36  `}
     >
-      <div className="max-w-7xl mx-auto">
+      <motion.div
+        viewport={{ once: true }}
+        initial="hidden"
+        whileInView="show"
+        className="max-w-7xl mx-auto"
+      >
         <motion.p
           variants={animateIn(0, 50, "spring", 0.4, 0.25, 0.75)}
-          viewport={{ once: true }}
-          initial="hidden"
-          whileInView="show"
           className="section-sub-heading"
         >
           Testimonials
@@ -31,9 +33,6 @@ const Reviews = () => {
 
         <motion.h2
           variants={animateIn(0, -20, "spring", 0.4, 0.25, 0.75)}
-          viewport={{ once: true }}
-          initial="hidden"
-          whileInView="show"
           className="section-heading"
         >
           Trusted Opinions
@@ -41,16 +40,13 @@ const Reviews = () => {
 
         <motion.div
           variants={animateIn(0, -150, "spring", 0.4, 0.25, 0.75)}
-          viewport={{ once: true }}
-          initial="hidden"
-          whileInView="show"
           className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-10  py-5 sm:px-0 px-4 md:max-w-full max-w-xl mx-auto "
         >
           {reviews.map((review, i) => (
-            <Review key={review._id} review={review} i={i}></Review>
+            <Review key={review._id} review={review} i={i} />
           ))}
         </motion.div>
-      </div>
+      </motion.div>
     </section>
   );
 };
