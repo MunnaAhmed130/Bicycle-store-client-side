@@ -5,18 +5,20 @@ import Catagories from "./Catagories";
 import FeaturedItem from "./FeaturedItem";
 import { motion } from "framer-motion";
 import "./ExploreSection.css";
-import { fadeIn } from "../../utils/motion";
+import { animateIn, fadeIn } from "../../utils/motion";
 
 const SideBar = ({ products, tags, setTags, setMinPrice, setMaxPrice }) => {
   return (
     <section id="sidebar" className="lg:w-3/12">
-      <div className="flex flex-col gap-12 mb-20 ">
+      <motion.div
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        className="flex flex-col gap-12 mb-20 "
+      >
         <section>
           <motion.h6
-            variants={fadeIn("up", "spring", 0.1, 0.5)}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
+            variants={animateIn(0, 50, "spring", 0.4, 0.5, 0.75)}
             className="sidebar-title mb-2"
           >
             catagories
@@ -26,7 +28,7 @@ const SideBar = ({ products, tags, setTags, setMinPrice, setMaxPrice }) => {
 
         <section>
           <motion.h6
-            variants={fadeIn("up", "spring", 0.1, 0.5)}
+            // variants={fadeIn("up", "spring", 0.1, 0.5)}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
@@ -57,7 +59,7 @@ const SideBar = ({ products, tags, setTags, setMinPrice, setMaxPrice }) => {
               ))}
           </ul>
         </section>
-      </div>
+      </motion.div>
     </section>
   );
 };

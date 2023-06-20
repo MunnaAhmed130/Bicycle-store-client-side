@@ -1,5 +1,6 @@
+import { animateIn } from "../../utils/motion";
 import ExploreProduct from "./ExploreProduct";
-import { AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const ExploreProducts = ({ tags, products, minPrice, maxPrice }) => {
   const matchTags = (currentProd, tags) => {
@@ -7,7 +8,12 @@ const ExploreProducts = ({ tags, products, minPrice, maxPrice }) => {
   };
 
   return (
-    <section className="grid md:grid-cols-3 sm:grid-cols-2 gap-5 ">
+    <motion.section
+      variants={animateIn(0, 0, "", 0, 0.25, 0.75)}
+      initial="hidden"
+      whileInView="show"
+      className="grid md:grid-cols-3 sm:grid-cols-2 gap-5 "
+    >
       <AnimatePresence>
         {products
           .filter((prod) => matchTags(prod.tags, tags))
@@ -19,7 +25,7 @@ const ExploreProducts = ({ tags, products, minPrice, maxPrice }) => {
               )
           )}
       </AnimatePresence>
-    </section>
+    </motion.section>
   );
 };
 

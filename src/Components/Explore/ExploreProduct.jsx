@@ -9,17 +9,22 @@ const ExploreProduct = ({ product }) => {
   const variants = {
     hidden: {
       opacity: 0,
+      scale: 0.8,
     },
     visible: {
       opacity: 1,
+      scale: 1,
       transition: {
-        ease: "easeIn",
-        duration: 0.5,
+        delay: 0.25,
+        duration: 0.25,
       },
     },
     exit: {
       opacity: 0,
-      transition: { duration: 0.25, ease: "easeOut" },
+      scale: 0.8,
+      transition: {
+        duration: 0.25,
+      },
     },
   };
 
@@ -30,6 +35,7 @@ const ExploreProduct = ({ product }) => {
       initial="hidden"
       animate="visible"
       exit="exit"
+      viewport={{ once: true }}
     >
       <div className="max-w-[300px] sm:h-[23rem] mx-auto text-center rounded-sm overflow-hidden">
         <div className="relative w-full h-60 flex items-center  bg-[#E5E5E5]">
