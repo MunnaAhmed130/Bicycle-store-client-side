@@ -15,10 +15,29 @@ const ExploreTags = ({ allTags, tags, setTags }) => {
   };
 
   return (
-    <div className="flex flex-wrap">
+    <motion.div
+      variants={{
+        hidden: {
+          opacity: 0,
+          y: -10,
+        },
+        show: {
+          opacity: 1,
+          y: 0,
+          transition: {
+            delay: 1.7,
+            when: "beforeChildren",
+          },
+        },
+      }}
+      initial="hidden"
+      animate="show"
+      viewport={{ once: true }}
+      className="flex flex-wrap"
+    >
       {allTags.map((tag, i) => (
         <motion.button
-          variants={animateIn(50, 0, "spring", (i + 1) * 0.1, 0.75)}
+          variants={animateIn(50, 0, "spring", 0.4, (i + 1) * 0.1, 0.75)}
           key={tag}
           onClick={() => handleTag(tag)}
           className={`py-1.5 px-3 border border-solid border-red-500/70 m-1 rounded-[1px] text-white flex items-center gap-1 text-[.9375rem] tracking-widest
@@ -29,7 +48,7 @@ const ExploreTags = ({ allTags, tags, setTags }) => {
           <DeleteTag tags={tags} tag={tag} />
         </motion.button>
       ))}
-    </div>
+    </motion.div>
   );
 };
 

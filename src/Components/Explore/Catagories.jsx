@@ -1,32 +1,32 @@
 import { catagories } from "../../utils/constant";
 import { Link } from "react-router-dom";
-import { animateIn, fadeIn } from "../../utils/motion";
+import { animateIn } from "../../utils/motion";
 import { motion } from "framer-motion";
 
 const Catagories = () => {
   return (
     <motion.ul
       variants={{
-        hidden: { opacity: 0 },
+        hidden: {
+          opacity: 0,
+          y: -10,
+        },
         show: {
           opacity: 1,
+          y: 0,
           transition: {
-            staggerChildren: 1,
-            delayChildren: 1,
+            delay: 0.4,
+            when: "beforeChildren",
           },
         },
       }}
       initial="hidden"
-      whileInView="show"
-      // viewport={{ once: true }}
+      animate="show"
+      viewport={{ once: true }}
     >
       {catagories.map((catag, i) => (
         <motion.li
-          // variants={fadeIn("up", "spring", (i + 1) * 0.15, 0.75)}
-          variants={animateIn("100v", 0, "spring", 0.4, (i + 1) * 0.2, 0.75)}
-          initial="hidden"
-          whileInView="show"
-          // viewport={{ once: true }}
+          variants={animateIn(50, 0, "spring", 0.4, i * 0.1, 0.75)}
           key={catag.title}
           className="py-2 flex justify-between uppercase text-sm text-slate-300 hover:text-slate-50 transition-color font-bold border-b border-solid border-red-500/80"
         >

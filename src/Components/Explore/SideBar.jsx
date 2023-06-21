@@ -5,7 +5,7 @@ import Catagories from "./Catagories";
 import FeaturedItem from "./FeaturedItem";
 import { motion } from "framer-motion";
 import "./ExploreSection.css";
-import { animateIn, fadeIn } from "../../utils/motion";
+import { animateIn } from "../../utils/motion";
 
 const SideBar = ({ products, tags, setTags, setMinPrice, setMaxPrice }) => {
   return (
@@ -18,7 +18,7 @@ const SideBar = ({ products, tags, setTags, setMinPrice, setMaxPrice }) => {
       >
         <section>
           <motion.h6
-            variants={animateIn(0, 50, "spring", 0.4, 0.5, 0.75)}
+            variants={animateIn(0, 50, "spring", 0.4, 0.35, 0.75)}
             className="sidebar-title mb-2"
           >
             catagories
@@ -28,24 +28,28 @@ const SideBar = ({ products, tags, setTags, setMinPrice, setMaxPrice }) => {
 
         <section>
           <motion.h6
-            // variants={fadeIn("up", "spring", 0.1, 0.5)}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
+            variants={animateIn(0, 50, "spring", 0.4, 1.1, 0.75)}
             className="sidebar-title mb-2"
           >
             Price Filter
           </motion.h6>
-          <PriceFilter
-            min={200}
-            max={4000}
-            setMaxPrice={setMaxPrice}
-            setMinPrice={setMinPrice}
-          />
+          <motion.div variants={animateIn(150, 0, "spring", 0.4, 1.25, 0.75)}>
+            <PriceFilter
+              min={200}
+              max={4000}
+              setMaxPrice={setMaxPrice}
+              setMinPrice={setMinPrice}
+            />
+          </motion.div>
         </section>
 
         <section>
-          <h6 className="sidebar-title mb-2 ">Tags</h6>
+          <motion.h6
+            className="sidebar-title mb-2"
+            variants={animateIn(0, 50, "spring", 0.4, 1.5, 0.75)}
+          >
+            Tags
+          </motion.h6>
           <ExploreTags allTags={allTags} tags={tags} setTags={setTags} />
         </section>
 
