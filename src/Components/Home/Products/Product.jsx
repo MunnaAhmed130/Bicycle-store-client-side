@@ -7,7 +7,7 @@ const Product = ({ product }) => {
   // console.log(product);
 
   return (
-    <div className="xs:[--image-height:18rem] [--image-height:13rem] z-10 h-auto w-full rounded-sm overflow-hidden cursor-pointer ">
+    <div className="sm:[--image-height:18rem] xs:[--image-height:16rem] [--image-height:14rem] z-10 h-auto w-full rounded-sm overflow-hidden cursor-pointer ">
       <div className="overflow-hidden relative bg-[#E5E5E5]">
         <ImageLoader
           blurhash={blurhash}
@@ -15,8 +15,8 @@ const Product = ({ product }) => {
           url={url}
           height={300}
           width={500}
-          className="w-full h-[var(--image-height)] object-contain object-center brightness-90 "
-          containerStyle="overflow-hidden h-[var(--image-height)] flex-center brightness-90"
+          className="w-full sm:h-72 xs:h-64 h-56 object-contain object-center brightness-90 transition-all duration-1000 "
+          containerStyle="overflow-hidden sm:h-72 xs:h-64 h-56 flex-center brightness-90 transition-all duration-1000"
         />
 
         <div className="absolute top-0 p-2  flex ">

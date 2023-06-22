@@ -20,7 +20,7 @@ const ImageLoader = ({
       setImageLoading(false);
       // setTimeout(() => {
       //   setImageLoading(false);
-      // }, 200000);
+      // }, 5000);
     };
     img.src = src;
   }, [src]);

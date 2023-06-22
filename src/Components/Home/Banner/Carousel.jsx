@@ -38,7 +38,7 @@ const Carousel = ({
       </div>
 
       {/* indicator button */}
-      <div className="absolute inset-0 px-4  hidden">
+      {/* <div className="absolute inset-0 px-4  hidden">
         <div className="flex items-center justify-between h-screen">
           <button
             onClick={prev}
@@ -54,7 +54,7 @@ const Carousel = ({
             <BsChevronRight size={30} />
           </button>
         </div>
-      </div>
+      </div> */}
 
       {/* pagination button */}
       {/* <div className="absolute bottom-4 right-0 left-0 z-50 hidden">
