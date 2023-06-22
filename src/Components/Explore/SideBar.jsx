@@ -12,7 +12,7 @@ const SideBar = ({ products, tags, setTags, setMinPrice, setMaxPrice }) => {
     <section id="sidebar" className="lg:w-3/12">
       <motion.div
         initial="hidden"
-        whileInView="show"
+        animate="show"
         viewport={{ once: true }}
         className="flex flex-col gap-12 mb-20 "
       >
@@ -54,14 +54,39 @@ const SideBar = ({ products, tags, setTags, setMinPrice, setMaxPrice }) => {
         </section>
 
         <section>
-          <h6 className="sidebar-title mb-5 ">Featured Items</h6>
-          <ul className="flex flex-col gap-5">
+          <motion.h6
+            variants={animateIn(0, 50, "spring", 0.4, 2, 0.75)}
+            className="sidebar-title mb-5 "
+          >
+            Featured Items
+          </motion.h6>
+          <motion.ul
+            variants={{
+              hidden: {
+                opacity: 0,
+              },
+              show: {
+                opacity: 1,
+                transition: {
+                  delay: 2,
+                  when: "beforeChildren",
+                },
+              },
+            }}
+            initial="hidden"
+            animate="show"
+            viewport={{ once: true }}
+            className="flex flex-col gap-5"
+          >
             {products
-              .filter((product) => product.rating == 5)
-              .map((product, i) => (
-                <FeaturedItem key={product.name} product={product} i={i} />
-              ))}
-          </ul>
+              // .filter((product) => product.rating == 5)
+              .map(
+                (product, i) =>
+                  product.rating == 5 && (
+                    <FeaturedItem key={product.name} product={product} i={i} />
+                  )
+              )}
+          </motion.ul>
         </section>
       </motion.div>
     </section>

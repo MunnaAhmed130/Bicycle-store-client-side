@@ -25,7 +25,7 @@ const ExploreTags = ({ allTags, tags, setTags }) => {
           opacity: 1,
           y: 0,
           transition: {
-            delay: 1.7,
+            delay: 1.4,
             when: "beforeChildren",
           },
         },
@@ -37,7 +37,7 @@ const ExploreTags = ({ allTags, tags, setTags }) => {
     >
       {allTags.map((tag, i) => (
         <motion.button
-          variants={animateIn(50, 0, "spring", 0.4, (i + 1) * 0.1, 0.75)}
+          variants={animateIn(50, 0, "spring", 0.4, (i + 1) * 0.1, 0.5)}
           key={tag}
           onClick={() => handleTag(tag)}
           className={`py-1.5 px-3 border border-solid border-red-500/70 m-1 rounded-[1px] text-white flex items-center gap-1 text-[.9375rem] tracking-widest

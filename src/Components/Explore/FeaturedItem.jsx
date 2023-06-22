@@ -1,4 +1,4 @@
-import { fadeIn } from "../../utils/motion";
+import { animateIn } from "../../utils/motion";
 import Rating from "../Rating/Rating";
 import ImageLoader from "./ImageLoader";
 import { motion } from "framer-motion";
@@ -7,10 +7,7 @@ const FeaturedItem = ({ product, i }) => {
   const { name, blurhash, url, rating, price } = product;
   return (
     <motion.li
-      variants={fadeIn("up", "spring", i * 0.1, 0.75)}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true }}
+      variants={animateIn(150, 0, "spring", 0.4, i * 0.15, 0.75)}
       className="flex gap-4"
     >
       <div className="flex items-center justify-center">
