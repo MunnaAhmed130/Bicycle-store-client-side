@@ -1,10 +1,14 @@
+import { useState } from "react";
 import Tag from "../../Home/Products/Tag";
 import Rating from "../../Rating/Rating";
 import ImageLoader from "../ImageLoader";
 import { motion } from "framer-motion";
+import { BsCartPlus, BsFillBookmarksFill, BsBookmarks } from "react-icons/bs";
 
 const ExploreProduct = ({ product }) => {
   const { name, url, blurhash, price, tags, rating } = product;
+
+  const [wishlist, setWishlist] = useState(true);
 
   const variants = {
     hidden: {
@@ -53,17 +57,28 @@ const ExploreProduct = ({ product }) => {
               <Tag key={crypto.randomUUID()} tag={tag} />
             ))}
           </div>
-          <div className="absolute h-full top-0 right-0 p-2 flex flex-col justify-center gap-2">
-            {tags.map((tag) => (
+          <div className="absolute h-full top-0 right-0 p-2 flex flex-col  gap-2">
+            {/* {tags.map((tag) => (
               <Tag key={crypto.randomUUID()} tag={tag} />
-            ))}
+            ))} */}
+            <button className="text-black bg-white w-10 h-10 rounded-full flex-center text-lg">
+              <BsCartPlus />
+            </button>
+            <button
+              onClick={() => setWishlist((prev) => !prev)}
+              className="text-black bg-white w-10 h-10 rounded-full flex-center text-lg"
+            >
+              {/* <div></div> */}
+              {wishlist ? <BsBookmarks /> : <BsFillBookmarksFill />}
+              {/* <BsFillBookmarksFill /> */}
+            </button>
           </div>
         </div>
 
         <div className="p-2">
           <h3 className="font-bold">{name}</h3>
 
-          <div className="text-red-500 text-sm h-5 flex items-center justify-center leading-none">
+          <div className="text-red-500 text-sm h-5 flex-center leading-none">
             <Rating count={rating} className="mr-0.5 inline-block pb-0.5" />
             &nbsp;
             <span className="font-bold ">({rating})</span>

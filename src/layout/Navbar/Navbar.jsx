@@ -49,7 +49,7 @@ const Navbar = () => {
         </Link>
 
         {/* list of links  */}
-        <ul className="hidden lg:flex flex-row items-center justify-center lg:gap-x-7 gap-x-4 text-white mb-0 transition-all">
+        <ul className="hidden lg:flex flex-row items-center justify-center xl:gap-x-7 gap-x-4 text-white mb-0 transition-all">
           <NavList toggle={toggle} setToggle={setToggle} dropdown={false} />
         </ul>
         <div
@@ -70,7 +70,7 @@ const Navbar = () => {
             <motion.div
               variants={listVariant}
               initial="hidden"
-              whileInView={toggle ? "show" : "exit"}
+              animate={toggle ? "show" : "exit"}
             >
               <div
                 className={`absolute md:w-[calc(100%_-_95px)] w-[calc(100%_-_55px)] text-center right-0 rounded-lg transition-all bg-[#1f1f1f]`}
