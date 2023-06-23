@@ -1,14 +1,13 @@
 import Review from "./Review";
-import reviews from "../../../assets/data/reviewData.json";
 import { motion } from "framer-motion";
 import { animateIn } from "../../../utils/motion";
+import { reviews } from "../../../assets/data";
 
 const Reviews = () => {
   // const [reviews, setReviews] = useState([]);
 
   // useEffect(() => {
   //   fetch("http://localhost:4000/reviews/limit?number=3")
-  //   fetch("fakeReview.json")
   //     fetch("https://bicycle-store-server-side.vercel.app/reviews")
   //     .then((res) => res.json())
   //     .then((data) => setReviews(data));

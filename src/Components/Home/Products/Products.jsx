@@ -1,7 +1,7 @@
 // import { useLoaderData } from "react-router-dom";
 import { motion } from "framer-motion";
 import { animateIn } from "../../../utils/motion";
-import data from "../../../assets/data/productData.json";
+// import data from "../../../assets/data/productData.json";
 import Product from "./Product";
 import "./Products.css";
 
@@ -13,11 +13,11 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/scrollbar";
 import "swiper/css/a11y";
+import { products } from "../../../assets/data";
 
 const Products = () => {
   // const data = useLoaderData();
-  // const value = data.length;
-  // console.log(value);
+
   return (
     <section className="bg-gradient-to-b from-[black] from-70% to-[#1a1919] xl:pt-40 xl:pb-40 pt-36 pb-20 md:px-10 sm:px-5 px-2.5">
       <motion.div
@@ -64,8 +64,8 @@ const Products = () => {
             modules={[Pagination, Navigation, Scrollbar, A11y, Autoplay]}
             className={`mySwiper `}
           >
-            {data.length ? (
-              data.map(
+            {products.length ? (
+              products.map(
                 (product) =>
                   product.rating >= 4.7 && (
                     <SwiperSlide key={product.name}>

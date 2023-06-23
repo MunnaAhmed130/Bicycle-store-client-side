@@ -1,12 +1,11 @@
 import { useState } from "react";
 // import { useLoaderData } from "react-router-dom";
-import products from "../../assets/data/productData.json";
-
 import ExploreProducts from "./ExploreProducts/ExploreProducts";
 import SideBar from "./SideBar/SideBar";
 import { motion } from "framer-motion";
 import { animateIn } from "../../utils/motion";
 import "./ExploreSection.css";
+import { products } from "../../assets/data";
 
 const ExploreSection = () => {
   // const products = useLoaderData();
