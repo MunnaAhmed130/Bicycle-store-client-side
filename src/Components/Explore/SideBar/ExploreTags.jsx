@@ -1,6 +1,6 @@
 import { ImCross } from "react-icons/im";
 import { motion } from "framer-motion";
-import { animateIn } from "../../utils/motion";
+import { animateIn } from "../../../utils/motion";
 
 const ExploreTags = ({ allTags, tags, setTags }) => {
   const handleTag = (tag) => {

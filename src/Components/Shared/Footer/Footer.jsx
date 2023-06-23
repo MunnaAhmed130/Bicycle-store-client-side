@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { footerInfo, icons } from "../../../utils/constant";
+import { footerInfo, icons } from "../../../assets/constant";
 import { SiMinutemailer } from "react-icons/si";
 import FooterLists from "./FooterLists";
 import Social from "./Social";

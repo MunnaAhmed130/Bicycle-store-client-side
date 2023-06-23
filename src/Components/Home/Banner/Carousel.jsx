@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { BsChevronRight, BsChevronLeft } from "react-icons/bs";
+// import { BsChevronRight, BsChevronLeft } from "react-icons/bs";
 
 const Carousel = ({
   children: banner,
@@ -9,21 +9,21 @@ const Carousel = ({
   setCurr,
   setLast,
 }) => {
-  const prev = () => {
-    setLast(curr);
-    setCurr((curr) => (curr === 0 ? banner.length - 1 : curr - 1));
-  };
+  // const prev = () => {
+  //   setLast(curr);
+  //   setCurr((curr) => (curr === 0 ? banner.length - 1 : curr - 1));
+  // };
 
   const next = () => {
     setLast(curr);
     setCurr((curr) => (curr === banner.length - 1 ? 0 : curr + 1));
   };
 
-  const goToSlide = (i) => {
-    if (i == curr) return setCurr(i);
-    setLast(curr);
-    setCurr(i);
-  };
+  // const goToSlide = (i) => {
+  //   if (i == curr) return setCurr(i);
+  //   setLast(curr);
+  //   setCurr(i);
+  // };
 
   useEffect(() => {
     if (!autoSlide) return;

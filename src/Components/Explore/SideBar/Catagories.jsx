@@ -1,6 +1,6 @@
-import { catagories } from "../../utils/constant";
+import { catagories } from "../../../assets/constant";
 import { Link } from "react-router-dom";
-import { animateIn } from "../../utils/motion";
+import { animateIn } from "../../../utils/motion";
 import { motion } from "framer-motion";
 
 const Catagories = () => {

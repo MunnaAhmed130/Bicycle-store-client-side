@@ -1,6 +1,6 @@
-import Tag from "../Home/Products/Tag";
-import Rating from "../Rating/Rating";
-import ImageLoader from "./ImageLoader";
+import Tag from "../../Home/Products/Tag";
+import Rating from "../../Rating/Rating";
+import ImageLoader from "../ImageLoader";
 import { motion } from "framer-motion";
 
 const ExploreProduct = ({ product }) => {
@@ -49,6 +49,11 @@ const ExploreProduct = ({ product }) => {
             containerStyle="w-full overflow-hidden text-center brightness-90"
           />
           <div className="absolute top-0 p-2 flex ">
+            {tags.map((tag) => (
+              <Tag key={crypto.randomUUID()} tag={tag} />
+            ))}
+          </div>
+          <div className="absolute h-full top-0 right-0 p-2 flex flex-col justify-center gap-2">
             {tags.map((tag) => (
               <Tag key={crypto.randomUUID()} tag={tag} />
             ))}

@@ -1,4 +1,4 @@
-import { animateIn } from "../../utils/motion";
+import { animateIn } from "../../../utils/motion";
 import ExploreProduct from "./ExploreProduct";
 import { motion, AnimatePresence } from "framer-motion";
 

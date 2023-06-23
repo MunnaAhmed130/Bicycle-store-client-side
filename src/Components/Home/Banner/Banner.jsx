@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Carousel from "./Carousel";
 import CarouselInfo from "./CarouselInfo";
-import { bannerImg } from "../../../utils/constant";
+import { bannerImg } from "../../../assets/constant";
 import "./Banner.css";
 
 const Banner = () => {

@@ -1,11 +1,10 @@
-import { allTags } from "../../utils/constant";
+import { allTags } from "../../../assets/constant";
 import ExploreTags from "./ExploreTags";
 import PriceFilter from "./PriceFilter";
 import Catagories from "./Catagories";
 import FeaturedItem from "./FeaturedItem";
 import { motion } from "framer-motion";
-import "./ExploreSection.css";
-import { animateIn } from "../../utils/motion";
+import { animateIn } from "../../../utils/motion";
 
 const SideBar = ({ products, tags, setTags, setMinPrice, setMaxPrice }) => {
   return (

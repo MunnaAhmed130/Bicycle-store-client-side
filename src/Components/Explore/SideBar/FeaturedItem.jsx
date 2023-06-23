@@ -1,6 +1,6 @@
-import { animateIn } from "../../utils/motion";
-import Rating from "../Rating/Rating";
-import ImageLoader from "./ImageLoader";
+import { animateIn } from "../../../utils/motion";
+import Rating from "../../Rating/Rating";
+import ImageLoader from "../ImageLoader";
 import { motion } from "framer-motion";
 
 const FeaturedItem = ({ product, i }) => {
