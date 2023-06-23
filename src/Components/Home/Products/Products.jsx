@@ -1,6 +1,7 @@
-import { useLoaderData } from "react-router-dom";
+// import { useLoaderData } from "react-router-dom";
 import { motion } from "framer-motion";
 import { animateIn } from "../../../utils/motion";
+import data from "../../../assets/data/productData.json";
 import Product from "./Product";
 import "./Products.css";
 
@@ -14,8 +15,9 @@ import "swiper/css/scrollbar";
 import "swiper/css/a11y";
 
 const Products = () => {
-  const data = useLoaderData();
-
+  // const data = useLoaderData();
+  // const value = data.length;
+  // console.log(value);
   return (
     <section className="bg-gradient-to-b from-[black] from-70% to-[#1a1919] xl:pt-40 xl:pb-40 pt-36 pb-20 md:px-10 sm:px-5 px-2.5">
       <motion.div
@@ -62,7 +64,7 @@ const Products = () => {
             modules={[Pagination, Navigation, Scrollbar, A11y, Autoplay]}
             className={`mySwiper `}
           >
-            {Array.isArray(data) ? (
+            {data.length ? (
               data.map(
                 (product) =>
                   product.rating >= 4.7 && (
@@ -72,7 +74,9 @@ const Products = () => {
                   )
               )
             ) : (
-              <p>loading</p>
+              <p className="flex items-center justify-center h-32">
+                loading...
+              </p>
             )}
           </Swiper>
         </motion.div>

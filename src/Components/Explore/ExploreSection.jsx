@@ -1,5 +1,7 @@
 import { useState } from "react";
-import { useLoaderData } from "react-router-dom";
+// import { useLoaderData } from "react-router-dom";
+import products from "../../assets/data/productData.json";
+
 import ExploreProducts from "./ExploreProducts/ExploreProducts";
 import SideBar from "./SideBar/SideBar";
 import { motion } from "framer-motion";
@@ -7,7 +9,7 @@ import { animateIn } from "../../utils/motion";
 import "./ExploreSection.css";
 
 const ExploreSection = () => {
-  const products = useLoaderData();
+  // const products = useLoaderData();
   const [tags, setTags] = useState([]);
   const [minPrice, setMinPrice] = useState(200);
   const [maxPrice, setMaxPrice] = useState(4000);

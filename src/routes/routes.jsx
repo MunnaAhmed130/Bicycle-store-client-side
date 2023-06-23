@@ -27,18 +27,19 @@ const routes = createBrowserRouter([
     children: [
       {
         path: "/",
-        loader: async () => {
-          // return fetch("http://localhost:4000/products");
-          return fetch("fakeData.json");
-        },
+        // loader: async () => {
+        // return fetch("http://localhost:4000/products");
+        // return fetch("productData.json");
+        // },
         element: <Home />,
       },
       {
         path: "/explore",
-        loader: async () => {
-          // return fetch("http://localhost:4000/products");
-          return fetch("fakeData.json");
-        },
+        // loader: async () => {
+        // return fetch("http://localhost:4000/products");
+        // return fetch("../assets/data/fakeData.json");
+        // return fetch("fakeData.json");
+        // },
         element: <Explore />,
       },
       {

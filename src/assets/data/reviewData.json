@@ -1,0 +1,26 @@
+[
+  {
+    "_id": 0,
+    "name": "David Woods",
+    "profession": "Professional Cyclist",
+    "rating": "5",
+    "url": "https://i.ibb.co/09svrJ4/man-g1de523124-640.jpg",
+    "description": "I've been a cyclist for years, and I must say that the bicycle I bought from this shop has exceeded all my expectations. The attention to detail and the level of craftsmanship are evident in every aspect of the bike."
+  },
+  {
+    "_id": 1,
+    "name": "Sofia Rocks",
+    "profession": "Cycle Racer",
+    "url": "https://i.ibb.co/bW17KxR/woman-g5e3f7c984-640.jpg",
+    "rating": "5",
+    "description": "I recently upgraded to one of their high-performance bicycles, and I can't emphasize enough how much of a difference it has made to my cycling experience."
+  },
+  {
+    "_id": 2,
+    "name": "Fred Miller",
+    "profession": "Cyclist",
+    "description": "As a daily commuter, I needed a reliable and versatile bike, and that's exactly what I found at this shop. The bicycle I purchased has exceeded my expectations in terms of durability and functionality.",
+    "rating": "4.5",
+    "url": "https://i.ibb.co/TqkDnCN/young-man-in-helmet-riding-bmx-bicycle-and-smiling-8-EUT9-VK-150x150.jpg"
+  }
+]
