@@ -8,6 +8,8 @@ import Pay from "../Components/Dashboard/User/Pay/Pay";
 import Dashboard from "../Components/Dashboard/Dashboard/Dashboard";
 import Home from "../pages/Home/Home";
 import Auth from "../pages/Authentication/Auth";
+import Product from "../Components/Explore/Product/Product";
+// import Product from "../Components/Home/Products/Product";
 
 // export const getReviews = async () => {
 //   const response = await fetch(`http://localhost:4000/reviews`);
@@ -41,6 +43,10 @@ const routes = createBrowserRouter([
         // return fetch("fakeData.json");
         // },
         element: <Explore />,
+      },
+      {
+        path: "/explore/:id",
+        element: <Product />,
       },
       {
         path: "/login",
