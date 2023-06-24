@@ -4,6 +4,7 @@ import Rating from "../../Rating/Rating";
 import ImageLoader from "../ImageLoader";
 import { motion } from "framer-motion";
 import { BsCartPlus, BsFillBookmarksFill, BsBookmarks } from "react-icons/bs";
+import TooltipButton from "./Tooltip";
 
 const ExploreProduct = ({ product }) => {
   const { name, url, blurhash, price, tags, rating } = product;
@@ -52,26 +53,25 @@ const ExploreProduct = ({ product }) => {
             className=" w-full max-h-56 min-h-56 object-cover brightness-90 "
             containerStyle="w-full overflow-hidden text-center brightness-90"
           />
+
+          {/* product tags */}
           <div className="absolute top-0 p-2 flex ">
             {tags.map((tag) => (
               <Tag key={crypto.randomUUID()} tag={tag} />
             ))}
           </div>
-          <div className="absolute h-full top-0 right-0 p-2 flex flex-col  gap-2">
-            {/* {tags.map((tag) => (
-              <Tag key={crypto.randomUUID()} tag={tag} />
-            ))} */}
-            <button className="text-black bg-white w-10 h-10 rounded-full flex-center text-lg">
+
+          {/* tooltip buttons */}
+          <div className="absolute  bottom-0  p-2 flex w-full justify-center  gap-2">
+            <TooltipButton tooltip="add to cart">
               <BsCartPlus />
-            </button>
-            <button
+            </TooltipButton>
+            <TooltipButton
+              tooltip="wishlist"
               onClick={() => setWishlist((prev) => !prev)}
-              className="text-black bg-white w-10 h-10 rounded-full flex-center text-lg"
             >
-              {/* <div></div> */}
               {wishlist ? <BsBookmarks /> : <BsFillBookmarksFill />}
-              {/* <BsFillBookmarksFill /> */}
-            </button>
+            </TooltipButton>
           </div>
         </div>
 

@@ -8,7 +8,7 @@ import { animateIn } from "../../../utils/motion";
 
 const SideBar = ({ products, tags, setTags, setMinPrice, setMaxPrice }) => {
   return (
-    <section id="sidebar" className="lg:w-3/12">
+    <section id="sidebar" className="lg:w-3/12 overflow-hidden">
       <motion.div
         initial="hidden"
         animate="show"
