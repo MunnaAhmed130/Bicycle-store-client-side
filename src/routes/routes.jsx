@@ -8,7 +8,7 @@ import Pay from "../Components/Dashboard/User/Pay/Pay";
 import Dashboard from "../Components/Dashboard/Dashboard/Dashboard";
 import Home from "../pages/Home/Home";
 import Auth from "../pages/Authentication/Auth";
-import Product from "../Components/Explore/Product/Product";
+import ProductInfo from "../pages/Explore/ProductInfo";
 // import Product from "../Components/Home/Products/Product";
 
 // export const getReviews = async () => {
@@ -46,7 +46,8 @@ const routes = createBrowserRouter([
       },
       {
         path: "/explore/:id",
-        element: <Product />,
+        // title: "",
+        element: <ProductInfo />,
       },
       {
         path: "/login",

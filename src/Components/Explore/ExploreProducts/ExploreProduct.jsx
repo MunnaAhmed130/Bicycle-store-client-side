@@ -44,7 +44,7 @@ const ExploreProduct = ({ product }) => {
       viewport={{ once: true }}
     >
       <div className="max-w-[300px] sm:h-[23rem] mx-auto text-center rounded-sm overflow-hidden">
-        <Link to={`/explore/${name}`}>
+        <Link to={`/explore/${name}`} title="">
           <div className="relative w-full h-60 flex items-center  bg-[#E5E5E5]">
             <ImageLoader
               blurhash={blurhash}
