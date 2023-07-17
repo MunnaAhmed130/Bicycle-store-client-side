@@ -5,10 +5,11 @@ import SideBar from "./SideBar/SideBar";
 import { motion } from "framer-motion";
 import { animateIn } from "../../utils/motion";
 import "./ExploreSection.css";
-import { products } from "../../assets/data";
+import { useLoaderData } from "react-router-dom";
+// import { products } from "../../assets/data";
 
 const ExploreSection = () => {
-  // const products = useLoaderData();
+  const products = useLoaderData();
   const [tags, setTags] = useState([]);
   const [minPrice, setMinPrice] = useState(200);
   const [maxPrice, setMaxPrice] = useState(4000);

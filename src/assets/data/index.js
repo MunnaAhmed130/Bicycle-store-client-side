@@ -1,4 +1,4 @@
-import products from "./productData.json";
-import reviews from "./reviewData.json";
+import products from "./productsData.json";
+import reviews from "./reviewsData.json";
 
 export { products, reviews };

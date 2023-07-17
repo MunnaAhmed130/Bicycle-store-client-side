@@ -9,6 +9,7 @@ import Dashboard from "../Components/Dashboard/Dashboard/Dashboard";
 import Home from "../pages/Home/Home";
 import Auth from "../pages/Authentication/Auth";
 import ProductInfo from "../pages/Explore/ProductInfo";
+import { getProducts, getReviews } from "../api/api";
 // import Product from "../Components/Home/Products/Product";
 
 // export const getReviews = async () => {
@@ -29,19 +30,19 @@ const routes = createBrowserRouter([
     children: [
       {
         path: "/",
-        // loader: async () => {
-        // return fetch("http://localhost:4000/products");
-        // return fetch("productData.json");
-        // },
+        loader: async () => {
+          // return fetch("http://localhost:4000/products");
+          return { products: await getProducts(), reviews: await getReviews() };
+        },
         element: <Home />,
       },
       {
         path: "/explore",
-        // loader: async () => {
-        // return fetch("http://localhost:4000/products");
-        // return fetch("../assets/data/fakeData.json");
-        // return fetch("fakeData.json");
-        // },
+        loader: async () => {
+          // return fetch("http://localhost:4000/products");
+          // return fetch("../assets/data/fakeData.json");
+          return fetch("/src/assets/data/productsData.json");
+        },
         element: <Explore />,
       },
       {

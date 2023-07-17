@@ -1,11 +1,12 @@
 import Review from "./Review";
 import { motion } from "framer-motion";
 import { animateIn } from "../../../utils/motion";
-import { reviews } from "../../../assets/data";
+import { useLoaderData } from "react-router-dom";
 
 const Reviews = () => {
-  // const [reviews, setReviews] = useState([]);
+  const { reviews } = useLoaderData();
 
+  // const [reviews, setReviews] = useState([]);
   // useEffect(() => {
   //   fetch("http://localhost:4000/reviews/limit?number=3")
   //     fetch("https://bicycle-store-server-side.vercel.app/reviews")
